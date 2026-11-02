@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.45, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+R [label="Output Formats", fillcolor="#FFE9B3"];
+a [label="Static images\nPNG, JPEG (raster)\nSVG, PDF (vector)"]; b [label="Interactive web\nD3.js, Plotly, Bokeh"]; c [label="Dashboards\nTableau, Power BI,\nGrafana"]; d [label="Animated\nGIF, MP4"];
+e [label="Data files\nCSV, JSON"]; f [label="Model serialization\nPickle, ONNX, PMML"]; g [label="3-D printing\n(physical models)"];
+R->{a b c d e f g};
+}

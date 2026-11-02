@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.35, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=9]; rankdir=LR;
+S [label="Statistics"]; M [label="Mathematics"]; C [label="Computer\nScience"];
+CS [label="Computational\nStatistics\n(algorithms, simulation,\nresampling, optimisation)", fillcolor="#FFE9B3"];
+DV [label="Data Visualization\n(shows results: histograms,\nconfidence bands, clusters)"]; I [label="Insight &\nDecision"];
+{S M C}->CS; CS->DV [label="computes what\nto draw"]; DV->CS [label="suggests new\nhypotheses", style=dashed]; DV->I;
+}

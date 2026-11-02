@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.45, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=TB; node [fontsize=13];
+a [label="1786-1801\nWilliam Playfair\nline, bar, pie chart"]; b [label="1854\nJohn Snow\ncholera map"]; c [label="1858\nF. Nightingale\ncoxcomb chart"]; d [label="1869\nC. Minard\nNapoleon march"];
+e [label="1977\nJohn Tukey\nEDA, box plot"]; f [label="1983\nEdward Tufte\ndata-ink, chartjunk"]; g [label="Today\ninteractive, web,\nAI-driven", fillcolor="#FFE9B3"];
+{rank=same; a; b; c; d;} {rank=same; e; f; g;}
+a->b->c->d; d->e [constraint=false]; a->e [style=invis]; e->f->g;
+}

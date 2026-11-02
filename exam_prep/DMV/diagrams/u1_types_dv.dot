@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.45, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+R [label="Types of Data Visualization\n(choose by PURPOSE)", fillcolor="#FFE9B3"];
+C1 [label="Comparison\nBar / Column"]; C2 [label="Trend over time\nLine / Area"]; C3 [label="Part-to-whole\nPie / Tree map"];
+C4 [label="Relationship\nScatter / Bubble"]; C5 [label="Distribution\nHistogram / Box"]; C6 [label="Spatial & Network\nChoropleth / Network\n/ Heat map"];
+R->{C1 C2 C3 C4 C5 C6};
+}

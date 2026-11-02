@@ -1,0 +1,13 @@
+import numpy as np, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+rng = np.random.default_rng(1); x = np.linspace(0, 10, 40); y = 2*x + 3 + rng.normal(0, 2, 40)
+fig, ax = plt.subplots(figsize=(6.4, 4.2), dpi=150)
+ax.scatter(x, y, color="#1F77B4", label="Data points", s=18)
+m, c = np.polyfit(x, y, 1); ax.plot(x, m*x+c, color="#D62728", label="Regression line")
+ax.set_title("Sales vs Advertising Spend (2025)"); ax.set_xlabel("Advertising spend (₹ lakh)"); ax.set_ylabel("Sales (₹ lakh)")
+ax.legend(loc="upper left"); ax.grid(alpha=0.3)
+ax.annotate("Annotation:\nhighest sale", xy=(x[np.argmax(y)], y.max()), xytext=(5.2, 23.5), arrowprops=dict(arrowstyle="->"), fontsize=8)
+kw = dict(fontsize=8, color="#7A3B00", bbox=dict(boxstyle="round", fc="#FFE9B3", ec="#7A3B00"))
+fig.text(0.53, 0.955, "① Title", ha="center", **kw); fig.text(0.53, 0.01, "② X-axis label + units", ha="center", **kw)
+ax.text(0.03, 0.55, "③ Y-axis label (left)", transform=ax.transAxes, **kw); ax.text(0.2, 0.7, "④ Legend", transform=ax.transAxes, **kw)
+ax.text(0.73, 0.08, "⑤ Grid / ticks /\nscale", transform=ax.transAxes, **kw)
+fig.tight_layout(rect=(0.04, 0.04, 1, 0.94)); fig.savefig("u1_complete_plot.png")

@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.45, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=TB;
+D [label="Raw data", shape=cylinder, fillcolor="#FFFFFF"]; P [label="Data processing\n(clean, integrate,\naggregate)"]; S [label="Statistical\ncomputation\n(mean, corr., models)"];
+M [label="Mapping to\nvisual properties\n(x,y, size, colour)"]; R [label="Rendering\n(CPU / GPU)"]; V [label="Display", fillcolor="#FFE9B3"]; U [label="User interaction\n(zoom, filter)", fillcolor="#FFFFFF"];
+{rank=same; D; P; S;} {rank=same; M; R; V;}
+D->P->S; S->M; M->R->V; V->U [dir=none]; U->P [label="re-compute", style=dashed];
+}

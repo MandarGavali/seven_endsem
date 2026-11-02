@@ -8,7 +8,7 @@ OCR of DMV textbook: tesseract per page, 200 dpi (re-create if needed; not commi
 | # | Document | Status |
 |---|---|---|
 | 1 | DMV_PYQ_Topic_Analysis.docx | DONE |
-| 2 | DMV_Unit1_Exam_Answers.docx | pending |
+| 2 | DMV_Unit1_Exam_Answers.docx | DONE |
 | 3 | DMV_Unit2_Exam_Answers.docx | pending |
 | 4 | DMV_Unit3_Exam_Answers.docx | pending |
 | 5 | DMV_Unit4_Exam_Answers.docx | pending |

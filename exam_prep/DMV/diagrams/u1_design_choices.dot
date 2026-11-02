@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.35, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=9]; layout=neato; overlap=false; splines=true;
+R [label="Scientific\nDesign Choices", fillcolor="#FFE9B3", pos="0,0!"];
+a [label="1. Chart type", pos="0,1.6!"]; b [label="2. Visual encoding\n(position, size, colour)", pos="2.6,1.0!"]; c [label="3. Colour palette", pos="2.8,-0.4!"];
+d [label="4. Scales & axes", pos="1.6,-1.6!"]; e [label="5. Labels, titles,\nannotations", pos="-1.6,-1.6!"]; f [label="6. Data-ink ratio\n(no chartjunk)", pos="-2.8,-0.4!"]; g [label="7. Audience,\naccessibility,\ninteractivity", pos="-2.6,1.0!"];
+R->{a b c d e f g} [dir=none];
+}
