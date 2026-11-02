@@ -28,8 +28,27 @@ def render_dot(m):
     return f"\n![]({png}){{width={width_in:.2f}in}}\n"
 
 text = re.sub(r"```dot (\S+)\n(.*?)```", render_dot, text, flags=re.S)
-# '|' inside math -> \mid (renders everywhere and does not break pipe tables)
-text = re.sub(r"(\$\$?)(.+?)(\1)", lambda m: m.group(1) + re.sub(r"(?<!\\)\|", r"\\mid ", m.group(2)) + m.group(3), text, flags=re.S)
+
+def render_mpl(m):
+    """```mpl name ... ``` : matplotlib code; figure saved automatically."""
+    name, body = m.group(1), m.group(2)
+    png = os.path.join(work, name + ".png")
+    import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+    plt.close("all"); plt.rcParams.update({"font.size": 11})
+    exec(body, {"plt": plt})
+    plt.tight_layout(); plt.savefig(png, dpi=150); plt.close("all")
+    from PIL import Image
+    w, h = Image.open(png).size
+    width_in = min(5.5, w / 150)
+    if width_in * h / w > 4.2:
+        width_in = 4.2 * (w / h)
+    return f"\n![]({png}){{width={width_in:.2f}in}}\n"
+
+text = re.sub(r"```mpl (\S+)\n(.*?)```", render_mpl, text, flags=re.S)
+# '|' / \mid inside math -> U+01C0 (looks like a bar in Word AND LibreOffice; does not break pipe tables)
+BAR = "\u01c0"
+text = re.sub(r"(\$\$?)(.+?)(\1)", lambda m: m.group(1) + re.sub(r"\\mid\b ?|(?<!\\)\|", BAR, m.group(2)) + m.group(3), text, flags=re.S)
+text = re.sub(r"\$\$\n(?=[-*] |\d+\. )", "$$\n\n", text)  # list right after display math
 md = os.path.join(work, "c.md"); open(md, "w", encoding="utf-8").write(text)
 tmp = os.path.join(work, "t.docx")
 subprocess.run(["pandoc", md, "-f", "markdown+pipe_tables+grid_tables", "-o", tmp], check=True)
