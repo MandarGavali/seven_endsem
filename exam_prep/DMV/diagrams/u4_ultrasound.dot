@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+T [label="Transducer\n(piezoelectric crystal)\nsends 2-18 MHz pulse"]; B [label="Sound travels\nthrough tissue"]; R [label="Echo reflected at\ntissue boundaries\n(acoustic impedance)"];
+E [label="Transducer receives\necho → voltage"]; P [label="Processing\ndepth = c·t/2\nbrightness = echo strength"]; I [label="Real-time image\nB-mode, Doppler,\n3-D / 4-D", fillcolor="#FFE9B3"];
+{rank=same; T; B; R;} {rank=same; E; P; I;}
+T->B->R; R->E [constraint=false]; T->E [style=invis]; E->P->I;
+}

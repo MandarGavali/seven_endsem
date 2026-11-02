@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+R [label="Data\nReconstruction", fillcolor="#FFE9B3"];
+a [label="Temporal (time-wise)"]; b [label="Spatial (location / 3-D)"]; c [label="Hierarchical (tree)"]; d [label="Aggregated (summary)"]; e [label="Cleansing & Imputation"];
+f [label="Dimensionality reduction (PCA)"]; g [label="Normalization / Standardization"]; h [label="Time-series forecasting"]; i [label="Feature engineering"]; j [label="Joining & Merging"]; k [label="Unpivoting (wide → long)"]; l [label="Interpolation"];
+R->{a b c d e f g h i j k l};
+}

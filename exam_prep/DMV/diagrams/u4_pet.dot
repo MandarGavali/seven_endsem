@@ -1,0 +1,7 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+{rank=same; A; B; C;} {rank=same; F; E; D;} {rank=same; G; H; I;}
+A [label="1. Radiotracer injected\n(e.g. ¹⁸F-FDG = glucose\n+ positron emitter)"]; B [label="2. Uptake by active cells\n(cancer, brain, heart\nuse more glucose)"]; C [label="3. Positron emitted\n(β⁺ decay)"];
+D [label="6. Coincidence detection\nring of scintillation\ndetectors + PMTs"]; E [label="5. Two 511 keV gamma\nphotons emitted\nat 180°"]; F [label="4. Annihilation:\npositron + electron"];
+G [label="7. Line of response (LOR)\n→ sinogram data"]; H [label="8. Reconstruction\nFBP / OSEM + attenuation\ncorrection (with CT)"]; I [label="9. PET image\n(hot spots, SUV values,\nfused PET-CT)", fillcolor="#FFE9B3"];
+A->B->C; C->F; F->E->D; D->G; G->H->I;
+}

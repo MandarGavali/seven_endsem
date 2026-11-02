@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+A [label="1. Strong magnet\n(1.5-3 T) aligns\nH protons"]; B [label="2. RF pulse tips\nprotons out of\nalignment"]; C [label="3. RF off → protons\nrelax (T1, T2)\nemit RF signal"];
+D [label="4. Gradient coils\nencode position;\nreceiver coils record\nk-space"]; E [label="5. Fourier transform\n→ 2-D / 3-D image"]; F [label="MRI image\n(T1, T2, fMRI, DWI)", fillcolor="#FFE9B3"];
+{rank=same; A; B; C;} {rank=same; D; E; F;}
+A->B->C; C->D [constraint=false]; A->D [style=invis]; D->E->F;
+}

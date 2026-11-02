@@ -1,0 +1,5 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=TB;
+C [label="Conceptual model\n(business entities)"]; L [label="Logical model\n(entities, attributes,\nkeys, relationships)"]; P [label="Physical model\n(tables, columns,\ntypes, indexes)"];
+DB [label="Database\n(Oracle, SQL Server,\nMySQL, ...)", shape=cylinder, fillcolor="#FFE9B3"]; Rep [label="Repository\n(versions, collaboration,\nglossary, lineage)", shape=folder, fillcolor="#FFF6DD"];
+C->L->P; P->DB [label="Forward engineering\n(generate DDL)"]; DB->P [label="Reverse engineering\n(import schema)"]; {C L P}->Rep [style=dashed, dir=both, arrowsize=0.6];
+}

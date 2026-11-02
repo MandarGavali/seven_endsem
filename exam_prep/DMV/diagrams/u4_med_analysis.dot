@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+A [label="1. Acquisition\nCT, MRI, PET,\nUltrasound (DICOM)"]; B [label="2. Pre-processing\n& enhancement\n(noise, contrast)"]; C [label="3. Registration\n(align modalities /\ntime points)"];
+D [label="4. Segmentation\n(organs, tumour)"]; E [label="5. Feature extraction\n& quantification\n(volume, SUV)"]; F [label="6. CAD / ML\nclassification"]; G [label="7. Visualization\nvolume & surface\nrendering, MPR", fillcolor="#FFE9B3"];
+{rank=same; A; B; C; D;} {rank=same; E; F; G;}
+A->B->C->D; D->E [constraint=false]; A->E [style=invis]; E->F->G;
+}

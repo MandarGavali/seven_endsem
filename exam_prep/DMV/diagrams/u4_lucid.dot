@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+A [label="Start from template\n(ERD, UML, BPMN,\nDFD, flowchart)"]; B [label="Build model\ndrag-and-drop shapes\nor import SQL / DB\n(reverse engineering)"]; C [label="Collaborate in real time\n(comments, @mentions,\nversion history)", fillcolor="#FFF6DD"];
+D [label="Link live data\n(Sheets, CSV) →\ncharts, dashboards"]; E [label="Export SQL / DDL,\nPNG, PDF, SVG;\nshare via Drive, Jira,\nConfluence, Teams", fillcolor="#FFE9B3"];
+{rank=same; A; B; C;} {rank=same; D; E;}
+A->B->C; C->D [constraint=false]; A->D [style=invis]; D->E;
+}
