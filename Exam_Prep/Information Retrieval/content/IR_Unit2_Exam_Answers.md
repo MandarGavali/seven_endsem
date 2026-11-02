@@ -90,7 +90,7 @@ A **clustering algorithm** groups data objects so that **intra-cluster similarit
 ### Types of clustering algorithms
 
 ```dot clus_types
-digraph G { rankdir=TB; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", fontname="Helvetica", fontsize=10];
+digraph G { rankdir=LR; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", fontname="Helvetica", fontsize=10];
 R [label="Clustering algorithms", fillcolor="#FCE4D6"];
 P [label="Partitioning\nK-means, K-medoids\n(PAM), CLARA"]; H [label="Hierarchical\nAgglomerative (bottom-up)\nDivisive (top-down)"]; D [label="Density-based\nDBSCAN, OPTICS"]; M [label="Model-based\nEM, Mixture of\nGaussians"]; G2 [label="Grid-based\nSTING, CLIQUE"];
 R -> P; R -> H; R -> D; R -> M; R -> G2; }
