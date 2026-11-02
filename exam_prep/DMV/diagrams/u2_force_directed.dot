@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=TB;
+S [label="Start: place nodes\nat random positions", fillcolor="#FFFFFF"]; R [label="Compute REPULSIVE force\nbetween every pair of nodes\n(like charges: push apart)"];
+A [label="Compute ATTRACTIVE force\nalong every edge\n(springs: pull together)"]; M [label="Move each node by\nnet force (limited by\n'temperature')"]; C [label="Cool down:\nreduce temperature"];
+Q [label="Forces balanced /\nmax iterations?", shape=diamond, fillcolor="#FFFFFF"]; E [label="Final layout\n(equilibrium)", fillcolor="#FFE9B3"];
+S->R->A->M->C->Q; Q->R [label="No"]; Q->E [label="Yes"];
+}

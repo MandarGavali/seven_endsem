@@ -1,0 +1,5 @@
+graph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR; splines=line; node [shape=ellipse];
+subgraph cluster_u { label="Set U: Students"; style=rounded; color="#1F3A68"; s1 [label="Asha"]; s2 [label="Ravi"]; s3 [label="Meena"]; }
+subgraph cluster_v { label="Set V: Courses"; style=rounded; color="#1F3A68"; c1 [label="DMV", fillcolor="#FFE9B3"]; c2 [label="ML", fillcolor="#FFE9B3"]; c3 [label="IR", fillcolor="#FFE9B3"]; }
+s1--c1; s1--c2; s2--c2; s2--c3; s3--c1; s3--c3;
+}

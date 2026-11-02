@@ -1,0 +1,5 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR; node [shape=plaintext, style="", fontname="Courier", fontsize=13];
+W [label=<<table border="1" cellborder="1" cellspacing="0" bgcolor="#EAF1FB"><tr><td colspan="3"><b>WIDE</b></td></tr><tr><td>city</td><td>2024</td><td>2025</td></tr><tr><td>Pune</td><td>10</td><td>12</td></tr><tr><td>Delhi</td><td>15</td><td>18</td></tr></table>>];
+L [label=<<table border="1" cellborder="1" cellspacing="0" bgcolor="#FFF6DD"><tr><td colspan="3"><b>LONG</b></td></tr><tr><td>city</td><td>year</td><td>sales</td></tr><tr><td>Pune</td><td>2024</td><td>10</td></tr><tr><td>Pune</td><td>2025</td><td>12</td></tr><tr><td>Delhi</td><td>2024</td><td>15</td></tr><tr><td>Delhi</td><td>2025</td><td>18</td></tr></table>>];
+W->L [label="melt() / stack()", fontname="Helvetica"]; L->W [label="pivot() / unstack()", fontname="Helvetica"];
+}

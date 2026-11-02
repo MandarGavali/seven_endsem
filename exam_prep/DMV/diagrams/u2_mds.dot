@@ -1,0 +1,5 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+X [label="High-dimensional\ndata\n(n objects × p features)", shape=box3d, fillcolor="#FFFFFF"]; D [label="Distance /\ndissimilarity\nmatrix  D (n × n)"];
+M [label="MDS\nfind 2-D points whose\ndistances ≈ D\n(minimise STRESS)"]; P [label="2-D / 3-D map\nsimilar objects\nclose together", fillcolor="#FFE9B3"];
+X->D [label="Euclidean,\ncorrelation"]; D->M->P;
+}

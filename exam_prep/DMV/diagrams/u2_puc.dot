@@ -1,0 +1,5 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=LR;
+F [label="Force-directed\nlayout\n(repulsion + springs)"]; C [label="Constraints\n• fixed / anchored nodes\n• inertia (smooth moves)\n• edge bundling\n• alignment / separation\n• boundary region", shape=note, fillcolor="#FFF6DD"];
+P [label="Pull nodes toward\npositions that satisfy\nconstraints"]; O [label="Structured, stable,\nreadable layout", fillcolor="#FFE9B3"];
+F->P; C->P; P->O;
+}

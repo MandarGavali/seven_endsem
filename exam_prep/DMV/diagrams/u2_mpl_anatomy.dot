@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=TB;
+F [label="Figure  plt.figure()\n(whole canvas)", fillcolor="#FFE9B3"]; A1 [label="Axes 1\nplt.subplot() / subplots()"]; A2 [label="Axes 2"];
+P [label="Plot functions\nplot, scatter, bar,\nhist, pie, boxplot"]; L [label="Decorations\ntitle, xlabel, ylabel,\nlegend, grid, annotate"]; T [label="Scale / ticks\nxlim, ylim, xticks"];
+O [label="Output\nshow(), savefig()", fillcolor="#FFFFFF"];
+F->{A1 A2}; A1->{P L T}; F->O [style=dashed];
+}

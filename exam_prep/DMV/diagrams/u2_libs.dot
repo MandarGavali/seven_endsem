@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=BT;
+MPL [label="Matplotlib (low-level base)\nfull control: figure, axes, every element", fillcolor="#EAF1FB", width=5];
+PD [label="pandas .plot()\nquick plots from DataFrame"]; SNS [label="Seaborn\nstatistical, high-level,\nbeautiful defaults"];
+U [label="Your analysis", fillcolor="#FFE9B3"];
+PD->MPL [label="built on"]; SNS->MPL [label="built on"]; U->PD; U->SNS;
+}

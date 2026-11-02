@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=12, nodesep=0.3, ranksep=0.4, pad=0.2]; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontname="Helvetica", fontsize=14]; edge [color="#1F3A68", fontname="Helvetica", fontsize=11]; rankdir=TB;
+A [label="1. Data\nCollection"]; B [label="2. Data Cleaning\n(missing, errors,\nduplicates)"]; C [label="3. Data\nTransformation\n(reshape, aggregate)"]; D [label="4. Data\nIntegration\n(merge / concat)"];
+E [label="5. Data Reduction\n(filter, sample,\nsummarise)"]; F [label="6. Data Enrichment\n(external data)"]; G [label="7. Outliers, Formatting,\nImbalance, Feature\nEngineering"]; H [label="8. Validation →\nAnalysis-ready data", fillcolor="#FFE9B3"];
+{rank=same; A; B; C; D;} {rank=same; E; F; G; H;}
+A->B->C->D; D->E [constraint=false]; A->E [style=invis]; E->F->G->H;
+}
