@@ -5,3 +5,4 @@ Budget mode: this session processes Information Retrieval only.
 - [x] IR_PYQ_Topic_Analysis.docx (86 raw → 32 canonical; QC passed)
 - [x] IR_Unit1_Exam_Answers.docx (10 answers; QC passed)
 - [x] IR_Unit2_Exam_Answers.docx (9 answers; QC passed)
+- [x] IR_Unit3_Exam_Answers.docx (8 answers incl. PageRank numerical; QC passed)

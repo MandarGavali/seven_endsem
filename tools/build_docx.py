@@ -49,6 +49,7 @@ text = re.sub(r"```mpl (\S+)\n(.*?)```", render_mpl, text, flags=re.S)
 BAR = "\u01c0"
 text = re.sub(r"(\$\$?)(.+?)(\1)", lambda m: m.group(1) + re.sub(r"\\mid\b ?|(?<!\\)\|", BAR, m.group(2)) + m.group(3), text, flags=re.S)
 text = re.sub(r"\$\$\n(?=[-*] |\d+\. )", "$$\n\n", text)  # list right after display math
+text = re.sub(r"(?m)^((?![-*] |\d+\. |\s|\||#|```).+)\n(?=[-*] |\d+\. )", r"\1\n\n", text)  # blank line before lists
 md = os.path.join(work, "c.md"); open(md, "w", encoding="utf-8").write(text)
 tmp = os.path.join(work, "t.docx")
 subprocess.run(["pandoc", md, "-f", "markdown+pipe_tables+grid_tables", "-o", tmp], check=True)
