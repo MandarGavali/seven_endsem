@@ -1,0 +1,6 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.5, pad=0.2]; node [shape=plaintext, fontname="Helvetica", fontsize=13]; edge [color="#1F3A68", fontname="Helvetica", fontsize=12, penwidth=1.3]; rankdir=LR; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontsize=14];
+S [label="Many sources\n(DBs, files, APIs,\nIoT, social media)", shape=cylinder, fillcolor="#FFFFFF"];
+C [label="1. Collection\nextract & store\natomic rows"]; P [label="2. Processing\ngroup by keys,\napply sum / mean /\ncount / min / max"];
+O [label="3. Presentation\nsummary tables,\ncharts, dashboards", fillcolor="#FFE9B3"];
+S->C->P->O;
+}

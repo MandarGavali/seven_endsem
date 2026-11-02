@@ -1,0 +1,17 @@
+import numpy as np, pandas as pd, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+rng = np.random.default_rng(7)
+idx = pd.date_range("2022-01-01", periods=36, freq="MS"); t = np.arange(36)
+trend = 100 + 3*t; season = 15*np.sin(2*np.pi*t/12); noise = rng.normal(0, 5, 36); y = trend + season + noise
+fig, ax = plt.subplots(figsize=(7, 3.2), dpi=150)
+ax.plot(idx, y, marker="o", ms=3, label="Observed sales (trend + seasonality + noise)")
+ax.plot(idx, trend, "--", color="#D62728", label="Trend (long-term rise)")
+ax.set_title("Time series: monthly sales indexed by date"); ax.set_xlabel("Time (DatetimeIndex)"); ax.set_ylabel("Sales (units)")
+ax.annotate("Seasonal peak\n(repeats every 12 months)", xy=(idx[3], y[3]), xytext=(idx[6], 175), arrowprops=dict(arrowstyle="->"), fontsize=8)
+ax.legend(fontsize=8, loc="upper left"); ax.grid(alpha=.3); fig.tight_layout(); fig.savefig("u3_timeseries.png")
+d = pd.date_range("2025-01-01", periods=120, freq="D"); s = pd.Series(50 + 0.2*np.arange(120) + 10*np.sin(np.arange(120)/9) + rng.normal(0, 6, 120), index=d)
+fig, ax = plt.subplots(figsize=(7, 3.2), dpi=150)
+ax.plot(s, color="#9BB7D4", label="Daily data (noisy)")
+ax.plot(s.rolling(7).mean(), color="#1F3A68", lw=2, label="rolling(7).mean()  (moving average)")
+ax.plot(s.ewm(span=7).mean(), color="#D62728", lw=1.5, ls="--", label="ewm(span=7).mean()  (EMA)")
+import matplotlib.dates as mdates; ax.xaxis.set_major_formatter(mdates.DateFormatter("%b")); ax.set_title("Moving window functions smooth a noisy time series"); ax.set_xlabel("Date"); ax.set_ylabel("Value")
+ax.legend(fontsize=8, loc="upper left"); ax.grid(alpha=.3); fig.tight_layout(); fig.savefig("u3_rolling.png")

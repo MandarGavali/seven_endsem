@@ -1,0 +1,5 @@
+digraph G { graph [fontname="Helvetica", fontsize=13, nodesep=0.3, ranksep=0.5, pad=0.2]; node [shape=plaintext, fontname="Helvetica", fontsize=13]; edge [color="#1F3A68", fontname="Helvetica", fontsize=12, penwidth=1.3]; rankdir=LR; node [shape=box, style="rounded,filled", fillcolor="#EAF1FB", color="#1F3A68", fontsize=14];
+D [label="Daily data\n(365 points/yr)", fillcolor="#FFE9B3"];
+W [label="Weekly / Monthly\n(fewer points)\nsum, mean, ohlc"]; H [label="Hourly\n(more points)\nffill, bfill,\ninterpolate"];
+D->W [label="DOWNSAMPLING\nresample('M').sum()"]; D->H [label="UPSAMPLING\nresample('H').interpolate()"];
+}
