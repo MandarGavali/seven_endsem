@@ -1,0 +1,4236 @@
+
+=== PAGE 1 ===
+Unit IlI
+3
+Classification
+Syllabus
+Introduction : Need of Classification, Types of Classification (Binary and Mulliclass),
+Binary-vs-Multiclass Classification,Balanced and Imbalanced ClassificationProblems.
+Binary Classification : Linear Classification model, Performance Evaluation - Confusion Matrix,
+Accuracy, Precision, Recall, F measures.
+Multiclass Classification : One-vs-One and One-vs-All classification techniques, Performance
+Evaluation-ConfusionMatrix,PerClassPrecision,PerClassRecall.
+Classification Algorithms : K Nearest Neighbor, Linear Support Vector Machines (SVM)
+Introduction,Soft Margin SVM, Kernel. functions -Radial Basis Kernel, Gaussian,Polynomial,
+Sigmoid.
+Contents
+3.1
+IntroductionofClassification
+3.2
+Types of Classification:Binary Classification
+3.3
+PerformanceEvaluation
+3.4
+Multiclass Classification
+3.5
+PerformanceEvaluation:Micro-averageMethod
+3.6
+Classification Algorithms : K Nearest Neighbor
+3.7
+Linear Support Vector Machines (SVM)
+3.8
+KernelFunctions
+(3 - 1)
+
+=== PAGE 2 ===
+MachineLeaming
+Classification
+3-2
+3.1
+Introduction of Classification
+Classification.
+categorical  labels - (classes), prediction
+n..models
+predicts
+and uses it in classifying new data. Prediction means models continuous-valued
+functions, i.e., predicts unknown or missing values.
+Preprocessing of the data in preparation for classification and prediction can
+involve data cleaning to reduce noise or handle missing values, relevance analysis
+to remove irrelevant or redundant attributes, and data transformation, such as
+generalizing the data to higher level concepts or normalizing data.
+Fig. 3.1.1 shows the classification.
+New example
+Training..
+Machine
+learning
+Rules for
+example
+Predicted-
+labeled
+algorithm
+classification
+classification
+Fig. 3.1.1 Classification
+Aim : To predict categorical class labels for new samples.
+Input : Training set of samples, each with a class label.
+Output : Classifier is based on the training set and the class labels.
+ Prediction is similar to classification. It constructs a model and uses the model to
+predict unknown or missing value.
+Classification is the proces of finding a model that describes and distinguishes
+data classes or concepts, for the purpose of being able to use the model to predict
+the class of objects whose class label is unknown. The derived model is based on
+the analysis of'a set.of training data.
+Classfication and prediction may need to be preceded by relevance analysis.
+which attempts to identify atributes that do not contribute to the classification or
+prediction process.
+TECHNICALPUBLICATIONs-an up-thrustfor knowledge
+R
+
+=== PAGE 3 ===
+Machine Leaming
+3-3
+Classification
+work experience, or the potential sales of a new product given its price.
+and k-nearest-neighbor classifiers can be used for prediction.
+3.1.1
+Binary - vs - Multiclass Classification
+Sr. No.
+Binary classification
+Multiclass classification
+Task of classifying an item of a
+Task of classifying an item of a
+given set into two groups.
+given set into multiple groups..
+It is common to model a binary
+It iscommontomodela
+classificationtaskwith amodel
+multi-classclassification taskwith
+thatpredicts aBernoulli
+a model thatpredicts a
+probability distribution for each
+Multinoulli probability
+example.
+distributionforeach example.
+3.
+Popular algorithms that can be
+Popular algorithms that can be
+used forbinary classification
+used for multi-class classification
+include:Logistic regression,
+include : k-nearest neighbors,
+k-nearest neighbors, decision
+decision trees, Naive bayes,
+trees, support vector machine and
+random forest and gradient
+Naive bayes.
+boosting.
+Example : Decide if an email is
+Example : Decide if an email is
+spam or not.
+advertisement, newsletter,
+phishing or personal.
+5.
+O
+X2
+O
+☆☆
+☆
+X1
+3.1.2
+ Balanced and Imbalanced Classification Problems
+ - an up-thrust for knowledge
+TECHNICAL PUBLICATIONS
+
+=== PAGE 4 ===
+Classification
+MachineLeaming
+3-4
+Balancing a dataset makes training a model easier because it helps prevent the
+model from becoming biased towards one class.
+Fig. 3.1.2 shows balanced class and imbalanced class.
+00
+OQ
+Balanced.class
+Imbalancedclass
+Fig..3.1.2
+Imbalanced classification problems
+·Adataset is imbalanced if one set.of datahashigh dominance.over the secondset
+of data.
+Imbalanced datasets create challenges for predictive modeling
+While learning, several techniques such as support vector machine faces great
+challenge in presence of imbalanced data.
+Imbalance is usually represented as ratio between the total number of occurrence
+in majority class and the total number of occurrence in the minority class.
+ Imbalanced' data typically refers to a problem with classification problems where
+the classes. are not represented :equally. For example, we may have a 3-class
+classification problem of set of fruits to classify as oranges, apples or pears with
+total 100 instances.
+A total of 80 instances are labeled with Class - 1 (Oranges), 10 instances with
+Class - 2 (Apples) and the remaining 10 instances are labeled with Class - 3
+(Pears). This is an imbalanced dataset and the ratio'of 8 : 1 : 1.
+Most classification data sets do not have exactly equal number of instances in each
+class, but a small difference often does not matter.
+TECHNICAL PUBLICATIONs- an up-thrust for knowledge
+?
+
+=== PAGE 5 ===
+Machine Leaming
+3-5
+Classification
+Types of Classification : Binary Classification
+3.2
+ sport cars.
+classification.
+.. For a collction of objects, user task is to classify the objects into two groups based
+different types and makes, we can easily separate them into two classes, namely
+pens and pencils.
+This seemingly. trivial task, if we take a moment would seem to involve a lot.of
+underlying computation. The question to ask would be what is our basis for
+classification ? And how perhaps might we incorporate the principle to allow for
+efficient classification by 'intelligent algorithms'
+S           
+predict whether Rakshita will enjoy a course or niot. Or predict whether a user
+review of the newest Apple product is positive or negative about the product. : 
+Binary. classification would generally fall into the domain of supervised learning
+since the training dataset is labeled. Discriminant function is used to represent a
+classifier.
+ A well known example of a binary classification problem is predicting whether an
+email is spam or not spam.
+ In binary. classification, the objective is to design a rule that assigns objects to one
+of 2 classes, often referred to as positive and negative, on the basis of descriptive
+vectors of objects.
+binary prediction p  when .the label is y to be
+1
+y+p
+lo1 (y, p).
+otherwise
+classification rule is as follows :
+
+=== PAGE 6 ===
+Classification
+MachineLearning
+3-6. .
+a. If age = "31...40"and income = Low then credit-rating. = Bad
+b. If age = "31...40"and-income = High. then credit-rating = Very. good
+Classification is a two step process : Model construction and model usage.
+1. Model construction :
+· Model construction is used for describing a set of predetermined classes. Each
+ sample is assumed to belong to a predefined class, as determined by the.class
+label attribute.
+Training set is. a set of samples. The model is represented as classification rules,
+decision trees, or mathematical formulae.
+Classification
+Classifier
+Datafortraining
+algorithms
+Fig. 3.2.1 Model construction
+2.Model usage :
+It is used for classifying future or unknown objects. It estimates an accuracy of the
+constructed model. The known. label of test samples is compared with the
+classifiedresult from the model.
+Accuracy rate is the percentage of test set samples that are correctly classified by
+the model. Test set is independent of training set, otherwise over-fitting will occur.
+Unseen
+Data for
+Classifier
+testing
+data
+Fig.3.2.2 Model usage
+Some examples of binary classification problems :
+1. You want to train a medical diagnosis system to predict whether a patient has a
+the disease..
+amount of money, or the time of day.
+TECHNICAL PUBLICATIONs- an up-thrust for knowledge
+
+=== PAGE 7 ===
+Machine Leaming
+3-7
+Classification
+Linear Classification Model
+3.2.1
+predictor function combining a set of weights with the feature vector.
+it's weights all the characteristics that define a particular class.
+ Linear classifiers can represent a lot of things, but they can't represent everything.
+The classic example of what they can't represent is the XOR function.
+3.2.2
+Implementation and Optimizations
+ scikit-learn implements the "LogisticRegression" class, which can solve problem
+using optimized algorithms.
+For example, the sklearn.linear_model.LinearRegression estimator allows the user to
+specify whether or not to fit an intercept term. This is done by setting the
+corresponding. constructor arguments'of the estimator object.
+ In order to. immediately test the accuracy of our classification, it's useful to split
+the dataset into training and test. sets : from sklearn.model_selection import
+train_test_split
+Now we can train the model using the default parameters :
+fromsklearn.linear_modelimportLogisticRegression
+It's also possible to check the quality through a cross-validation .: from
+sklearn.model_selection import cross_val_score.
+Optimization in machine learning has a slight difference. Generally, while
+optimizing, we know exactly how our data looks like and what areas we want to
+improve. But in machine learning we have no clue how our "new data" looks like,.
+let alone try to optimize on it.
+ So in machine learning, we perform optimization on the training data and check
+its performance .on a new validation data.
+3.3
+Performance Evaluation
+basis of its description.
+actual classes in rows and predicted classes in columns.
+?
+
+=== PAGE 8 ===
+Classification
+MachineLeaming
+3-8
+ Measures of performance need to satisfy several criteria :
+2.
+conclusions to be drawn;*
+They must be computationally tractable, to match the rapid growth in scale of
+3.
+modem data collection.
+4.
+They must be simple to report .as a single number for each method-dataset
+combination.
+ Performance metrics for binary classification are designed to captured tradeoffs
+between four fundamental population quantities : True positives, false positives,
+true negatives and false negatives.
+The evaluation measures in classification problems are defined from a matrix with
+the numbers of examples correctly and incorrectly classified for each class, named
+confusion matrix. The confusion matrix.for a binary classification problem is
+ shown below.
+True class
+Predicted class
+Positive
+Negative
+Positive
+True positive
+False negative
+Negative
+False positive
+True negative
+A confusion matrix contains about actual and predicted classifications done by a
+classification system. Performance of such systems is commonly using data in the
+· matrix. Confusion matrix is also called a contingency table.
+1. False positives : Examples predicted as positive, which are from the negative
+class.
+2.
+ False negatives : Examples predicted as negative, whose true class is positive.
+.3.7
+class.
+class.
+effectiveness of the classifier by its.percentage of correct predictions.
+ITrue negatives I+ ITrue positivesl
+Accuracy rate =
+TECHNICALPUBLICATIONS
+?
+-anup-thrustforknowledge
+
+=== PAGE 9 ===
+Machine Learning
+3-9
+Classification
+ The complement of accuracy rate is the error rate, which evaluates a classifier by
+its percentage of incorrect predictions.
+IFalse negativesI + IFalse positives|
+Error rate =
+Error rate = 1 - (Accuracy rate)
+.' The recall and specificity measures 'evaluate the effectiveness of a classifier for
+each class in the binary problem. The recall is also known as sensitivity or true
+positive rate. Recall is the proportion of examples belonging to the positive class
+which were correctly predicted as positive.
+The specificity is. a statistical measures of. how well a binary classification test
+correctly identifies. the' negative cases..
+Accuvacy !i+ js
+ITrue positivel
+Recall (R)
+Bato of Gmeff
+ITrue positiveI+ IFalse negativel
+Precu cHel ohsemvahosy
+I True negativel
+Specificity
+Ho fotel ohseavchon
+IFalsepositive| +ITruepositivel
+TPtTN
+True Positive Rate (TPR) is also called sensitivity, hit rate and recall.
+TPTN+FP+FN
+Numberoftruepositives
+Sensitivity
+Number of true positive+ Number of false positive
+ A statistical measure of how well a binary classification test correctly identifies a
+condition. Probability of correctly labeling members of the target class.
+· No single measures tells the whole story. A classifier with 90 % accuracy can be
+useless if 90 percent of the population does not have cancer and the 10 % that do
+are misclassified by the classifier. Use of multiple measures recommended.
+Tf.
+3.3.1
+Accuracy and Roc Curves True posi hivc Rotc (fPR)
+TP-EFN
+ Binary classification accuracy metrics quantify the two types of correct predictions
+ en sd  e are su i sa o sd o p
+predicative model. False Posi fi vt eakt (FPR)
+NL.中d
+F1-measure is the harmonic mean of precision and recall.
+ROC curve
+?
+
+=== PAGE 10 ===
+3-10
+(cassiicallon)
+MachineLearning
+machinelearningcommunity.
+a single contingency table corresponds to a single point in an ROC plot.
+(1, 1) and is monitorically non-decreasing in both axes. .
+ A useful technique for organizing classifiers and visualizing their performance.
+Especially useful for domains with skewed class distribution  and unequal
+classificationerrorcosts.
+It allows to create ROC curve and a complete sensitivity/specificity report. The
+ROC curve is a fundamental tool for diagnostic test evaluation.
+Ina ROC'curve the true positive rate (Sensitivity) is plotted in function. of the
+false positive rate (100 Specificity) for different cut-off points of a parameter. Each
+point on the ROC curve represents a sensitivity/specificity pair corresponding toa
+particular decision threshold. The area under the ROC curve is a measure of how.
+well a parameter can distinguish between two diagnostic groups.
+Each point on an ROC curve connecting two segments corresponds to the true and
+false positive rates achieved on the same test set by the classifier obtained from
+the ranker by splitting the ranking between those two'segments.
+An ROC curve is convex if the slopes are montonically non-increasing when
+moving along the curve from (0, 0) to (1, 1). A concavity in an ROC curve, i.e.
+ e  s       s
+than random ranking. In this we would get better ranking performance by joining
+the segments involved in the concavity, thus creating a coarser classifier.
+Example 3.3.1
+i) Find contingency table i) Find recall i Precision  iv) Negative recall
+v)False positive rate
+Answer apply
+Level questions
+Fastlearner:
++Ve class
+Fastlearner:25
+AnswerRecall
+Slowlearner.:10
+Level questions
+Fast learner : 20
+Fastlearner:5
+Slow learner:10
+Slowlearner:30
+TECHNICAL·PUBLICATIONS
+?
+-anup-thrustforknowledge
+
+=== PAGE 11 ===
+Machine Leaming
+3-11
+assificeti
+Solution : Contingency table
+Predicted
+Total
+Faster Learner
+25
+20
+5
+50
+Slow Learner
+10TR
+10
+30
+50
+Actual.
+Total
+3518
+302
+35
+100
+True positive
+Precision =
+True positive
+Actual results
+or
+True'positive+ False positive
+True positive
+Recall =
+True positive
+Predicted results
+or
+True positive+ False negative
+Calculate precision and recall
+Precision = 25/35 = 0.714
+Recall = 25/30 = 0.833
+False positive rate = (False positive ) / (False positive + True'negative)
+= 10/(10 + 30) = 0.25
+Example 3.3.2
+Consider following confusion matrix and calculate following i) Sensitivity of
+classifier ii) Specificity of classifier.
+Confusion
+Predicted
+Total
+Actual
+8
+10
+18
+4
+8
+12
+Total
+12
+18
+30
+Solution : Given data : TP = 8, FN = 10, FP = 4, TN = 8
+(TPR)
+Sensitivity (SN) = TP +FN 
+TP
+8
+= 0.444.
+8+10
+Specificity (SP) = 
+TN
+8
+= 0.666
+TN+FP-8+4
+
+=== PAGE 12 ===
+Classification
+Machine Leaming
+.3-12
+Consider the following 3-class confusion matrix. Calculate precision and recall
+Example 3.3.3
+per class. Also calculate weighted average precision and recall for classifier.
+Predicted
+15
+2
+3
+Actual
+7
+15
+8.
+2
+3
+45
+Solution :
+Predicted'
+15
+2
+3
+20
+7
+15
+8
+30
+Actual
+2
+3
+45
+50
+24
+20
+56
+100
+15+15+45
+75
+Classifier accuracy
+0.75
+100
+100
+Calculate per-class: precision and' recall :
+15
+15-20
+First class
+0.63
+and
+0.75
+24
+ 15-0:15-
+15.
+Second class
+0.75and
+0.50
+20
+45
+Third class
+0.8
+and
+0.9
+56
+50
+Example 3.3.4
+Prove that : i) FPR =1 - TPR i) FNR =1 - TPR.
+Solution:i）FPR=1-TPR
+: False Positive Rate (FPR) = 1 - True Negative Rate (TNR)
+FPR = FP/N = FP/ (FP + TN)
+FPR = 1- TNR
+ii) FNR =1 - TPR
+False Negative Rate = 1 - True Positive Rate
+FNR = FN (FN + TP)
+FNR =. 1 - TPR
+TECHNICALPUBLICATIONS
+-anup-thristforknowledge
+
+=== PAGE 13 ===
+Machine Leaming
+3-13
+Classification
+3.3.2
+Precision and Recall
+relevance or non-relevance of particular documents to given questions.
+. In response to a query, an IR system searches its document collection and returns
+a ordered list of responses. It is called the retrieved set or ranked list. The system
+employs a search strategy or algorithm and measure the quality of a ranked list.
+A better search strategy yields a better ranked list and better ranked lists help the
+user fill their information need.'
+· Precision and recall are the basic measures used in evaluating search strategies. As
+shown in the first two figures, these measures assume':
+1. There is a set of records in the database which is relevant to the search topic
+2. Records are assumed to be either relevant or.irrelevant.
+3. The actual retrieval set may not perfectly match the set. of relevant records.
+The set.
+.-lrrelevant
+ofitems
+items'-
+retrieved.
+retrieved.
+Relevantitems-retrieved
+Thesetofrelevant
+Relevantitems-notretrieved
+itemsinthedatabase
+ Recall is the ratio of the number of relevant records retrieved to the total number
+of relevant records in the database. It is usually expressed as a percentage.
+A=Number.of relevant records retrieved.
+B=Number of relevant records not'retrieved.
+Recall =
+.A
+× 100 %
+A+B
+A =Number of relevant records retrieved.
+C = Number of irrelevant records retrieved.
+?
+
+=== PAGE 14 ===
+MachineLeaming
+3-14
+Classification
+Precison =
+A
+× 100 %
+A+C
+increases.
+Example 3.3.5
+Assume the following :
+A database contains 80 records on a particular. topic
+A search was conducted on that topic and 60 records were retrieved.
+Of the 60 recordsretrieved,45 were relevant.
+Calculate the precision and recall scores for the search.
+Solution : Using the designations above :
+A = The number of relevant·records retrieved,
+B=
+The number of relevant records not retrieved and
+C= The number of irrelevant records retrieved.
+In this example A = 45, B = 35 (80 - 45) and C = 15 (60 - 45).
+45
+Recall
+× 100 %
+45+ 35
+45
+Recall
+x 100 %
+80
+Recall
+=
+56.25 %
+A
+Precision
+× 100 %
+A +C.
+45
+45
+Precision
+× 100 % =
+X100.
+45+15
+60
+Precision = 75 %
+Example 3.3.6
+20 found documents, 18 relevant, 3 relevant documents are not found,
+27 irrelevant are as well not found. Calculate the precision and recall and fallout scores for
+the search.
+Solution :
+Precision : 18/20 = 90 %
+Recall :
+18/21 = 85.7 %
+Fall-out :*2/29= 6.9 %
+ Recall is a non-decreasing function of the number of docs retrieved. In a good
+system, precision decreases as either the number of docs retrieved or recall
+increases. This is not a theorem, but a result with strong empirical confirmation.
+TECHNICAL PUBLICATIONS
+-an up-thrust forknowledge
+
+=== PAGE 15 ===
+Machine Learning
+3-15
+Classification
+each request, is combined in some way to produce an average curve.
+Assume.thatsetR。
+ containing the relevant document for q has been defined.
+following documents :
+Rq = I d3, d5 , d9, d25 , d39 , d44 , d56 , d71, d89 , d123 1.
+There are ten documents which are relevant to the query q..
+- For the query q,. a ranking of the documents in .the answer set as follows.
+Ranking for query q :
+1. d123
+6. dg
+11. d38
+￥
+2. d84
+7. d511
+12. d48
+3. d56
+8. d129
+13. d250
+4. d6
+9. d187
+14. d113
+5. dg
+10. d25
+* 15. d3
+· The documents. that are relevant to the query q are marked with star after. the
+6. dg 
+11. d38
+1. d123 
+2. d84
+7. d511
+12. d48
+ 3. d56
+ 8. d129 
+13. d250
+4. d6
+9. d6187
+14. d113
+5. dg.
+10. d25
+. 15. d3
+(P, R)6 = (50 %; 30 %)
+(P, R)15 = (30 %, 50 %)
+(P, R)1 = (100 %, 10 %)
+(P, R)3 = (66 %, 20 %)
+(P, R)10 = (40 %, 40 %)
+document number. Ten relevant documents, five included in Top 15 .
+precision-recall curve.
+level: 0 %,10 %,...,10. %.
+?
+-anup-thrustforknowledge
+TECHNICALPUBLICATIONS
+
+=== PAGE 16 ===
+Machine Leaming
+3-16
+Classification
+Machir
+120
+Revi
+100
+Precision
+80
+60
+40
+20
+0
+20
+40
+60
+80
+100
+120
+Recall
+3.4
+Fig.3.3.1Precisionversusrecallcurve
+ In this example : The precisions for.recall levels higher than 50 % drop to 0
+because no relevant documents were retrieved. There was an interpolation for the
+recall level 0 %.
+Since the recall levels for each query might be distinct from the 11 standard recall
+levels:
+3.3.3
+F-Measure
+The F measure is a measure of a test's accuracy and is defined as .the weighted
+harmonic mean of the precision and recall of the test. The F - measure or F- score
+is one of the most commonly used"single number"measures in Information
+Retrieval, Natural Language Processing and Machine Learning.
+F-measure comes from Information Retrieval (IR) where Recall is the frequency
+with which relevant. documents are retrieved or 'recalled' by. a system, but it is
+known elsewhere as Sensitivity or True Positive Rate (TPR).
+ Precision is the frequency with which retrieved documents or predictions are
+relevant or.'correct, and is properly a form of Accuracy, also known as Positive
+Predictive. Value (PPV) or True Positive Accuracy (TPA). F is intended to combine
+these into a single measure of search'effectiveness'.
+High precision and low accuracy is possible due to systematic bias. One of the
+problems with Recall, Precision, F - measure and Accuracy as used in Information
+3.4.1
+Retrieval is that they are easily biased.
+: The F-measure balances the precision and recall. The result is a value between 0.0
+for theworstF-measureand1.0for aperfect F-measure.
+The formula for the standard F1 - score is the harmonic mean of the precision and
+recall. A perfect model has an F-score of 1.
+2xPrecisionxRecall
+F -Measure
+Precision+Recall
+TECHNICALPUBLICATIONs-an up-thrustforknowledge
+
+=== PAGE 17 ===
+MachineLearning
+3-17
+Classification
+Review Questions
+1. Define fllowing terms with suitable example :
+i) Confusion matrix i) False positive rate i) True positive rate.
+2. What is a contingency table/matrix ? What is the use of it ?
+3. Explain true positive, true negative false positives, false negatives and class ratio.
+4. What is a contingency table ? What does it represent ?
+5. What is multiple linear regresion ? How will it be diffrent from simple linear regression ?
+3.4
+Multiclass Classification
+more than two classes, or outputs. For example, using a model to identify animal
+types in images from an encyclopedia is a. multiclass classification example
+because there are many different animal classifications that each image can be
+classified as. Multiclass classification also requires that a sample only have one
+class.
+Each training point belongs to one of N different classes. The goal is to construct a
+function which, given. a new data point, will correctly predict the class to which
+the new point belongs.
+There are many. scenarios in which there are multiple categories to which points.
+belong, but a given point can belong to multiple categories. In its most basic form,
+this problem decomposes trivially into a set of unlinked binary problems, which
+can be solved naturally using techniques for binary classification.
+ Common model for classification is the Support Vector Machine (SVM). An SVM
+sp  aus  sdiady (o ios a as e n Aq sss yunp o
+membership in one of. the K classes.
+3.4.1
+ Weighted Average
+each time a relevant doc is retrieved.
+?
+- an up-thrust for knowledge
+TECHNICALPUBLICATIONS
+
+=== PAGE 18 ===
+Classification
+MachineLeaming
+3-18
+compare the performance of distinct IR algorithms.
+for.each query, then average over queries :
+MN
+Qj
+1
+MAP
+∑P(doc;)
+N
+j=1
+i=1
+where  Q; = Number of relevant document for query j
+N = Number of queries
+P(doc;) =β Precision at ith. relevant document
+:Precision - recall appropriateness :
+Precisioni and recall have been extensively used to evaluate .the retrieval
+performance of IR algorithms. However, a more careful reflection reveals problems
+withthesetwomeasures:
+First, the proper estimation of maximum recall for a query. requires detailed
+knowledge of all the documents in the collection.
+Second, in many situations the use of a single measure could be more appropriate.
+Third, recall and precision measure the effectiveness over. a set of queries
+processed in batch mode.
+Fourth, for systems which require a weak ordering though, recall and precision
+might be inadequate.
+Singlevaluesummaries:
+.Average precision -. Recall curves constitute standard evaluation metrics for
+information retrieval systems. However, there. are situations in which we would
+like to evaluate retrieval performance over individual queries. The reasons are
+twofold :
+1. First, averaging precision over many queries might disguise important anomalies
+in the retrieval algorithms under study.
+2.
+         
+outperforms the other for each query.
+ In these situations, a single precision value can be used.
+3.4.2
+Multiclass Classification Techniques
+function which, given a new data point, will correctly predict the class to which
+the new point belongs. The multi-class classification problem refers to assigning
+each of the observations into one of k classes.
+TECHNICALPUBLICATIONS
+?
+-anup-thrustforknowledge
+
+=== PAGE 19 ===
+MachineLearning
+3 -19
+Classification
+with the most winning two-class decisions. Though the voting procedure requires
+just pair wise decisions, it only predicts a class label.
+ Example of Multi-label classification is as follows :
+1. Is it eatable?
+1. Is it a banana ?
+1. Is it a banana ?
+2. Is it sweet ?
+2. Is it an apple ?
+2. Is it yellow ?
+3. Is it a fruit ?
+3. Is it an orange ?
+3. Is it sweet ?
+4. Is it a banana?
+4. Is it a pineapple ?
+4. Is it round ?
+88
+Nested/Hierarchical
+Exclusive/Multi-class
+General/Structured
+Fig. 3.4.1 and 3.4.2 shows binary and multiclass classification.
+·Multiclass classification through binary classification:
+XX
+XX
+X
+X1
+X1
+Fig. 3.4.1 Binary classification
+Fig. 3.4.2 Multiclass classification
+1. One .Vs All (OVA) :
+classifiers.
+belonging to. the other K - 1 classes.
+
+=== PAGE 20 ===
+Classification
+Machine Leaming
+3-20
+2.AIl-Vs-All (AVA) :
+classifiers, one classifier to distinguish each pair of classes i and j .
+discarding the rest of the classes.
+ When testing a new example, a voting is performed among the classifiers and the
+class with the maximum number of votes wins.
+3. Calibration
+The decision function .f of a classifier is said to be calibrated or well-calibrated if P.
+(x is correctly classified. | f(x) = s) = s
+'Informally f is a good estimate of the probability. of classifying correctly a new
+datapoint x which would have output value x..Intuitively if the"raw"output of a
+classifier is g you can calibrate it by estimating the probability of x being well
+classified given that g(x)=y for all y values possible.
+4.Error-Correcting Output-Coding (ECOC)
+Error correcting code approaches try to combine binary classifiers in a way that
+lets you exploit de-correlations and correct errors.
+This approach works by training N binary classifiers to distinguish between the K
+different classes. Each class is given a codeword of length N according to a binary
+: matrix M . Each row of M corresponds to a certain class.
+The following table shows ·an example for K = 5 classes and N. = 7 bit code words.
+f1
+f2
+f3
+f4
+f5
+f6
+f
+Class 1
+0.
+0
+0
+0
+0
+0
+0
+Class 2
+0
+1
+1
+0
+0 .
+1
+1
+Class 3
+0
+1
+1
+0
+0
+.
+Class 4
+1
+0
+1
+1
+0
+1
+0
+Class5
+1
+0
+0
+1
+minimum hamming distance is considered the class label for that example.
+TECHNICALPUBLICATIONS
+?
+-anup-thrustforknowledge
+
+=== PAGE 21 ===
+MachineLearming
+3-21
+Classification
+Using following feature tree, write decision rules for majority class.
+Example 3.4.1
+'Viagra'
+"ottery'
+spam:20
+ham:5
+0
+spam:20
+spam:10
+ham:40
+ham:5
+Fig. 3.4.3
+Solution : Left side : A feature tree combining two Boolean features. Each internal node
+or split is labelled with a feature, and each edge emanating from a split is labelled with
+a feature value. Each leaf therefore corresponds to a unique combination of feature
+values. Also. indicated in each leaf is the class distribution derived from the training set.
+· Right side : A feature tree partitions the instance space into rectangular regions,
+onefor eachleaf.
+'Viagra'
+spam:10
+0
+ham:5
+lottery
+spam:20
+"ottery'
+spam:20
+ham:5
+ham:5
+spam:20
+ham:40
+0
+Q
+1
+'Viagra'
+spam:20
+spam:10
+ham:40
+ham:5
+Fig. 3.4.4
+ Left side : A feature tree with training set class distribution in the leaves.
+ Right side : A decision tree obtained using the majority class decision rule.
+?
+TECHNICALPUBLICATIONS
+-an up-thrustforknowledge
+
+=== PAGE 22 ===
+Classification
+MachineLeaming
+3 - 22
+'Viagra'
+"'Viagra'
+=
+0
+0
+C(x)= spam
+spam:20
+"ottery'
+"ottery'
+ham:5
+0
+C(x)=ham
+C(x) = spam
+spam:20
+spam:10
+ham:40
+ham:5
+Fig. 3.4.5
+Example 3.4.2
+Consider the following three-class confusion matrix.
+Predicted
+15
+2
+3
+7
+15
+8
+Actual
+3
+45
+2
+Calculate precision and recall per class. Also calculate weighted average precision and recall
+for the classifier.
+Solution :
+Predicted
+15
+2
+3
+20
+Actual
+7
+15
+8
+30
+2
+3
+45
+50
+24
+20
+56
+100
+15+15+45
+75
+0.75
+Classifier accuracy
+100.
+100
+Calculate per-class precision and recall :
+15
+15
+0.63
+and
+= 0.75
+First class
+24
+20
+15
+15.
+Second class
+0.75
+and
+0.50
+20
+30
+45
+45
+Third class
+0.8
+and
+0.9
+56
+=
+50
+Example 3,4.3
+Prove with an example Accuracy = 1 - error rate.
+TECHNICALPUBLICATIONS
+-an up-thrustforknowledge
+
+=== PAGE 23 ===
+Machine Leaming
+3-23
+Classification
+fraction of the majority class.
+Review Questions
+1.. Explain construction of multi-class classifier,
+i) One Vs all approachi) One Vs one approach
+iii)Error correcting output codes approach.
+2.Explain any two approaches to constructmulticlassclassifier.
+3.5
+Performance Evaluation: Micro-average Method
+ In. micro-average technique, you sum up the individual proper positives, fake
+positives and false negatives of the gadget for exceptional units and then apply
+them to get the statistics. For example, for a set of information, the system's
+True advantageous (TP1) = 12.
+False nice (FP1) = 9
+False terrible(FN1)= three
+. Then precision (P1) and recollect (R1) could be 57.14 and 80 and for a
+one-of-a-kind set of information, the gadget's
+True effective (TP2) = 50.
+False fine (FP2) = 23
+False bad (FN2) = 9
+. Then precision (P2) and do not forget (R2) will be sixty eight.49 and 84.Seventy
+five.
+· Now, the common precision and consider of the machine the use of the
+. Micro-common approach is
+Micro-average of precision = (TP1+TP2)/(TP1+TP2+FP1+FP2)
+= (12+50)/(12+50+9+23) = 65.Ninety six
+Micro-average of don't forget = (TP1+TP2)/(TP1+TP2+FN1+FN2)
+. = (12+50)/(12+50+Three+9) = Eighty three.Seventy eight
+
+=== PAGE 24 ===
+Machine Leaming
+3-24
+Classification
+True tremendous (TP1) = 12
+False effective (FP1)=Nine
+False terrible (FN1)= Three
+for a special set of information, the gadget's
+True tremendous (TP2) = 50
+False positive (FP2) = 23
+False bad (FN2) = Nine
+technique is
+Micro-average of precision = (TP1+TP2)/(TP1+TP2+FP1+FP2)
+= (12+50)/(12+50+9+23) = 65.Ninety six
+Micro-common of consider = (TP1+TP2)/(TP1+TP2+FN1+FN2)
+=(12+50)/(12+50+Three+Nine) = 83.Seventy eight
+The micro-average F-score can be virtually the.harmonic imply of those two
+figures.
+3.5.1
+Marco-averageMethod
+Macro-average approach can be used whilst you need to know how the machine
+performs usually across the units of facts. You have to no longer give you any
+particular choice with this average.
+ On the other hand, micro-common may be a useful measure whilst your dataset
+varies in length.
+This method is simple. Just take the common of the precision and don't forget the
+system on specific sets. For example, the macro-average precision and don't forget
+of the gadget for the given. example is,
+Macro-average precision = (P1+P2)/2 = (57.14+68.Forty nine)/2 = Sixty two. Eighty two
+03  = 740) = 7) = 1 1 11-01
+3.5.1.1
+Suitability
+with any unique decision with this' common.
+varies in size.
+
+=== PAGE 25 ===
+Machine Learming
+3 - 25
+Classification
+Classification Algorithms : K Nearest Neighbor
+3.6
+on supervised learning approach.
+ K-NN algorithm assumes the similarity between the brand new case/facts and
+available instances and placed the brand new case into the category that is
+. maximum similar to the to be had classes.
+ K-NN set of rules shops all of the to be had facts and classifies a new statistics
+point based at the similarity. This means when new data seems then it may be
+se N n q ss as Aadd e o ps Asse
+ K-NN set of rules can be used for regression as well as for. classification however
+normally it's miles used for the classification troubles.
+K-NN is a non-parametric algorithm, because of this it does no longer makes any
+assumption on underlying data.
+It is also referred to as a lazy learner set of rules because it does no longer
+research from the training set immediately as a substitute it shops the dataset and
+at the time of class, it plays an movement at the dataset.
+ The KNN set of rules at the schooling section simply stores the dataset and when
+it gets new data,then. it classifies that statistics into'a class that is an awful lot
+similartothebrandnewdata.
+ pe al yn son s an e go id ue aaam 'ssodns : adxi
+dog, but we. want to know both it is a cat or dog. So for this identity, we are able
+to use the KNN algorithm, because it works on a similarity degree. Our KNN
+version will discover the similar features of the new facts set to the cats and dogs
+snap shots and primarily based on the most similar functions it will place it in.
+both cat or canine class.
+3.6.1 Why Do We Need KNN ?
+Consider the underneath diagram :
+TECHNICAL PUBLICATIONS
+-an up-thrust forknowledge
+?
+
+=== PAGE 26 ===
+MachineLeaming
+3-26
+Classification
+CategoryB
+Category B
+New.data point
+Newdatapoint
+K-NN
+assigned to
+category'1
+?
+CategoryA
+CategoryA
+Before K-NN
+After K-NN
+Fig. 3.6.1 Why do we need KNN ?
+3.6.2
+How Does KNN Work ?
+_Step - 1 : Select the wide variety K of the acquaintances.
+Step-2: Calculate the Euclidean.distance of Kvariety of friends.
+ Step - 3 : Take the K nearest neighbors as according to the calculated Euclidean
+distance.
+ Step -'4 : Among these ok pals, count number the number of the data points in each
+class.
+ Step - 5: Assign the brand new records points to that category for which the quantity
+of the neighbor is maximum.
+Step - 6 : Our model is ready.
+u u 1. aeld on quem am pue quod uoneunoju mau pueaq e pog aa,am asoddns
+required category. Consider the under image
+X2A
+CategoryB
+New data
+point
+CategoryA
+上Fig. 3.6.2 KNN example
+TECHNICAL PUBLICATIONs - an up-thrust for knowledge
+?
+
+=== PAGE 27 ===
+MachineLeaming
+3-27
+Classification
+Firstly, we are able to pick the number of friends, so we are able to select the
+ok = 5.
+Next, we will calculate the Euclidean distance between the facts points. The
+geometry. It may be calculated as :
+△
+△△
+Z
+△
+Best hyperplane
+0
+B(X2,
+A(X，Y）
+X
+-X)+(Y2-Y)²
+Euclidean distance between A and B2
+Fig. 3.6.3 KNN example continue
+?
+TECHNICALPUBLICATIONS
+-an up-thrust for knowledge
+
+=== PAGE 28 ===
+Classification
+Machine Leaming
+3-28
+ By calculating the Euclidean distance we got the nearest acquaintances, as 3
+the underneath image.
+X2
+Category A: 3 neighbours
+Category B: 2 neighbours
+Category.B
+New data
+point
+Category A
+Fig.3.6.4KNN example continue
+S           
+: subsequently this new fact point must belong to category A.
+3.6.3
+AdvantageandDisadvantagesofKNN
+Advantages :
+1. The KNN algorithm is very easy to implement.
+2. Nearly optimal in the large sample limit.
+3. Uses local information, which can yield highly adaptive behavior.
+4. Lends itself very-easily to parallel implementations.
+Disadvantages :
+1. Large storage requirements:
+2. Computationally intensive recall.
+3. Highly susceptible to the curse of dimensionality.
+Review Questions
+1. What is the KNN algorithm ? Explain in detail.
+2. Why do you need KNN ? How it works is explained with an example.
+?
+TECHNICALPUBLICATIONS
+-anup-thrustforknowledge
+
+=== PAGE 29 ===
+Machine Leaming
+3-29
+Classification
+Linear Support Vector Machines (SVM)
+3.7
+Support Vector Machines (SVMs)
+are a set of supervised learning
+methods which learn from the
+dataset
+and
+used
+101
+classification. SVM is a classifier
+Class 2
+derived from statistical learning
+theory
+by
+Vapnik
+and
+Chervonenkis.
+口
+SVM
+An
+is
+kind
+of
+Class 1.
+large-margin
+1 classifier:  it is a
+vector
+ spacebased  machine
+learning. method where  the goal
+Fig.3.7.1 Two class problem
+is  to  find  a  decision  boundary
+p un  u sod e  r  si r ss o aa
+Given
+a
+of
+training
+examples,
+each
+marked .as
+belonging to one  of
+Class 2
+Class 2
+two classes, an SVM
+algorithmbuilds . a
+model that predicts
+whether.
+a
+new
+8
+Class 1
+Class 1
+example
+falls‘
+into
+one
+class
+.10
+the
+other.
+ Simply
+Fig. 3.7.2 Bad decision boundary of SVM
+speaking,
+we
+can
+think of an SVM model as representing the examples as points in space, mapped
+so that each of the examples of the separate classes are divided by a gap that is as
+wide as possible.
+Two class problems
+choose ?
+class 1 and class 2.
+
+=== PAGE 30 ===
+Classification
+3-30
+MachineLeaming
+ si w j uoisup a mon e sy .u yo u e yim sud-rady
+case is on.
+Exampleofbaddecisionboundaries
+aim to.find the optimal hyperplane such that the expected generalization error is
+minimized. Instead of directly minimizing the empirical risk calculated from'the
+training data, SVMs perform structural risk minimization to achieve good
+generalization.
+The empirical risk is the average
+High
+loss of an estimator for a finite set
+Expected risk
+of data drawn ·from P. The idea of
+risk   minimization  is   not  only
+measure the performance. of an
+Confidence
+Short
+estimator by its risk, but to
+actually search for the estimator
+that
+risk
+Empirical risk
+minimizes
+over
+distributionP.Becausewedon't
+Low
+knowdistribution P we instead
+Small
+Large
+minimize ‘empirical risk 'over. a
+training dataset. drawnfrom' P.
+Complexity of function set
+This general learning technique is
+called
+empirical
+risk
+Fig.3.7.3 Empirical risk
+minimization.
+Fig. 3.7.3 shows empirical risk.
+Good decision boundary : Margin should be large
+ The decision boundary should be as far away from the data of both classes as
+data points to the separator,
+TECHNICALPUBLICATIONS
+S-anup-thrustforknowledge
+?
+
+=== PAGE 31 ===
+MachineLeaming
+3- 31
+Classification
+2
+Margin (m)
+I/ wll
+denotes+1
+denotes-1
+wx+b>0
+Class2
+Class 1
+wx+b<0
+Fig. 3.7.4 Good decision boundary
+2. Maximal margin classifier : A classifier in the family F that maximizes the
+margin. Maximizing the margin is good according to intuition and PAC theory.
+Implies that only support vectors matter; other training examples are ignorable.
+Example 3.7.1
+For the following figure find a linear hyperplane (decision boundary) that will
+separatethedata.
+Fig. 3.7.5
+?
+
+=== PAGE 32 ===
+Classification
+3-32
+MachineLeaming
+Solution :
+1. Define what an optimal hyperplane is : Maximize margin
+term for misclassifications.
+1. One possible solution
+2. Second possible solution
+B1
+o
+3. Other possible solution
+4. Which one is better? B1 or B2?
+B
+5.Howdoyoudefinebetter?
+6.Find ahyperplanethatmaximizes
+themargin=>B1isbetterthanB2
+B
+B
+B
+w·x+b=0
+w·x+b=+1
+w·x+b=-1
+b12
+b12
+Fig. 3.7.6
+space.
+Key Properties of Support Vector Machines
+which is occupied by Class 1 and the other by Class 2.
+TECHNICAL PUBLICATIONS
+-anup-thrustforknowledge
+
+=== PAGE 33 ===
+MachineLeaming
+3- 33
+Classification
+2. They maximize the margin of the decision boundary using quadratic optimization
+techniques which find the optimal hyperplane.
+3. Ability to handle large feature spaces.
+e  s a pn q s  s
+5. When used in practice, SVM approaches frequently map the examples to a higher
+dimensional space and find margin maximal hyperplanes in the mapped space,
+obtaining decision boundaries which are not hyperplanes in the original space.
+6. The most popular versions of SVMs use non-linear kernel functions and map the
+attribute space into a higher dimensional space to facilitate finding "good" linear
+decision boundaries in the modified space.
+3.7.2SVM Applications
+ SVM has been used successfully in many real-world problems,
+1.. Text (and hypertext) categorization.
+2.
+ Image classification.
+3.  Bioinformatics (Protein classification, Cancer classification).
+4.
+Hand-written character recognition.
+5.. Determination of SPAM email.
+3.7.3
+Limitations.of SVM
+1. It is sensitive to noise.
+ 2. The biggest limitation of SVM lies in the choice of the kernel.
+3. Another limitation is speed and size.
+4. The optimal design for multiclass SVM classifiers is also a research area:
+3.7.4
+ Soft Margin SVM
+while ignoring a few weird noise documents.
+hyperplane, allowing misclassification.
+
+=== PAGE 34 ===
+Classification
+Machine Leaming
+3-34
+are from the soft margin, the less influence they have on the prediction.
+. All observations have an associated slack variable,
+1. Slack variable = 0 then all points on the margin.
+2.
+hyperplane.
+3.  C is the tradeoff between the slack variable penalty and the margin.
+3.7.5
+Comparison of SvM and Neural Networks
+Support vector machine
+Neural network
+Kernel maps to a very-high dimensional space.
+Hidden layersmap to lower dimensional
+spaces.
+Search space has a unique minimum.
+Search space has multiple local minima.
+Very good accuracy in typical domains.
+Very good accuracy in typical domains.
+Kernel and cost the two parameters.to select.
+Requires number of hidden units and layers.
+Trainingis extremely efficient.
+Trainingis expensive.
+Example 3.7.2
+From the following diagram, identify which data points (1, 2, 3, 4, 5) are
+support vectors (if any), slack variables on correct side of classifier (if any) and slack
+variables on wrong side of classifier (if any). Mention which point will have maximum
+penalty and why?
+Fig. 3.7.7
+TECHNICAL PUBLICATIONs - an up-thrust for knowledge
+
+=== PAGE 35 ===
+Machine Leaming
+3-35
+Classification
+Solution :.
+ Margin (m) is the gap between data points & the classifier boundary. The margin
+the weight vector.
+Maximal margin classifier : A classifier in the family F that maximizes the margin.
+Maximizing the margin is good according to intuition and PAC theory. Implies
+s  sa   r sra ns  
+What if the training set is not linearly separable ? Slack variables can be added to
+allow misclassification of difficult or noisy examples, resulting margin called soft.
+'A soft-margin allows a few variables to cross into the margin or over the
+hyperplane, allowing misclassification.
+We penalize the crossover by looking at the number and distance of the
+misclassifications. This is a trade off between the hyperplane violations and the
+margin size. The slack variables are bounded by some set cost. The farther they
+are from the soft margin, the less influence they have on the prediction.
+ All observations have an associated slack variable,
+1. Slack variable = 0 then all points on the margin.
+2. Slack variable > 0 then a point in the margin or on the wrong side of the
+hyperplane.
+3. C is the tradeoff between the slack variable penalty' and the margin.
+Review Questions
+1. What are support vectors and margins ? Also explain soft margin SVM.
+2. What is slack variable ? Discuss margin errors.
+3. Explain support vector machine.
+ WAS u8uu yfos utdxa osv i sui8uu pu siopaa yuoddns aun pum '
+5. What is slack variable ? Discuss margin errors.
+6. Explain support vector machine.
+?
+-an up-thrustforknowledge
+TECHNICALPUBLICATIONS
+
+=== PAGE 36 ===
+Classification
+MachineLearning
+3-36
+3.8
+Kernel Functions
+learning tasks like classification, regression, and feature extraction. .
+higher dimension and shown in Fig. 3.8.1.
+O
+Input space
+Feature space
+Fig.3.8.1Mappingofspace
+Often we want to capture nonlinear patterns in the data.
+a. Nonlinear Regression : Input-output'relationship may not be linear
+b. Nonlinear Classification : Classes may not be separable by a linear boundary
+Features
+Examples
+K
+Kernel fuinction
+Originalfeaturesmatrix
+Kernel matrix
+Fig. 3.8.2
+ Kernels : Make linear models work in nonlinear settings.
+learning problem becomes easy.
+function k which takes as inputs x and z and computes.
+TECHNICALPUBLICATIONS
+-an up-thrust for knowledge
+
+=== PAGE 37 ===
+MachineLeaming
+3-37
+Classification
+k(x, z) =(xTz)²
+=(x121 +x2z2)2
+x²2²+x22²+2x1x22122
+(x1²,√2x1x2,x²)(2²,√2z1222²)
+Φ(x)T Φ(z) (an inner product)
+The above k implicitly defines a mapping Φ to a higher dimensional space
+Φ（x)=(x²，√2x1x2x2}
+.We didn't need to pre-define/compute the mapping Φ to compute k(x, z).
+ The function k is known as the kernel function.
+·K : N x N matrix of pairwise.similarities between examples in F space.
+Advantages
+1. The kernel defines a similarity measure between two data points and thus allows
+one.to incorporate prior knowledge of the problem domain.
+2. Most importantly, the kernel contains all of the information about the relative
+positions of. the inputs in the feature space and the actual learning algorithm is
+based only on the kernel function and can thus be carried out without explicit use
+of the feature space.
+3. The number of operations required is not necessarily proportional to the number
+of features.
+3.8.1
+ Sigmoid
+A.
+sigmoid
+function
+0.9
+produces a curve with an
+0.8
+"S" shape. The example
+0.7
+sigmoidfunctionshown
+0.6
+on the left is a special case
+0.5
+of the logistic function,
+0.4
+which models the growth
+of some set.
+0.3
+sig (t) =
+0.2
+1+e-t.
+0.1
+0
+-6
+-4
+-2
+：0
+2
+4
+6
+.Fig. 3.8.3
+-an up-thrust for knowledge
+
+=== PAGE 38 ===
+Machine Learning
+Classification
+3-38
+maximum.
+1 - 2sig(x) = 1-2-
+1
+X
+-tanh
+1+e-x
+2
+nonlinearity in the model.
+applies a sigmoid function to the result.
+satisfies a. property between
+the derivative anditself such that it  is
+computationally easy to perform.
+d
+sig(t) = sig(t)(1-sig(t))
+dt
+ Derivatives of the sigmoid function are usually employed in learning algorithms.
+3.8.2
+RBF,Gaussian,Polynomial
+1. Polynomial Kernel.
+. It is a more generalized representation of the linear kernel. It is not as preferred as
+other kernel functions as it is less efficient and accurate.
+Polynomial Kernel Formula
+F (x,xi) = (x.x; +1)d
+.'Here '' shows the dot product of both the values, and d denotes the degree.
+F (x, xi) representing the decision boundary to separate the given classes.
+2. Radial Basis Function (RBF)
+prior knowledge of. data.
+3. Gaussian Kernel.
+given dataset.
+
+=== PAGE 39 ===
+MachineLeaming
+3-39
+Classification
+Gaussian Kernel formula,
+1lx- yl12
+k(x, y)
+=exp
+2g2
+Review Questions
+1.Explain kernel methods for non --linearity..
+·2. What are support vector margins and also explain soft margin.
+□00
+TECHNICALPUBLICATIONS
+?
+- an up-thrust for knowledge
+
+=== PAGE 40 ===
+Unit IV
+n
+Clustering
+Syllabus
+HIntroduction : What is clustering, Need of Clustering, Types of Clustering
+Hierarchical clustering algorithms /connectivity-based clustering) : Agglomerative Hierarchical
+Clustering (AHC) algorithm, Divisive Hierarchical Clustering (DHC) algorithm.
+Centroid-based clustering algorithms / Partitioning clustering algorithms : K-Means clustering
+algorithm, Advantages and disadvantages of K-Means clustering algorithm, Elbow method, The
+Silhouette method, K-Medoids, K-Prototype,
+Density-based clustering algorithms : DBSCAN algorithm, how it works, Advantages and
+disadvantages of DBSCAN.
+Distribution-based clustering algorithms:Gaussianmixture model.
+ApplicationofClusteringTechnique:MarketSegmentation,Statistical data analysisSocialnetwork
+analysis,Imagesegmentation,Anomalydetection.
+Contents
+4.1 What is Clustering ?
+4.2 Hierarchical Clustering Algorithms
+4.3
+K-MeansClusteringAlgorithm
+4.4
+Centroid-basedClusteringAlgorithms
+4.5
+Density-based Clustering Algorithms
+4.6
+Distribution-based Clustering Algorithms
+4.7. Application of Clustering Technique
+(4. - 1)
+
+=== PAGE 41 ===
+MachineLeaming
+Clustering
+4-2
+4.1
+What is Clustering ?
+What is cluster analysis ?
+Given a set of objects, place them in groups such that the objects in a group are
+similar (or related) to one another and different from (or unrelated to) the objects
+in other groups.
+Cluster analysis can be a powerful data - mining tool for any organisation that
+ needs to identify discrete groups of customers, sales transactions or other types of
+behaviors and things. For example, insurance providers use cluster analysis to
+detect fraudulent claims, and banks use it for credit. scoring.
+Cluster analysis uses mathematical models to discover groups of similar customers
+'based on the smallest variations among customers within each group.
+Cluster is a group of objects.that belong to the: same class. In other words the
+similar object are grouped in one cluster and dissimilar are grouped in" other
+cluster.,
+Clustering is a process of partitioning a set of data in a set of meaningful
+subclasses. Every data in the subclass shares a common trait. It helps a user
+understand the natural grouping or structure in a data set.
+Various types of clustering methods: are. partitioning methods, hierarchical
+clustering,
+Fuzzy clustering,  Density - based  clustering
+gand Model-based
+clustering.
+Cluster analysis is .process of grouping a set of data - objects into clusters.
+Desirable properties of.a clustering algorithm are as follows :
+1.
+Scalability (in terms of both time and space).
+2.
+Ability to deal with different data types.
+3.
+Minimal requirements for domain knowledge to determine input parameters.
+4.
+Interpretability and usability..
+ padn ae eep o sas al um Kq po e i e go usn
+clusters of smaller sets of similar data. Clustering can be considered the most
+important unsupervised learning problem.
+Acluster is therefore.a
+collection of objects which
+are
+"similar"
+between
+them and'are "dissimilar"
+: to the objects belonging to
+other clusters. Fig. 4.1.1
+shows cluster.
+Fig. 4.1.1 Cluster
+TECHNICAL PUBLICATIONs - an up-thrust for knowledge
+?
+
+=== PAGE 42 ===
+MachineLeaming
+Clustering
+This is called distance-based clustering.
+Raw data
+Clustering algorithm.
+Clustersof data
+. Clustering means grouping of data or dividing a large data set into smaller data
+sets of some similarity.
+. A clustering algorithm attempts to find natural
+Centroid
+groups of components or data based on some
+. similarity. Also, the. clustering algorithm finds the
+centroid of a group of data sets.
+To determine cluster membership, most algorithms
+evaluate the distance between a point and the
+cluster centroids. The output from a clustering
+algorithm is basically a statistical description of the cluster centroids with the
+number of components in each cluster.
+Cluster centroid : The centroid of a. cluster is a point whose parameter values are
+the mean of the parameter values of all the points in the clusters. Each cluster has
+a well defined centroid.
+Distance : The distance between two points is taken as a common metric to as see
+the similarity among the components of a population. The commonly used
+distance measure is the euclidean metric which defines the distance between two.
+points p = (P1, P2..) and q = (q1, q2...) is given by :
+k
+d
+(pi-qi)2
+ The goal of clustering is to determine the intrinsic grouping in a set of unlabeled
+data. But how to decide what constitutes a good clustering ? It can be shown that
+there is no absolute "best" criterion which would be independent of the final aim
+such a way that the result of the clustering will suit their needs.
+recognition, data analysis, image processing, etc.
+
+=== PAGE 43 ===
+Clustering
+Machine Leaming
+-+
+1. Exclusive clustering. .
+2. Overlapping clustering.
+3. Hierarchical clustering.
+4. Probabilistic clustering.
+all of the hidden patterns.
+ExamplesofClusteringApplications
+1. Marketing : Help marketers discover distinct groups in their customer bases
+Land use : Identification of areas of similar land use in an earth observation
+database.
+3.
+Insurance : Identifying groups of motor insurance policy holders with a high
+average claim cost.
+4.1
+Urban planning : Identifying groups of houses according to their house type,
+value, and geographical location.
+Seismology : Observed earth quake epicenters should be clustered along
+continent faults.
+4.1.1 Typical Requirements of Clustering in Data Mining
+1.Scalability : Many clustering algorithms work well on small data sets.
+2.
+Ability to deal with different types of atributes : Many algorithms are
+designed to cluster interval-based data.
+3.
+determine clusters based on Euclidean or Manhattan distance measures.
+4.
+parameters in cluster analysis..
+6.
+clustering structures.
+
+=== PAGE 44 ===
+MachineLearming
+4-5
+Clustering
+dimensions or attributes.
+8.
+clustering under various kinds of constraints.
+9.
+interpretable, comprehensible and usable.
+4.1.2
+Problems with Clustering
+ Current clustering techniques do. not address all the requirements adequately ;
+1.
+2.
+ Dealing with large number of dimensions and large number of data items can
+be problematic because of time' complexity ;.
+3.
+ The effectiveness of the method depends ort the definition of "distance" ;
+ If an obvious distance measure doesn't exist we must "define" it, which is not
+always easy, especially in multi-dimensional spaces ;
+5.
+.The result of the clustering algorithm can be interpreted in different ways.
+4.1.3
+TypesofClusters
+Type of clusters are as follows :
+a)Well - separated clusters
+b)
+ Prototype - based clusters
+Contiguity - based clusters
+d)
+）Density - based clusters
+a)Well -separated clusters.:
+· A cluster is a set of points such that any point in a cluster is closer to every other
+point in the cluster than to any point not in the cluster.
+Fig. 4.1.2 shows well-separated cluster.
+Fig. 4.1.2 Well-separated cluster
+?
+TECHNICALPUBLICATIONS
+-an up-thrust for knowledge
+
+=== PAGE 45 ===
+Clustering
+MachineLeaming
+data contains natural clusters.
+b)Prototype -based cluster :
+Prototype based clusters can also be referred to as "Center-Based" Clusters.
+The center of a cluster is often a centroid, the average of all the points in the
+cluster, or a medoid, the most "representative" point of a cluster. Fig. 4.1.3 shows
+4center-based clusters.
+Fig.4.1.3 4 Center-based clusters
+If the data is numerical, the prototype of the cluster is often a centroid i.e., the
+average of all the points in the cluster.
+If the data has categorical attributes, the prototype of the cluster is often a medoid
+i.e., the most representative point of the cluster.
+Objects in the cluster. are closer to the prototype of the cluster than to. the
+prototype of any other cluster.
+ K-Means and K-Medoids are the examples of prototype-based clustering algorithm.
+c) Contiguity -based clusters :
+·A cluster is a set of points such that a point in a cluster is closer (or more similar)
+to. one or more other points in the cluster than to any point not in the cluster.
+SC
+Fig. 4.1.4 8 contiguous clusters
+TECHNICALPUBLICATIONS
+-an up-thrust forknowledge
+
+=== PAGE 46 ===
+MachineLeaming
+4-7
+Clustering
+d) Density - based :
+from other regions of high density.
+are present.
+4.1.4Desired Features of Cluster Analysis
+Features are as follows :
+1. Scalability : Data-mining problems can be large and therefore a cluster-analysis
+method should be able to deal with large problems gracefully. Ideally,
+performance shouldbelinearwith data-size:
+2.
+Only one' scan of the dataset. : For large problems, data must be stored on
+disk, so cost of I/O disk can become significant in solving the problem.
+3. Ability to stop and resume : For large dataset, cluster-analysis may require
+huge processor-time to complete the task. In such cases, the task should be
+able to be stopped and then resumed when convenient.
+4. Minimal input parameters : The method should not expect too much guidance
+from the data-mining analyst.
+values gracefully.
+discover cluster-shapes other than spherical.
+7.
+to deal with numerical, boolean and categorical data.
+to data input-order.
+?
+TECHNICALPUBLICATIONS
+-anup-thrustforknowledge
+
+=== PAGE 47 ===
+Clustering
+MachineLeaming
+4-8
+4.1.5
+Difference between Clustering and Classification
+Classification
+Clustering
+Sr. No.
+This model function classifies the data
+1.
+This function maps the data into one of
+into one of several predefined categorical
+several clusters which is the grouping of
+classes.
+dataitemsbasedon thesimilarities
+between them.
+Involved in supervised learning
+2.
+Involved in unsupervised learning
+Training sample is provided,
+3.
+Training sample is not provided.
+The number of classes is known before
+4.
+Thenumber ofclusterisnotknown before
+classification as there is predefined output
+clustering, These are identified after the
+based on input data.
+completion ofclustering.
+Labeled data points.
+5.
+Data is not labeled.
+Asks how can I group this set of items ?
+Asks what class does this item belong to ?
+6.
+Unknown number of classes.
+Known number of classes.
+7.
+Used to understand data.
+Used to classify future observations.
+8.
+9.
+4.2
+Hierarchical Clustering Algorithms
+Hierarchical clustering arranges items in a hierarchy with a tree like structure
+the resulting hierarchy is a tree-structured graph called a dendrogram.
+clusters at one level are joined as clusters at the next level.
+technique.
+number of clusters k.
+TECHNICAL PUBLICATIONS- an up-thrust for knowledge
+(?
+
+=== PAGE 48 ===
+4-9
+Clustering
+MachineLeaming
+p, q, r, s, t
+Agglomerative
+T, s, t
+P, q
+s, t
+Divisive
+Fig. 4.2.1 Types of hierarchical clustering
+4.2.1
+Advantages and Disadvantages of Hierarchical Clustering
+1.Advantages
+. . It is simple to implement.
+·It is easy and results in a hierarchy, a structure that contains more information.
+.It does not need us to pre-specify the number of clusters.
+2. Disadvantages
+· It breaks the large clusters.
+·It is Difficult to handle different sized clusters and. convex shapes.
+· It is sensitive to noise. and outliers.
+·  The algorithm can never be changed or deleted once it was done previously.
+4.2.2
+Divisive Methods
+· Divisive clustering is known as the top - down approach. Divisive methods initialize
+in its own singleton cluster.
+threshold.
+
+=== PAGE 49 ===
+4-10
+Clustering
+MachineLeaming
+4.2.3
+Agglomerative Clustering
+manner.
+a new bigger cluster (nodes).
+This procedure is iterated until all points are member of just one single big cluste
+(root). The result is. a tree which can be plotted as a dendrogram. Most
+hierarchical clustering methods belong to this category?
+ Initially, AGNES places each objects into a cluster of its own. The clusters are then
+merged step-by-step according to some criterion.
+ For example, cluster C1 and C2 may be merged if an object in' C1 and object in
+clusters.
+ In the agglomerative hierarchical approach, we start by defining each data point to
+be a cluster and combine existing clusters at each step. Here are four different
+methods for doing this.:
+         
+cluster. It tends to produce long, ."loose" clusters.
+2.
+tends to produce more compact clusters.
+3.
+Average linkage : The average distance between elements from each cluster. It
+can·vary in the compactness of the clusters it creates.
+4.
+ Centroid linkage : Distance between cluster means.
+ Agglomerative clustering is good at identifying small clusters.
+Steps for an agglomerative hierarchical cluster analysis.
+measurement.
+2.
+hierarchical tree is formed.
+
+=== PAGE 50 ===
+MachineLeaming
+-11
+Clustering
+at an arbitrary point.
+Difference between Agglomerative and Divisive Clustering.
+4.2.4.
+Sr. No.
+Agglomerative clustering
+Divisive clustering
+1.
+Agglomerative clustering is known as
+Divisive clustering is known as the
+bottom-up approach.
+top-down approach.
+2.
+Agglomerative clustering is good at.
+Divisive clustering is good at identifying
+identifying small clusters.
+large clusters.
+3.
+Eachclusterstartswith onlyoneobject.
+Start with all object.in one cluster.
+4.
+It is also known asAGNES
+ItisalsoknownasDIANA(Divise
+(Agglomerative Nesting).
+Analysis).
+5.
+Iteratively clusters are merged together.
+Large clusters are successively divided.
+Example 4.2.1
+Consider one dimensional data set (7,10, 20, 28, 35), perform hierarchical
+clustering and plot the dendrogram to visualize it.
+Solution : Draw the graph using data set.
+1.00
+0.75
+0.50-
+0.25
+0.00
+-0.25-
+-0.50-
+-0.75
+-1.00
+15
+20
+25
+30
+10
+35
+Fig. 4.2.2
+?
+-an up-thrust forknowledge
+TECHNICALPUBLICATIONS
+
+=== PAGE 51 ===
+Machine Leaming
+Clustering
+4-12
+From the above graph, we write :
+be in the same cluster.
+2
+be in the same cluster.
+Solve the problem by hand using both the types of agglomerative hierarchical
+clustering :
+a) Single linkage :
+Single linkage
+1)
+10
+20.
+28
+35
+3
+10
+2)
+(7, 10)
+20
+28
+10
+8
+7
+3)
+(7,10)
+20
+(28,35)
+10.
+8
+4)
+(7,.10)
+(20, 28, 35)
+10
+10
+8
+5
+10
+20
+28
+35
+·(Dendrogram)
+Fig. 4.2.3
+Using single linkage two clusters are formed :
+Cluster 1 : (7, 10), Cluster 2 : (20, 28, 35)
+TECHNICAL PUBLICATIONS
+-anup-thrustforknowledge
+
+=== PAGE 52 ===
+Machine Leaming
+4-13
+Clustering
+b) Complete linkage :
+Complete linkage
+1)
+10
+20
+28
+35
+10
+8
+2)
+(7, 10)
+20
+28.35
+13
+3)
+(7, 10)
+20.. (28, 35)
+13
+15.
+4）
+(7, 10, 20)
+(28, 35)
+28
+28
+13
+710202835
+(Dendrogram)
+Fig. 4.2.4
+. Using complete linkage two clusters are formied :
+Cluster 1 : (7, 10, 20), Cluster 2 : (28, 35).
+Review Question
+1. What is agglomerative clustering ? Explain with example
+4.3
+K-Means Clustering Algorithm
+In  K-means clustering,  the objects are
+divided into several clusters mentioned by
+the number 'K.' So if we say K = 2, the
+objects are divided into two clusters, C1 and
+C2, as shown in Fig. 4.3.1.
+K-means clustering
+isan unsupervised
+learning algorithm. There is no labeled data
+Fig. 4.3.1 Two clusters
+-anup-thrustforknowledge
+
+=== PAGE 53 ===
+Clustering
+MachineLearning
+4-14
+similarities and are dissimilar to the objects belonging to another cluster.
+identify the K number of groups in the dataset.
+to the algorithm ; some criteria can be used to automatically estimate K.
+ This method initially takes the number of components of the population equal to
+ the final required number of clusters. In this step itself the final required number
+of clusters is chosen such that the points are mutually farthest apart.
+: Next, it examines each component in the population and assigns it to one of the
+clusters · depending on- the minimum distance. The centroid's position is
+recalculated everytime a component is added to the cluster and this continues
+until all the components are grouped into the final required number of clusters.
+Given K, the K-means algorithm consists of four steps :
+1.Select initial centroids at random.
+2.
+Assign each object to the cluster with the nearest centroid.
+3.
+Compute each centroid as the mean of the objects assigned to it.
+4.
+Repeat previous 2 steps until no change.
+The X1 ., XN are data points or vectors of observations. Each observation
+(vector xi) will be assigned to one and only one cluster. The C(i) denotes cluster
+number for the observation. K-means:minimizes within-cluster point scatter :
+K
+W(C)
+K-1C(i)-K C(i)-K
+K
+ NK ∑ IIxi -mk I12
+K-1
+C(i)-K
+where,
+mk is the mean vector of the Kth cluster.
+Nk is the number of observations in Kth cluster.
+K-means algorithm properties
+1. There are always K clusters.
+2. There is always at least one item in each cluster.
+TECHNICALPUBLICATIONS
+?
+anup-thrustforknowledge
+
+=== PAGE 54 ===
+Machine Leaming
+4-15
+Clustering
+3. The clusters are non-hierarchical and they do not overlap.
+closeness does not always involve the 'center' of clusters.
+The K-means algorithm process
+1. The dataset is partitioned into K clusters and the data points are randomly
+assigned to the clusters resulting in clusters that have roughly the same number of
+data points.
+. 2. For each data point,
+Calculate the distance from the data point to each cluster.
+a.
+b.
+If the data point is closest to its own cluster, .leave it where it is.
+If the data point is not closest to its own. cluster, move it into the closest
+C.
+cluster.
+3. Repeat the above step until a complete pass through all the data points results in
+no data point moving from one cluster to another. At this point the clusters are
+stable and the clustering process ends.
+4. The choice of initial partition can greatly affect the final clusters that result, in
+terms of inter-cluster and intracluster distances. and'cohesion.
+K-means algorithm is iterative in nature. It converges, however only a local
+   s p u n  sm h o s 
+implement.
+Advantages of K-means algorithm :
+1. Efficient in computation.
+2. Easy to implement.
+Weaknesses :
+1. Applicable only when mean is defined.
+2. Need to specify K, the number of clusters, in advance.
+3. Trouble with noisy data and outliers.
+4. Not suitable to discover clusters with non-convex shapes.
+4.3.1
+ K-medoids
+ a priori. A useful tool for determining K is the silhouette.
+?
+TECHNICALPUBLICATIONS
+-an up-thrustforknowledge
+
+=== PAGE 55 ===
+Machine Leaming
+Clustering
+ The most common realisation of K-medoid clustering is the Partitioning Around
+Medoids (PAM) algorithm. PAM uses a greedy search which may not find .the
+optimum solution, but it is faster than exhaustive search.
+medoids can be used, which is the most centrally located object in a cluster.
+10
+10
+９８7６543２1
+987654321
+0
+.12345678910
+0
+1.2345678910
+Fig. 4.3.2
+A medoid can be defined as that object of a cluster,whose average dissimilarity to
+all the objects in the cluster is minimal i.e. it is a most centrally located point in
+thegivendata set.
+1.  The algorithm begins with arbitrary selection of the' K objects as medoid points
+out of n data points (n > K).
+2. After selection of the K medoid points, associate each data object in the given
+ n  e     rs  n s s
+measure that can be euclidean distance, manhattan distance or minkowski
+distance.
+3.
+ Randomly select nonmedoid object O'.
+Compute total cost, S of swapping initial medoid object to O'.
+4.
+If S <'0, then swap initial medoid with the new one (if S < 0 then there willbe
+5.
+new set of medoids).
+  u aur ou si a n g o z sds sda
+6.
+Difference between K-mean and K-medoids Clustering?
+4.3.2
+K-means
+K-medoids
+Each cluster is represented by the center of the
+Each cluster is represented by one of the
+cluster.
+objects in the cluster.
+Simple Centroid-based method.
+Data point are chosen by the' medoids.
+
+=== PAGE 56 ===
+MachineLearming
+Clustering
+K-means clustering is a non-hierarchical cluster
+K-medoid isa classicpartition clustering
+technique that groups data sets of ni objects
+existing:
+into K groups.
+objects into one or more clusters or groups of
+Known a priori.
+objects based on their characteristics.
+K-means algorithm is very prone to the effects
+Normally less delicate to outliers thanK-means.
+of outliers.
+Convex shape is required.
+Convex shape is not required.
+K-means clustering algorithm is sensitive to
+K-medoids clustering is more robust to noises
+outliers.
+and outliers.
+Example 4.3.1
+Consider the following data set consisting of the scores of two variables on
+ each of seven individuals : Apply K-mean clustering to cluster this data into 2 clusters.
+Subject
+A
+B
+1.0
+1.0
+1
+1.5
+2.0
+2
+3.0
+4.0
+3
+5.0
+7.0
+4
+3.5
+5.0
+5
+6
+4.5
+5
+3.5
+4.5
+7
+the initial cluster :
+?
+
+=== PAGE 57 ===
+Machine Learning
+Clustering
+4-18
+Individual
+Mean vector
+(Centroid)
+Group 1
+1
+(1.0, 1.0)
+Group 2
+4
+(5.0, 7.0)
+ In sequence, remaining individuals are examined and allocated to the cluster to
+·which they are closest, using Euclidean distance to the cluster mean. Each time,
+mean vector is recalculated and new member is added. Following are the steps :
+Cluster 1
+Cluster 2
+Mean
+Mean
+Step
+Individual
+Vector
+Individual
+Vector.
+(Centroid)
+(Centroid)
+1
+1
+(1.0, 1.0)
+4
+(5.0, 7.0)
+2
+1, 2
+(1.2, 1.5)
+4
+(5.0, 7.0)
+3
+1, 2,3
+(1.8, 2.3)
+4
+(5.0, 7.0)
+4
+1,2,3
+(1.8, 2.3)
+4, 5
+(4.2, 6.0)
+5
+1, 2, 3
+(1.8, 2.3)
+4,5, 6
+(4.3, 5.7)
+6
+1, 2, 3
+(1.8, 2.3)
+4, 5, 6, 7
+(4:1, 5.4)
+ Now the initial partition has changed and the two clusters at this stage having the
+following characteristics:
+Individual
+Mean vector(Centroid)
+Cluster1
+1, 2, 3
+(1.8, 2.3)
+Cluster 2
+4, 5, 6, 7.
+(4.1, 5.4)
+Compare each individuals distance to its own cluster mean and to that of the
+Individual
+Distance to mean (Centroid) Distance to mean (Centroid)
+of cluster 1
+of cluster 2
+1
+1.5
+5.4
+2
+0.4
+4.3
+3
+2.1
+1.8
+
+=== PAGE 58 ===
+MachineLeaming
+4-19
+Clustering
+4
+5.7
+1.8
+5
+3.2
+0.7
+6
+3.8
+0.6
+7
+2.8
+distance to. the other cluster's mean (which is not the case with individual 3).
+Thus, individual 3 is relocated to cluster 2 resulting in the new partition :
+Individual
+Mean vector.(Centroid)
+Cluster 1
+1, 2
+(1.3, 1.5)
+Cluster 2
+3, 4, 5, 6, 7
+(3.9, 5.1)
+Review Question
+stronginitialcondition todecide.thenumberofclustersthrough.theassignmentof'K'initial
+centroidsormeans.
+4.4
+Centroid-based Clustering Algorithms
+Centroid based clustering is often used in game analytics, primarily due to
+popularity and widespread use of k-means clustering.
+Centroid based models represent clusters by a central vector, which does not need
+to be an actual object. The analyst needs to define the number of clusters in
+advance and k-means clustering then targets the optimization problem of finding k
+squared distances.
+measures than Euclidean distance.
+4.4.1
+Elbow Method
+different values of k.
+?
+-an up-thrust for knowledge
+TECHNICALPUBLICATIONS
+
+=== PAGE 59 ===
+MachineLeaming
+4-20
+Clustering
+constituent instances and the instances will be closer to their respective centroids.
+value of k at which improvement in distortion declines the most is called the
+elbow, at which we should stop dividing the data into further clusters.
+It involves running the algorithm multiple times over a loop, with an increasing
+number of cluster choice and then plotting a clustering score as a function of the
+numberofclusters.
+The Elbow and Silhouette methods are the two state-of-the-art methods used to
+identifythecorrectclusternumberinthedataset.
+The Elbow method is the oldest method to distinguish the potential optimal
+cluster number for .the analyzed dataset, whose basic idea is to specify K = 2 as
+the initial optimal cluster number K and then keeps. increasing K by step 1 to the
+maximal specified for the estimated potential optimal cluster number, and finally
+distinguish the potential optimal cluster number K corresponding to the plateau.
+The optimal cluster number K is distinguished by the fact that before reaching K,
+the cost rapidly decreases to the called cost peak value, and after exceeding K, it
+continues' to increase with the called cost peak value almost unchanged, as shown
+in Fig. 4.4.1 (a) with an explicit elbow point.
+80-
+80
+60
+60
+SSE
+SSE
+40
+40
+Elbow point.
+20
+20
+0
+0
+1.2.34.
+5
+6
+8
+0
+3
+4
+5
+8
+K: Number of clusters
+K:Number of clusters
+(a)
+(b)
+Fig. 4.4.1 Elbow point
+TECHNICAL PUBLICATIONs-an up-thrust forknowledge
+
+=== PAGE 60 ===
+MachineLeaming
+Clustering
+ambiguous' elbow point.
+.To select the best K, we need.to plot the mean in-cluster distance for each K. As K
+increases from 1, before reaching the optimal K, the decrease speed is relatively
+fast because the number of centers are too low from the very beginning and each
+new center will incur a large decrease in the mean distance.
+But after the optimal K, the decrease is slow since the correct cluster structure is
+already discovered and any newly added center will appear in a certain cluster
+already formed. That will not decrease the mean in-cluster distance too much.The
+entire curve looks like an L shape and the best K lies in the turning point or the
+elbow of the L shape.
+4.4.2
+TheSilhouetteMethod
+Silhouette refers to a method of interpretation and validation of clusters of data.
+ Silhouettes are a general graphical aid for interpretation and validation of cluster
+analysis. This technique is available through the silhouette function. In order to
+calculate silhouettes, two types of data are needed :
+1. The collection of all distances between objects. These distances are obtained
+from application of dist function on the coordinates of the elements in mat
+with argument method.
+2. The partition obtained by the application of a clustering technique.
+confidence in the assignment of the element :
+1.  Well-clustered elements have a score near 1.
+2. Poorly-clustered elements have a score near - 1.
+coefficient combines ideas of both cohesion and separation, but for individual
+points, as well as clusters and clustering's.
+· For an individual point, I
+. b = Min (average distance of i to points in another cluster).
+?
+TECHNICALPUBLICATIONS
+-anup-thrustforknowledge
+
+=== PAGE 61 ===
+4-22
+Clustering
+MachineLeaming
+Silhouette coefficient of i :
+s=1-a/bifa<b
+a
+Silhouettecoefficient.
+Cohesion:Measureshowcloselyrelated are objectsin a cluster.
+Separation : Measure how distinct or well-separated a. cluster is from other
+clusters.
+4.5
+Density-based Clustering Algorithms
+Density-based clustering is unsupervised learning methodologies used in model
+building and machine learning algorithms. This is a clustering method that is used
+in machine learning to separate clusters of high density from clusters 'of low
+density.
+DBSCAN stands for "Density-Based Spatial Clustering of Applications with Noise."
+DBSCAN groups together closely-packed points.
+There are two inputs to DBSCAN :
+1. The search distance around point (e).
+2. The minimum number of points (minpts) required to form a density cluster.
+ DBSCAN is .based on this intuitive notion of "clusters" and "noise". The key idea is
+that for each point of a cluster, the neighborhood of a given radius has to contain
+at least a minimum number of points.
+ The parameter (E) defines the radius of neighborhood around a point x. It is called
+neighbors within "eps" radius.
+.- Any point x in the dataset, with a neighbor count greater than or equal to MinPts,
+is marked as a core point. We say that x is border point, if the number of its
+neighbors is less than MinPts, but it belongs to the E-neighborhood of some core
+noise point or an outlier.
+TECHNICALPUBLICATIONS
+-anup-thrustforknowledge
+R
+
+=== PAGE 62 ===
+Machine Leaming
+4 - 23
+Clustering
+. Fig. 4.5.1 shows DBSCAN:
+x
+MinPts=6
+Fig.4.5.1 DBSCAN
+We define following terms for understanding the DBSCAN algorithm :
+1. Direct density reachable : A point "A" is directly density reachable from
+another point "B" if : "A" is in the E-neighborhood of "B" and "B" is a core
+point.
+2.
+Density reachable:A point "A"is density reachable from "B"if .there are a set
+of core points leading from "B" to "A. 
+3. Density connected : Two points "A" and "B" are density connected if there are
+a core point "C", such that both "A" and "B" are density reachable from "C".
+DBSCAN is broadly used in many applications such as market research, pattern
+recognition, data analysis and image processing.
+4.5.1
+Advantages and Disadvantages of DBsCAN
+Advantages :
+a) We don't need to specify the number of clusters.
+b) Flexibility in the shapes & sizes of clusters.
+c) Able to deal with noise and outliers.
+d) Ability to identify uneven shapes.
+Disadvantages :
+
+=== PAGE 63 ===
+4 - 24
+Clustering
+Machine Leaming
+4.5.2
+Spectral Clustering
+Spectral clustering techniques make use of the spectrum (eigenvalues) of the
+a quantitative assessment of the relative similarity of each pair of points in the
+dataset..
+(x x)a = y se asmiied Nx .. Ix sud ep u
+Build . similarity
+ graph
+shown in Fig. 4.5.2.
+Clustering. = Find a cut
+through the graph.
+ Define a . cut-type objective
+function.
+Thelow-dimensional space
+. is determined. by the data.
+Spectral  clustering  makes
+Fig. 4.5.2 Similarity graph
+use of the spectrum of the.
+graph for dimensionality reduction.
+Projection and clustering equates to graph partition by different min-cut criteria.
+Advantages :
+1. Does not make strong assumptions on the statistics of the clusters.
+2. Easy to implement.
+3. Good clustering results.
+ 4. Reasonably fast for sparse data sets of several thousand elements.
+Disadvantages :
+1. May be sensitive to choice of parameters.
+2. Computationaly expensive for large datasets.
+4.6
+Distribution-based Ciustering Algorithms
+ Distribution-based clustering directly relates to the use of distribution models (e.g.
+the parameters of the distribution of each cluster.
+?
+TECHNICALPUBLICATIONS
+-an up-thrust forknowledge
+
+=== PAGE 64 ===
+MachineLeaming
+4-25
+Clustering
+. Fundamentally, clusters are defined based on how likely the objects included are
+ likely to belong to the same distribution.
+ Distribution-based models can provide information beyond the cluster assignments
+of objects, for example correlation of object attributes, but suffer from overfitting
+problems if the complexity of the model used is not constrained.
+ These models do not work if there is no mathematical model inherent in the
+dataset for the model to optimize and assuming that data adhere to Gaussian
+distribution models is inherently dangerous.
+4.6.1
+GaussianMixtureModel
+A Gaussian mixture model is a probabilistic model that assumes all the data
+points are generated from a mixture of a finite number of Gaussian distributions
+with unknown parameters. Gaussian mixture model tends to group the data points
+belonging to a single distribution together.
+The advantage of.mixture models is that they do'not require which subpopulation
+a data point belongs to. It allows the model to learn the subpopulations
+automatically.
+Gaussian mixture models use the soft clustering technique for assigning data
+points to Gaussian distributions.
+Gaussian mixture model consists of two parts : Mean vectors and covariance
+matrices.
+· A Gaussian distribution is defined as a continuous probability distribution that
+takes on a bellshaped curve. Another name for Gaussian distribution is the
+normal distribution.
+· In a one dimensional space, the probability density fuinction of a Gaussian
+distribution is given by.:
+-(x-μ)²
+f(xlμ,o²)
+1
+2g2
+√2πg 2
+parameters when some of the data is missing.
+
+=== PAGE 65 ===
+4 - 26
+Clustering
+MachineLeaming
+ The Expectation-Maximization (EM) algorithm is a broadly applicable approach to
+the iterative computation of Maximum Likelihood (ML) éstimates.  On each
+iteration of the EM algorithm, there are two steps, called the expectation step or
+the E-step and the maximization step or the M-step. Because of this, the algorithm
+is called the EM algorithm.
+ The basic idea of the EM algorithm is to view the problem of computing the
+nLikelihood Estimates (MLEs) from the data at hand as being
+Maximum
+computationally simpler if data had’ been observed also on some other random
+variables.
+Thus with the EM algorithm the observed data are viewed as being incomplete,
+and the. problem is reformulated in a complete-data framework in which the ML.
+solution may exist in closed form or may be amenable to ML computation with a
+standard computer package.
+Consider complete data-set consists of Z = (X;Y) but that only X is observed. The
+complete-data log likelihood is then denoted by l(0;X;Y) where 0 is the unknown
+parameter vector for which we wish to find the MLE.
+E-step : The E-step of the EM algorithm computes the excepted value of l(0; X,Y)
+given observed data x and the current parameter estimate, 0old say, In particular,
+we define.
+Q(0;0old) = E[(0 ;X, Y|X,0 oa]
+{1(0; x, y) p(y [X,0ola)dy
+Where p (-1 x, 0oid) is the conditional density of y given the. observed data, X
+and assuming 0 = 0old.
+M-step : The M-step consists of maximizing over 0 the expectation computed in
+(1). That is, we set
+0new
+ = · maxQ(0;0old)
+We then set 0old =6
+O new.
+using these completions (known as the M-step).
+Review Question
+1. Discuss working of expectation maximization algorithm.
+
+=== PAGE 66 ===
+MachineLeaming
+4 - 27
+Clustering
+Application of Clustering Technique
+4.7
+o  rd pnm ep a um sns  sd   onn
+the groupings.
+ Limitations : Cluster analysis is a complex task and subject to certain limitations.
+It can be sensitive to the initial conditions, choice of distance measure and outliers
+in the data. Additionally, the results of cluster analysis should be interpreted
+carefully, as the effectiveness of the clustering depends on the quality of the data
+and the appropriateness of· the chosen algorithm.
+4.7.1
+MarketSegmentation
+ Clustering techniques are used to group data/observations in a few segments so
+that data within any segment are similar while data across segments are different.
+Cluster analysis, in the context of market segmentation, .is the application of a
+mathematical model to uncover groups of similar consumers based on the smallest
+variances among customers within each group.
+ In market segmentation, the purpose of cluster analysis is to precisely categorize
+customers  in order  to  create more  successful  customer  marketing  through
+personalization:
+4.7.2
+SocialNetworkAnalysis
+  in se s  pou si siie mu os u 
+necessitates classifying items based on their relationships as well as their
+properties.
+ Traditional clustering algorithms group items only on their similarity and cannot 
+be used for social network research.
+ A social network clustering analysis technique, unlike typical clustering algorithms,
+relationships between classes.
+4.7.3
+Image Segmentation.
+pixel-wise image segmentation.
+
+=== PAGE 67 ===
+Machine Leaming
+4-28
+Clustering
+clustering : Merging clustering and divisive clustering
+4.7.4
+AnomalyDetection
+ Clustering may be used to train the normalcy model by grouping comparable data
+points together into clusters using a distance function. Fig. 4.7.1 shows anomaly
+detection.
+Clusters
+. Normal data
++2
+ Noise .
+Fig.4.7.1 Anomalydetection
+Clustering is appropriate for anomaly detection since no knowledge of the attack
+classes is required during training. Outliers in a dataset can be found using
+clustering and related approaches.
+Clustering. can be used to find outliers or anomalies in the data that might point
+to mistakes or fraud. This may lessen the chance of suffering financial setbacks or
+other'adverse·effects.
+
+=== PAGE 68 ===
+Unit V
+5
+Ensemble Learning
+Syllabus
+Ensenble Learning : Introduction to Ensemble Learning, Need of Ensemble Learning, Homogeneous
+and Heterogeneous ensemble methods, Advantages and Limitations of Ensemble methods,
+Applications of Ensemble Learning.
+Basic Ensemble Learning Techniques:Voting Ensemble,Types of Voting: Max Voting,Averaging,
+Weighted Average.
+AdvancedEnsembleLearningTechniques:
+Bagging : Bootstrapping, Aggregation.
+Boosting : Adaptive Boosting (AdaBoost), Gradient Boosting, XGBoost.
+Stacking : Variance Reduction, Blending, Random Forest Ensemble, Advantages of Random Forest.
+Contents
+5.1 Introduction to Ensemble Learning
+5.2 Basic Ensemble Learning Techniques : Voting Ensemble
+5.3 Advanced Ensemble Learning.Techniques
+5.4 Random Forest Ensemble
+(5 - 1)
+
+=== PAGE 69 ===
+Ensemble Learming
+MachineLeaming
+5-2
+5.1
+Introduction to Ensemble Learning
+Machine learning models. suffer bias and/or variance. Bias is the difference
+between the predicted value and actual value by the model. Bias is introduced
+when the model doesn't consider the variation of data and creates a simple model.
+The simple model doesn't follow the patterns of data and hence the model gives
+errors in predicting training as' well as testing data i.e. the model with high bias
+and high variance.
+ Fig. 5.1.1 shows ensemble learning.
+Traning data
+Build K models
+(Level 0)
+Model1Model2Model3
+Model K
+Combination
+(e.g., linear,
+machinelearning)
+(Level 1)
+Stackedensemble
+Fig. 5.1:1 Ensemble learning
+When the model follows even random quirks of data, as pattern of data, then the
+model might do very well on training dataset i.e. it gives low bias, but it fails on
+test data and gives high variance.
+Therefore, to improve the' accuracy (estimate) of the model, ensemble learning
+'methods are developed. Ensemble is a machine learning concept, in which several
+models are trained using machine learning algorithms. It combines low performing
+model prediction for the final prediction.
+?
+TECHNICALPUBLICATIONS
+-an up-thrust forknowledge
+
+=== PAGE 70 ===
+MachineLeaming
+5-3
+EnsembleLearning
+affecting bias, i.e. reduce sensitivity to individual data points.
+capacity than single model. Averaging models can reduce bias substantially by
+increasing capacity and control variance by fitting one component at a time.
+5.1.1
+Need of Ensemble Learning
+ When making decision trees, there are several factors we must take into
+consideration. But there is limit to add new questions in' the decision tree. To solve
+this, ensemble learning method is used.
+Rather than just relying on one decision tree and hoping we made the right
+decision at each'split, ensemble methods allow us to take a sample of decision
+trees into account, calculate which features to use or questions to ask at each split
+and make' a final predictor based on the aggregated results of the sampled
+decision trees.
+Ensemble methods are techniques that create multiple models and then combine
+them to produce improved results. Ensemble methods in machine learning usually
+produce more accurate solutions than a single model would.
+ Ensemble models use multiple machine learning algorithms to bring ouit better
+predictive results, as compared to using a single algorithm. There are different
+with a particular problem.
+5.1.2
+ Homogeneous and Heterogeneous Ensemble Methods
+main idea behind ensemble learning.
+
+=== PAGE 71 ===
+Ensemble Leaming
+MachineLearning
+5-4
+then it is a homogeneous ensemble method. If base learners are different then it is
+a heterogeneous ensemble method.
+1. Homogeneous ensemble :
+Training only one learning algorithm on many different training sets obtained
+from the original training data to. generate the base classifiers is known as
+homogeneous ensemble.
+    s       s
+though the dataset consists of different classifiers, this ensemble technique makes a
+model that best suits: a given problem. This type of technique is computationally
+expensive and is suitable for solving large datasets.
+"BAGGING" and "BOOSTING" are the popular methods that exhibit homogeneous
+ensemble.
+2. Heterogeneous ensemble':
+. In ensemble learning, training different learning algorithms on the original training
+set to generate the base classifiers is known as heterogeneous ensemble.
+Heterogeneous ensemble is a combination of different types. of classifiers, in which
+each classifier is based on the same data.This methodworks on small datasets.
+"STACKING" comes in this category.
+5.1.3
+Advantages and Limitations of Ensemble Methods
+1.Advantages:
+Improvement in predictive accuracy.
+This type of model is used to reduce bias from the individual base model having
+high bias.
+Better prediction than individual model.
+ Ensembles can also be parallelized more easily, leading. to more effcient
+performance.
+2. Limitations :
+.It is difficult to understand an ensemble of classifiers.
+High computation power is required as compared to individual models.
+Ensemble model is complex and can be more difficuilt to interpret.
+ More time is consumed in training the ensemble models as compared to
+individual model.
+
+=== PAGE 72 ===
+Machine Learning
+5-5
+Ensemble Learning
+Basic Ensemble Learning Techniques : Voting Ensemble
+5.2
+ The simplest way to combine multiple classifiers is by voting, which corresponds
+learning algorithm.
+.For regression, a voting ensemble involves making a prediction that is the average
+of multiple other regression models.
+· In classification, a hard voting ensemble involves summing the votes for crisp
+class labels from. other models and predicting the class with the most votes. A soft
+predicting the class label with the largest sum probability.
+Fig. 5.2.1 shows Base-learners with
+their outputs.
+f()
+In this methods, the first step is to
+create'
+'multiple
+classification/regression
+models
+using some training dataset. Each
+7p
+base model can be created using
+different splits of the same training
+dataset and
+same algorithm, or
+using
+.thesame
+dataset with
+Fig. 5.2.1 Base-learners with their outputs
+different algorithms, or any. other
+miethod.
+ Learn multiple alternative definitions of a concept using different training data .or
+different learning algorithms. / It combines decisions. of 'multiple definitions,
+e.g. using weighted voting.
+ Fig. 5.2.2 shows general idea of Base-learners with model combiner. (See Fig. 5.2.2
+on next page)
+ Use a single, arbitrary learning algorithm but manipulate training data to make it
+learn multiple models.
+TECHNICAL PUBLICATIONs - an up-thruist.for knowledge
+?
+
+=== PAGE 73 ===
+Ensemble Learning
+Machine Learning
+5-6
+Training data set
+Data 1
+Data 2
+Data3
+Data M
+Learner 1
+Learner 2
+Learner 3
+LearnerM
+Model1
+Model2
+Model3
+Model.M
+Model combiner
+Final model.
+Fig. 5.2.2
+5.2.1
+Types of Voting
+Ensemble model types are as follows':
+. Simple : Max Voting, Averaging, Weighted Averaging
+Advanced : Stacking, Blending, Bootstrap Sampling , Other are Bagging and
+Boosting
+1. Max voting :
+The max voting method is generally used for classification problems. In this
+technique, multiple models are used to make predictions for each data point.
+get from majority of the models are used as the final predictions.
+TECHNICAL PUBLICATIONs-an up-thrust for knowledge
+
+=== PAGE 74 ===
+MachineLeaming
+5-7
+EnsembleLearning
+Model-1
+Model-2
+Model-3
+Model-4
+Model-5
+Final result
+5
+5
+4
+models can take a vote. The option that has. the most number ·of votes is
+considered the chosen one.
+ It is used for classification problems. Each machine learning model makes a vote,
+and .the option with the maximum vote is the selected option.
+2. Averaging voting :
+· In simple averaging method,. for every instance of test dataset, the average
+predictions are calculated.
+·This method often reduces overfit and creates a smoother regression model. Thus
+the averaging method will take average of all values.
+Model-1
+Model-2
+Model-3
+Model-4
+Model-5
+Final result
+5
+5
+4
+4.4
+3. Weighted average :
+. Weighted averaging is a slightly modified version of simple averaging, where the
+prediction of each model is multiplied by the weight and then their average is
+calculated.
+ All models are assigned different weights defining the importance of each model
+for prediction..
+[' = [(81'0++) + (810++) + (81'0+s) + (eZ'0++)+ (2Z'0+s)] : a[duexa 10 0
+Model-4
+Model-5
+Final result
+Model-1  Model-2  Model-3
+Weights
+0.23
+0.18
+0.18
+0.18
+.0.23
+Predictions
+5
+4
+4
+4
+4.41
+5
+5.3
+Advanced Ensemble Learning Techniques
+5.3.1
+Bagging
+?
+-anup-thrustforknowledge
+TECHNICALPUBLICATIONS
+
+=== PAGE 75 ===
+Ensemble Leaning
+Machine Leaming
+5-8
+ Bagging was the first effective method of ensemble learning and is one of the
+simplest methods of arching. The meta - algorithm, which is a special case of the
+model averaging, was originally designed for classification and is usually applied
+  o a u  sn q  h anq 's an u on
+classification or regression.
+Ensemble classifiers such as bagging, boosting and model averaging are known to
+have  improved accuracy  and  robustness over  a single  model.  Although
+unsupervised models, such as clustering, do not directly generate label prediction
+for each individual, they provide. useful constraints for the joint prediction of a set
+of related· objects.
+For given a training set of size n, create m samples of size n by drawing n
+examples from the original data, with replacement. Each bootstrap sample will on
+average contain 63.2 % of the unique training examples, the rest are replicates. It
+combines the m resulting models using simple majority vote.
+In particular, on each round, the base learner is trained on what is often called a
+"bootstrap replicate" of the original training set. Suppose the training set consists
+of n examples. Then a bootstrap replicate is a new training set that also.consists
+of n examples, and which is formed by repeatedly selecting uniformly at random
+and with replacement n examples from the original training set. This means that
+the same example may appear multiple times in the .bootstrap replicate, or it may
+appear not at all.
+It also decreases error by decreasing the variance in the results due to unstable
+learners, algorithms (like decision trees) whose output can change dramatically
+when the training data is slightly changed.
+Pseudocode:
+1.
+Given training data (x1, y 1), ..., (xm, Y m)
+2. For t = 1..., T :.
+ sxa   s a 's sp n d  em
+the training set with replacement.
+b.Let ht be the result of training base learning algorithm on St.
+3.
+Output combined.classifier :
+.H(x) = majority (h1(x),...,hr(x)).
+Bagging steps :
+ades v 'las eep Suuien u saine N pue suoeasqo' N are aiau asoddns '1
+from training data set is taken randomly with replacement.
+?
+TECHNICALPUBLICATIONS
+anup-thrustforknowledge
+
+=== PAGE 76 ===
+MachineLeaming
+5-9
+EnsembleLearning
+3. The tree is grown to the largest.
+of predictions from n number of trees.
+Advantages of bagging. :
+1. Reduces over - fitting of the model.
+e a  a  s 
+3. Maintains accuracy for missing data.
+Disadvantages of bagging :
+1. Since final prediction is based on the mean predictions from subset trees, it won't
+give precise values for the classification and regression model.
+5.3.2
+Boosting
+· Boosting is a very different method to generate multiple predictions (function
+estimates) and combine them linearly. Boosting refers to a general and provably
+effective method of producing a very accurate classifier by combining rough and
+moderately inaccurate rules of thumb.
+ Originally developed by. computational learning theorists to guarantee performance
+improvements on fitting training data for a weak learner that only needs to
+generate a hypothesis with a training accuracy greater than 0.5. Final result is the
+weighted sum of the results of weak classifiers.
+· A learner is weak if it produces a clasfier that is only slightly better than random
+guessing, while a learner is said to be strong if it produces a classifier that
+achieves a low error with high confidence for a given concept.
+TECHNICAL PUBLICATIONs - an ujp-thrust for knowledge
+?
+
+=== PAGE 77 ===
+5-10
+EnsembleLeaning
+MachineLearming
+is also  very useful as a regularization technique for additive or interaction
+modeling.
+To begin, we define an algorithm for finding the rules of thumb, which we call a
+weak learner. The boosting algorithm repeatedly calls this weak learner, each time
+feeding it a different distribution over the training data. Each call generates a
+weak. classifier and we must combine all of these into a single classifier that,
+hopefully, is much more accurate than any one of-the rules.
+Train a set of weak hypotheses : h1, ..,hr. The combined hypothesis H is a
+weighted majority vote of the T weak hypotheses. During the. training, focus on
+the.examples that are misclassified.
+Training sample
+Weighted sample
+Weighted sample
+Fig. 5.3.1
+AdaBoost :
+· AdaBoost, short for "Adaptive Boosting", is a machine learning meta - algorithm
+formulated by Yoav Freund and Robert Schapire who won the prestigious "Godel
+sada ao u ym uoun u pan aq un h om nu non soo u a
+of learning algorithms to improve their performance.
+vote'of weak·classifiers.
+properties.
+weak learner repeatedly on different distributions over the training examples.
+classifier poorly predicts receive greater weight on the next iteration.
+Advantages of AdaBoost :
+1.Very simple to implement
+TECHNICALPUBLICATIONS
+?
+- an up-thrust for knowledge
+
+=== PAGE 78 ===
+MachineLearming
+5-11
+EnsembleLearning
+2. Fairly good generalization
+3. The prior error need not be known ahead of time.
+Disadvantages of AdaBoost :
+1. Suboptimal solution
+Can over fit in presence of noise.
+2.
+Boosting steps :
+1. Draw a random subset .of training samples d1 without replacement from the
+training set D to train a weak learner C1.
+2. Draw second random training subset d2 without replacement from the training set
+and · add 50percent  of   the  samples
+thatwere  previouslyfalsely
+classified/misclassified to train a weak learner C2..
+3. Find the training samples d3 in the training set D on which C1 and C2 disagree to
+train a third weak learnier C3."
+4. Combine all the weak learners via majority voting.
+Advantages of boosting :
+1. Supports different loss function.
+2. Works well. with interactions.
+Disadvantages of boosting :
+ 1. Prone to over-fitting.
+5.3.3
+Stacking
+method that combines multiple heterogeneous base or component models via a
+meta-model.
+?
+TECHNICALPUBLICATIONS
+- an up-thrust for knowledge
+
+=== PAGE 79 ===
+MachineLeaming
+EnsembleLearning
+5-12
+doesn't always guarantee better performance.
+feature vector S; = (x;,t;).
+The stacking process can be broken into two phases :
+1. Generate a set of base - level classifiers C,.., CN where C; = L;(S)
+2. Train a meta - level classifier to combine the outputs of the base - level
+classifiers.
+Fig. 5.3.2 shows stacking frame.
+Training set
+3
+n
+Hypotheses
+-Training observations:
+Predictions on
+training observations
+Meta learner
+Metalearner's
+hypothesis ·
+Leastobservation
+Final prediction
+Fig.5.3.2 Stacking frame
+out cross validation process.
+V; = 1, .., n and k = 1, .., N : Ci
+= Lk(S-si)
+TECHNICALPUBLICATIONS
+-anup-thrustforknowledge
+
+=== PAGE 80 ===
+Machine Leaming
+5-13
+EnsembleLearning
+The meta - level dataset consists of examples of the form ( ,..,y)yi), where
+the features are the predictions of the base - level classifiers and the class is the
+correct class of the example in hand.
+Why do ensemble methods work ?
+Based on one of two basic observations :
+1.
+Variance reduction : If the training sets are completely independent, it will
+always helps to average an ensemble because this will reduce variance without
+affecting bias (e.g. - bagging) and reduce sensitivity to individual data points.
+2. Bias reduction : For simple models, average of models has much greater
+ a s r  s  r s  
+s e ie      pn   
+5.3.4
+AdaBoost
+Stump
+.' AdaBoost also referred to as adaptive boosting
+is a method in Machine Learning used as an
+ensemble method. The maximum·not unusual
+algorithmusedwithAdaBoostisselectiontrees
+with one stage meaning with decision trees
+with most effective 1 split. These trees also are
+Fig. 5.3.3 AdaBoost
+referred to as decision stumps.
+The working of the AdaBoost version follows the beneath-referred to path :
+Creation of the base learner.
+Calculation of the total error via the beneath formulation.
+Calculation of performance of the decision stumps.
+Updating the weights in line with the misclassified factors.
+Creation of a new database :
+AdaBoost ensemble :
+then teach them the use of weighted schooling records.
+We hold to iterate the process till we gain the advent of a pre-set range of
+vulnerable learners or we can not look at further improvement at the dataset. At
+fee.
+?
+-anup-thrustforknowledge
+TECHNICALPUBLICATIONS
+
+=== PAGE 81 ===
+Machine Learming
+Ensemble Learning
+5 -14
+5.3.5
+Difference between Bagging and Boosting.
+Sr. No.
+Bagging
+Boosting
+1.
+Bagging is a technique that builds
+Boosting refers to a group of algorithms
+multiplehomogeneous models from
+that utilize weighted averages to make
+differentsubsamplesofthesame
+weak learning algorithms stronger
+trainingdatasettoobtainmore accurate
+learning algorithms.
+predictionsthanitsindividualmodels
+2.
+Learms them independently from each
+Learns them sequentially in a very
+otherinparallel
+adaptative way
+3.
+It helps in reducing variance.
+It helps in reducing bias and variance.
+4.
+Every model receives an equal weight.
+Modelsareweightedby their
+performance.
+5.4
+Random Forest Ensemble
+Random forest is an ensemble machine learning algorithm. Random forest is an
+ensemble of decision tree algorithms. It is an extension of bootstrap aggregation
+(bagging) of decision trees and can be used for classification and regression
+problems.
+Random forest algorithm is a supervised machine learning algorithm.
+Training data
+Training phase
+Subset
+Subset
+Subset
+Sample 1
+Sample 2
+Sample N
+Decision
+Decision
+Decision
+Tree:1
+Tree : 2
+Tree:N
+Prediction by individual decision trees for the
+Testing phase
+testing data
+Voting
+Final class prediction
+ Fig. 5.4.1 Working principle of the random forest classifier.
+
+=== PAGE 82 ===
+MachineLeaming
+5-15
+EnsembleLearning
+One big advantage of random forest is that it can be used for both classification
+and regression problems, which form the majority of current machine learning
+systems.
+Fig. 5.4.1 (Fig. 5.4.1 see on previous page) shows the working principle of the RF
+classifier.
+ The training algorithm applies the general technique of bootstrap aggregating or
+bagging. Given a training set X = (xi..,xn) with responses. Y = (y1....ynb,
+i ns uurn  po uend m ars upun e sas 
+for B times and fits decision trees to these samples.
+After training, the class prediction for an unseen sample (x'), is determined by
+taking a majority vote as follows :
+B
+C(x') = arg max ∑= W;I(h;(x) = i)
+j=1
+where. Wi,..., We are weights that sum to 1, which are usually set to 1/B; I() is
+an indicator function; and h,() is the prediction function for the jth decision tree.
+The following steps explain the working random forest algorithm:
+Step 1: Select random samples from a given data or training set.
+Step 2 : This algorithm will construct a decision tree for every training data.
+Step 3 : Voting will take place by averaging the decision tree.
+Step 4 : Finally, select the most voted prediction result as the final prediction
+result.
+·Features of Random Forest
+1. Each tree has a unique attribute; variety and features concerning other trees. Not
+alltreesarethe same.
+2. Immune to the curse of dimensionality : Since a tree is.a conceptual idea, it
+ requires no features to be considered. Hence, the feature space is reduced.
+is created autonomously. from different data and features.
+train and test because the decision tree never sees 30 % of the data.
+5. Stability : The final result is based on bagging, meaning the result is based on
+majority voting or average.
+· When we use Random Forest ?
+algorithm can overcome this,
+TECHNICAL PUBLICATIONs - an up-thrust for knowledge
+?
+
+=== PAGE 83 ===
+Ensemble Leaming
+MachineLeaming
+.5-16
+2. Capable of both regression and classification problems.
+3. Handle a large number of features.
+4. Estimating which features are important in the underlying data being modelled.
+ without  carefully  crafted   data?
+5. Random  forest  is.   capable  of learning
+transformations.
+6. Output probabilities for classification problems.
+How random forest algorithm can be build using decision tree ?
+· A random forest is simply a. collection of decision trees whose results are
+aggregated into one  final result. Their ability .to. limit overfitting without
+substantially increasing error due to bias is why they are such powerful models.
+One way random forests reduce variance is by training on different samples of the
+data. A second way is by using a random subset of features. A random forest is a
+supervised machine learning algorithm that is constructed from decision tree
+algorithms.
+A random forest algorithm consists of many decision trees. The 'forest' generated
+by  the random forest algorithm is: trained. through bagging or bootstrap
+aggregating. Bagging is an ensemble meta-algorithm that improves the accuracy of
+machine learning algorithms.
+Decision trees are. the building blocks of a random forest algorithm. A decision
+tree is a. decision support technique that forms a tree-like structure.
+· . A.decision tree consists of three components : decision nodes, leaf nodes and a
+root node. A decision tree algorithm divides a training dataset into branches,
+ node is attained. The leaf node cannot be segregated further.
+Entropy and information gain are the building blocks of decision trees. The
+information gain concept involves using independent variables (features) to gain
+information about a target variable (class). The entropy of the target variable (Y)
+gain.
+employs the bagging method to generate the required prediction.
+TECHNICALPUBLICATIONS
+?
+-anup-thrustforknowledge
+
+=== PAGE 84 ===
+MachineLeaming
+5-17
+EnsembleLearming
+ Classification in random forests employs an ensemble methodology to attain the
+outcome. The training data is fed to train various decision' trees. This dataset
+consists of observations and features that will be selected randomly during the
+splitting of nodes.
+. Fig. 5.4.2 shows random forest classifier using decision tree.
+Random forest classifier !
+Dataset
+Decision tree!
+Prediction
+Prediction
+Prediction
+Majority vote taken
+Finalpredictionmade
+Fig.5.4.2 Random forest classifier using decision tree
+Every decision tree consists of decision nodes, leaf nodes and a root node. The leaf
+node of each tree is the final .output produced by that specific decision tree. The
+selection of the final. output follows the majority-voting system.
+In this case, the. output chosen by the majority of the decision trees becomes the
+final output of the rain forest system.
+5.4.1
+Applications of Random Forest
+  i s ns se  e sd in : 
+make a good decision on whether to give the customer loan or not. They are also
+ being used to detect fraudsters.
+Patients are diagnosed by assessing their previous medical history. Past medical
+ s   d   nn  ss   i
+also enables them to remember. the behaviour of stocks.
+E-commerce : Through this system, e-commerce vendors can predict the preference
+of customers based on past consumption behaviour.
+
+=== PAGE 85 ===
+Ensemble Learning
+MachineLeaming
+5-18
+5.4.2
+Advantages and Disadvantages of Random Forest .
+1. Advantages of Random Forest
+. It reduces the risk of overfitting and the required training time.
+It offers a high level of accuracy.
+ It can perform both regression and classification tasks.
+Produces good predictions that can be understood easily.
+Can handle large data sets efficiently.
+2.Disadvantages of RandomForest
+·While using a random forest algorithm, more resources are required for
+computation.
+It consumes more time compared to. the decision tree algorithm.
+ Less intuitive. when we have an' extensive collection of decision trees.
+. Extremely complex and requires more computational resources.
+TECHNICALPUBLICATIONS
+?
+-anup-thrust forknowledge
+
+=== PAGE 86 ===
+Unit VI
+Reinforcement Learning
+Syllabus
+Reinforcement learning:What is Reinforcement Learning ?Need for Reinforcement Learning;
+Supervised vs Unsupervised vs Reinforcement Learning, Types of Reinforcement, Elements of
+ReinforcementLearning,Real time applicationsofReinforcement learning.
+Markov's Decision Process : Markov property, Markov chain/process, Markov reward process
+(MRP), Markov decision process (MDP), Return, Policy, Value functions, Bellman equation.
+Q Learning : Introduction of Q-Learning, Important terms in Q learning, Q table, Q functions, Q
+learningalgorithm.
+Contents
+6.1
+WhatisReinforcementLearning.?
+6.2
+TypesofReinforcement
+6.3
+PositiveVsNegative ReinforcedLearning
+6.4
+MarkovDecisionProcess
+6.5
+QLearning
+(6 - 1)
+
+=== PAGE 87 ===
+Reinforcement Leaning
+MachineLeaming
+6-2
+6.1
+What is Reinforcement Learning ?
+ Reinforcement Learning (RL) is a type of machine learning technique that enables
+an agent to learn in an interactive environment by trial and error using feedback
+from its own actions and experiences.
+ Reinforcerment learning is the science of decision making. It is about learning the
+optimal behavior in an environment to obtain maximum reward. This optimal
+behaviour is learned through interactions with the environment and observations
+of how it responds...
+Reinforcement learning uses a formal framework defining the interaction between
+a learning agent and its environment in terms of states, actions and rewards.
+ Reinforcement learning is an approach to machine. learning in which the agents
+are trained to make a sequence of decisions. The agent, also called as an AI agent
+gets trained in the following manner. :
+a)The agent interacts with the environment and make decisions or choices. For
+training purpose, the agent is provided with the contextual information about
+the environment and choices:
+b) The agent is provided‘with the feedback or rewards.based.on how well the
+             
+achieving the desired. goal.
+ User will get immediate feedback in supervised learning and no feedback from
+ unsupervised learning. But in the. reinforced learning, you will get delayed scalar
+feedback.
+Reinforcementlearningis
+AGENT
+learning what ·to do and
+howto mapsituationsto
+:Situation
+Reward
+Action
+actions.·The learner is not
+'s
+T.
+at
+told which actions to take.
+Fig.. 6.1.1 shows concept of.
+Tt+1
+: reinforced learning.
+S+1
+ENVIRONMENT
+Reinforced learning is deals
+Fig. 6.1.1 Reinforced learning
+with agents that must sense
+machine learning techniques.
+the reinforcement signal.
+TECHNICAL PUBLICATIONS
+- an up-thrust for knowledge
+
+=== PAGE 88 ===
+MachineLeaming
+6-3
+ReinforcementLearning
+ Two  most  important  distinguishing  features of  reinforcement  learning  is
+trial-and-error and delayed reward.
+ With reinforcement learning algorithms an agent can improve its performance by
+using the feedback it gets from the environment. This environmental feedback is
+called the reward signal.
+ Based on accumulated experience, the agent needs to learn which action to take in
+a given situation in order to obtain a desired long term goal. Essentially actions
+that lead to long term rewards need to reinforced. Reinforcement learning has
+connections with control theory, Markov decision processes and game theory.
+Example of reinforcement learning : A mobile robot decides whether it should
+Am s pu o. un ps no pa o ysn o jo yrs u o mu e s
+back to its battery recharging station. It makes its decision based on how quickly
+and easily it has been able to find the recharger in the past.
+6.1.1
+Elements of Reinforcement Learning
+Reinforcement learning elements are as follows :
+1. Policy
+2. Reward function
+3.Valuefunction
+4.Model of the environment
+Fig. 6.1.2 shows elements of RL.
+Policy : Policy defines the learning
+agent behavior for given time period.
+Environment
+It is a mapping from perceived states
+of the environment to actions to be
+Action
+taken when in those states.
+Reward
+·Reward function .: Reward function
+Interpreter
+is used to' define a goal ina
+State
+reinforcement learning problem.  It.
+also maps each perceived state of the
+Agent
+environment to a single number.
+Fig.6.1.2Elementsofreinforcement
+Value function : Value functions
+learning
+specify what is good in the long run.
+The value of a state is the total amount of reward an agent can expect to
+accumulate over the future, starting from that state.
+Model of the environment : Models are used for planning.
+Credit assignment problem : Reinforcement learning algorithms learn to generate
+an internal value for the intermediate states as to how good they are in leading to
+the goal.
+
+=== PAGE 89 ===
+Reinforcement Leaming
+Machine Learning
+6-4
+ The learning decision maker is called the agent. The agent interacts with the
+environment that includes everything outside the agent.
+The agent has sensors to decide on its state in the environment and takes an
+actionthatmodifiesitsstate.
+The reinforcement learning problem model is an agent continuously interacting
+with an environment. The agent and the environment interact in a sequence of
+time steps. At each time step t, the agent receives the state of the environment and
+a'scalar numerical reward for the previous action, and then the agent then selects
+an action.
+ Reinforcement learning is a technique for solving Markov decision problems.
+ Reinforcement learning uses a formal framework defining the interaction between
+a learning agent' and its environment in terms of states; actions, and rewards. This
+framework is intended to be a simple way of representing essential features of
+the artificial intelligence problem.
+ Example of the general Reinforcement Learning concept : Imagine teaching a dog
+some new tricks. Unfortunately, dogs do not understand human speech, so. we
+cannot directly. tell pet what to do. Therefore, we will imitate the situation and
+dog will try to act one way or another..
+If dog does everything correctly, for example, sit down after a "sit" command; we
+will give it a treat. Thus, next time in a similar situation a dog will again act as an
+anticipated hoping to get a treat. again. However, if we do not use a treat at all;
+dog might never learn new tricks at all as it will not receive any positive stimuli
+from our side.
+6.1.2
+Characteristics of Reinforced Learning
+ No supervision, only a real value or reward signal .
+Decision making is sequential
+Time plays a major role in reinforcement problems
+Feedback isn't prompt but delayed
+6.1.3
+ Exploration Vs Exploitation
+ Exploration : gather more information
+
+=== PAGE 90 ===
+MachineLeaming
+6-5
+Reinforcement Learning
+dilemmas is to use an explicit exploration model that uses direct and planned
+exploration.
+· An agent will directly explore, by performing the action it has tried in that state
+the fewest amount of times in that particular state, until a state is known well
+Susnen paeidde aq ue aes peu iy spremai saea au arum yanoua
+planned exploration..
+ When E3 encounters a known state it first attempts to find a near optimal action
+to exploit based on values returned to it by the value function and if an optimal
+action is not found the most well-known state action pairs are set to return a.
+reward of zero and the remaining actions are set to return an optimal value
+temporarily in the reward function, to occur. 
+2. R-Max Algorithm (lmplicit Exploration)
+· The R-Max algorithm approach uses an implicit exploration model which utilizes
+the idea of optimistic initial values. That is, as an initial condition the agent will
+assume that every possible action in every state provides the optimal reward.
+the environment that is updated as it encounters various state changes
+sby
+performing actions.
+· It is not required that this preconceived model need accurately represent the
+environment; it only need be some approximation that the agent can adapt.
+recording all state action pairs, K(s, a).
+· Example :
+ 1. Restaurant Selection
+a) Exploitation : Go to favorite restaurant
+b) Exploration : Try a new restaurant
+2. Online Banner Advertisements:
+a) Exploitation : Show the most successful advert
+b) Exploration : Show a different advert
+3. Oil Drilling
+a) Exploitation : Drill at the best known location
+-anup-thrustforknowledge
+?
+TECHNICALPUBLICATIONS
+
+=== PAGE 91 ===
+MachineLeaming
+Reinforcement Learning
+6-6
+4. Game Playing
+a) Exploitation : Play the move you believe is. best
+b) Exploration : Play an experimental move
+5.
+Clinical Trial
+a) Exploitation : Choose the best treatment so far
+b) Exploration : Try a new treatment
+6.1.4
+Rewards andPenalties
+ Reinforcement learning is training by rewards and punishments. Reward-related
+separate, in biological terms, implemented by appetitive and aversive components
+of the nervous system but computational modeling of the relationship between
+such reward and punishment systems is relatively lacking.
+Where such modeling exists, typically, it concerns the additive combining .of
+       s    
+Punishment is .viewed as a type of negative reward added to the positive reward
+value.
+If the rewards and the result of actions. are not deterministic, then we have a
+there is a probability distribution for the next state.
+An agent's reward function determines the perception of a received reward. It.
+determines whether a reward was 'good' or bad' by comparing it other rewards
+received from the same state and also to rewards received from other states.
+ In the simple coin flip game, heads would be perceived by the reward function as
+the return of a 'good' reward and that tails would be perceived as a bad' reward.
+However, the reward function might weight the return of tails depending on the
+state it appeared.
+A tails returned at step one might return a 'worse' reward than a tails received at
+optimal reward is greatly diminished.
+6.1.5
+Application
+TECHNICALPUBLICATIONS
+?
+-an up-thrist for knowledge
+
+=== PAGE 92 ===
+Machine Leaming
+6 -7.
+ReinforcementLearning
+specified marginal costs
+without sticking strictly to the set points originally
+suggested by engineers.
+3. A mobile robot decides whether it should enter a new room in search of more
+trash to collect or start trying to find its way back to its battery recharging station.
+It makes its decision based on how quickly and easily it has been able to find the
+recharger in the past.
+6.1.6
+ Difference between Supervised, Unsupervised and Reinforced Learning
+Supervised learning
+Unsupervised learning
+Reinforcement learning
+Supervised  learming requires
+For unsupervisedlearning
+Reinforcementlearningis
+that the targetvariableiswell
+typicallyeither the  target
+learningwhattodoandhow
+definedand thatasufficient
+variableisunknownorhas
+to map situations to actions.
+number of its values are
+onlybeen recordedfor too
+Thelearnerisnot toldwhich
+given.
+small a number of cases.
+actions to take.
+Supervised learning deals with
+Unsupervised learming deals
+Reinforcement Learning deals
+two main tasks regression and
+with clustering and associative
+with
+exploitation
+or
+classification.
+rule mining problems.
+exploration, Markov's decision
+processes,  Policy  Learning,
+Deep Learning and value
+learning.
+The input data in supervised Unsupervised learning  uses
+The data is not predefined in
+learming in labelled data.
+unlabelled data.
+reinforcement learning.
+Learns by using labelled data.
+Trained using unlabelled data
+Works on interacting with the
+without any guidance.
+environment.
+Maps the labeled inputs to the
+Understands
+patterns
+and
+Follows the trial and
+error.
+known outputs.
+discovers the output.
+method.
+6.2
+Types of Reinforcement
+Fig. 6.2.1 shows types of Reinforced learning algorithm.
+(See Fig. 6.2.1 on next page)
+· In a model - based RL environment, the policy is based on the use of a machine
+learning model. When an RL environment or system utilizes the use of machine
+such an RL system is model - based.
+TECHNICAL PUBLICATIONs - an up-thrust for knowledge
+?
+
+=== PAGE 93 ===
+Reinforcement Learning
+MachineLearming
+6-8
+Reinforcement
+learning
+Model-based
+Model-free
+methods'
+methods
+Value-based
+Policy-based
+methods
+methods.
+Fig. 6.2.1 Types of Reinforced learning algorithm
+With a model - free RL, such a system has no policy based on the use of machine
+learning models; its policy is guided by the use of non - ML algorithms.
+1. Value - based :
+ The main goal of this method is to maximize a value function. Here, an agent
+through a policy expects a long - term return of the current states.
+Value functions arefunctions of states or of state- action pairs, that estimate how
+good it is for an agent to be in a given state or how good it is for the agent to
+perform a given action in a given state.
+2. Policy - based :
+·In policy - based, user enable to come up with a strategy that helps to gain
+maximum rewards in the future through possible actions performed in each state.
+Two types of policy - based methods are deterministic and stochastic.
+ Deterministic : In this sub-division, the same action is produced by the policy at
+ any state.
+. Stochastic. : Here, probability determines the action produced.
+3.Model -based :
+. In this method, we need to create a virtual model for the agent to help in learning
+to perform in each specific environment. Model - based reinforcement learning
+methods rely on the use of an explicit parameterization of the transition model.
+Positive Vs Negative Reinforced Learning
+6.3
+and Negative reinforcement.
+1. Positive reinforcement
+same behavior being repeated.
+TECHNICAL PUBLICATIONs - an up-thrust for knowledge
+
+=== PAGE 94 ===
+Machine Leaming
+6-9
+Reinforcement Learning
+· For example, if a child passes a test with impressive grades, they can be positively
+ reinforced with an ice cream cone.
+2. Negative reinforcement
+· Negative reinforcement involves increasing the chances of specific behavior to
+occur again by removing the negative condition.
+ For example, if a child fails a. test, they can be negatively reinforced by taking
+jnq uy io p ay susnd kisond pou si su se op nu Aeme
+removing a negative condition (in this case, video games) that might have caused
+the kid to fail the test.
+ Basically, when a person's behaviour leads to the removal of something that was
+unpleasant to that person then negative reinforcement is occuring.
+Example : An HR who wishes to increase productivity among employees.
+Now applying the two REINFORCEMENTs here to increase the likelihood of the
+desired behavior that is - Increased productivity.
+a) Positive reinforcement : Rewarding the employees who reach the given target
+with extra paid leaves:
+ Here : The employee will work towards the target as he is motivated to get more
+paidleaves.
+ Negative reinforcement : Reducing office noise and interference in privacy by
+b)
+giving more space to employees i.e., reducing crowding and offering more
+open space; if the targets are met and productivity is increased.
+ Here : To avoid the crowd, noises and privacy invasion, the employees will work
+towards achieving the targets. Hence, productivity is increased.
+ Thus, both reinforcements are increasing the chances of the desired behavior
+(Increased productivity).
+6.4
+Markov Decision Process
+· A reinforcement learning task that satisfies the Markov property is called a
+. Markov Decision Process (MDP): If the state and action spaces are finite, then it is
+called a finite Markov Decision Process (finite MDP). Finite MDPs are particularly
+important to the theory of reinforcement learning.
+· In a Markov Decision Process (MDP) the agent can perceive a set S of distinct
+states of its environment and has a set A of actions that it can perform.
+.A Markov decision process is a tuple (S, A, IPsal, , R).
+Where :
+· S is a set of actions. (For example, in autonomous helicopter flight. S might be the
+set of all possible positions and orientation of the helicopter).
+?
+TECHNICALPUBLICATIONS
+-anup-thrustforknowledge
+
+=== PAGE 95 ===
+Reinforcement Learning
+MachineLeaming
+6-10
+A is set of actions, (For example, the set of all possible directions in which you
+can push the helicopter's control sticks).
+gives the distribution over what states we will transition to if we take action a in
+state s.
+YE(0,1) is called the discount factor.
+ R : S x A →R is the reward function. (Rewards are sometimes also written as a
+function of a state S only in which case we would have R :S-→ R.
+6.4.1
+Markov Property
+ If our state representation is as effective as having a full history, then we say that
+our model fulfills. the requirements of the Markov property.
+ To illustrate this with an example, think of playing Tic-Tac-Toe. When we are able
+to take a decision based on the current state, rather than needing to know the
+whole history, then we say that we satisfy the conditions of the Markov property.
+A state StisMarkov if and only if
+P[St+ilSt] = P[St+1lS1,.,St]
+The state captures all relevant information from the history. Once the state is
+known, the history may be thrown away, i.e. the state is a sufficient statistic of the
+. future.
+ For a Markov state ( s ) and successor state (s), the state transition probability is
+· defined by
+Pss' = P[St+1 =s'|St = s]
+ State transition matrix p defines transition probabilities from all states (s) to all
+successor states (s'),
+to
+P11
+P1n
+P
+o=
+：
+Pn1
+Pnn
+where each row of the matrix sums to 1.
+is the probability that he will purchase tea two purchases from now ?
+TECHNICALPUBLICATIONS
+?
+-an up-thrust for knowledge
+
+=== PAGE 96 ===
+Machine Leaming
+6-11
+Reinforcement Learning
+[0.9 .0.1]
+P
+0.20.8
+State diagram :
+0.1
+0.9
+0.8
+Tea
+Milk
+0.2
+Fig. 6.4.1
+[0.9 0.1][0.9 0.1]
+0.20.8
+0.20.8
+0.9×0.9+0.1x0.2 0.9×0.1+0.1x0.87
+0.2x0.9+0.8×0.20.2×0.1+0.8×0.8
+0.83
+0.17]
+0.34
+0.66
+Probability that student will purchase tea two purchase from now
+0.2×0.9+0.8×0.2
+0.34
+6.4.2
+Markov Chain / Process
+A Markov process is a memoryless random process, i.e. a sequence of random
+states. S1; S2.... with the Markov property.
+Markov process or Markov chain is a tuple  <S; P>
+where S is a finite set of states
+P is a state transition probability matrix
+Markov chain is characterized by three components :
+1. State space
+2.
+Initial distribution
+3. Markov kernel (transition)
+ State space is the range of all random variables, The initial distribution quantifies
+the starting configuration for the chain.
+Kernel quantifies the probability of transitioning from state x; to xj so it
+establishes how the chain evolves.
+
+=== PAGE 97 ===
+Reinforcement Learning
+MachineLearming
+6-12
+Classification of states of a Markoy chain :
+1. State i leads to state j (i → j) :
+i=io
+i=in
+Fig. 6.4.2
+2.. State i and state j communicate (i <> j) :
+if i →jand j →i
+Fig. 6.4.3
+(n)
+> 0 for some n ≥ 1:
+4. A. state i is said to be an absorbing state if and only if Pij = 1.
+5. The Markov chain is said to be ‘irreducible' if there is only one class, i.e. all state .
+communicate with each other.
+6.A state with period 1 is said to be aperiodic.
+7. The Markov chain does not drift away to infinity.
+8. A Markov chain absorbing if it has at least one absorbing state and if from every
+state it is possible to go to an absorbing state.
+9. A Markov chain is called a regular chain if some power of the transition matrix
+. has only positive elements.
+10. If i → j and j > k then i > k.
+means that there exists at least one state to itself is possible.
+the Markov chain is positive recurrent, there exist a stationary distribution.
+TECHNICALPUBLICATIONS
+- an up-thrust for knowledge
+
+=== PAGE 98 ===
+MachineLeaming
+6-13
+Reinforcement.Learning
+equivalence classes defined by the relation <> are called the irreducible classes of
+states.
+· A Markov ·chain with a state space which is an irreducible class is called
+irreducible.
+6.4.3
+Markov Reward Process (MRP)
+.The Markov Reward Process is an extension on the original Markov Process, but
+with adding rewards to it.
+·A Markov Reward Process is a tuple < S; P; R;  >
+Where S is a finite set of states
+P is a state transition probability matrix
+R is a reward function.
+Y is a discount factor
+6.4.4
+Value Function
+·A value function is the long-term value of a state or an action. In other words, it's
+the expected return over a state or.an action.
+ Because we want to find a policy which maximizes the expected return, it is a
+good idea to estimate the expected return. Then we can search through the space
+of policies for a good policy.
+Value functions represent the expected return, for every state, given a certain
+policy. Computing value functions is an intermediate step towards computing
+good policies.;
+State value function :
+.  The state value function of a policy II is a function VI : S → R
+ The value of state under policy is the expected return if the agent starts from state
+and picks actions according to policy :
+V"(s) = EπIRtISt =s]
+· For a finite state space, we can represent this as an array, with one entry for
+every state.
+6.4.5
+Bellman Equation
+ The Bellman equation is central to Markov decision processes. It. outlines a
+msu a s e ie pm paxa o ar p e m
+the question : "what is the maximum reward an agent can receive if they make the
+optimal action now and for all future decisions" ?
+-an up-thrust forknowledge
+
+=== PAGE 99 ===
+Reinforcement Leaming
+MachineLeaming
+6 - 14.
+The Bellman equation gives a standard representation for 'value functions. It
+decomposes the value function inito two components :
+1. The immediate reward
+2.Discountedvalueofthefuturestate
+By putting all the previous pieces together, we get :
+Vπ(s) =
+∑π(s, a)  ra (s)+ ∑Ta (s, s)Vm(s)
+aEA
+s'ES
+This is a system of linear equations (one for. every state) whose unique solution is
+Vπ:
+The. uniqueness is ensured under mild technical conditions on the transitions p.
+6.5
+Q Learning
+Q-learning is a reinforcementlearning techniques used inmachine leaming. The
+goal of Q-learning is to learn a policy, which tells an agent which action to take.
+under which circumstances.
+ In Q-learning, an agent tries to learn the optimal policy from its history of
+interaction with the environment.
+It has the ability to compute the utility of the actions without a model for the
+environment. It takes the help 'of action-value pair and the expected reward from
+the current action.
+Q-learning is a model-free, value-based, off-policy algorithm that will find the best .
+series of actions based on the agent's current state. The "Q" stands for quality.
+Model-free algorithms learn the consequences of their actions - through the
+experience without transition and reward function.
+ The value-based method trains the value function to. learn which state is more
+valuable and take action. On the other hand, policy-based methods train the policy
+directly to learn which action to take in a given state. In the off-policy, the
+an action.
+ An idea behind Q-learning is that it is possible to collect data samples (Xt, ut It/
+Q-function will satisfy the equation.
+TECHNICALPUBLICATIONS
+?
+-an up-thrust for knowledge
+
+=== PAGE 100 ===
+MachineLeaming
+6-15
+ReinforcementLearning
+. Even if the model and reward function are unkriown, for a given sample (xt, ut)
+It, Xt+1) that is collected by interacting with the environment, the expectation :
+E[(rt +maxQ*(xt+1,u)-Q*(xt,ut)] = 0,
+u'eu
+will hold for the optimal Q-function. Therefore, the idea of Q-learning is that an
+approximation of the optimal Q-function can be improved over time by collecting
+data and trying to ensure that the above conditions holds.
+Q-learning is referred to as a model-free method because it forgoes explicitly
+estimating the true system dynamics, and directly estimates the Q-function. It is
+also called a value-based model-free method since it does not directly build the
+policy, but rather estimates the optimal Q-function to implicitly define the policy.
+Consider a computational agent moving around some discrete, finite world,
+  s    s o   e   g
+constitutes a controlled Markov process with the agent as a controller.
+ At step n, the agent is equipped to register the state xn(e X) of the world; an can
+choose. its action an (e 2) accordingly.
+The agent receives a probabilistic reward rn, whose mean value depends only on
+the state and action and the state of the world changes probabilistically to yn
+accordingtothelaw:
+Prob[y n = ylxn, an] = Pxny[an].
+ The task facing the agent is that of determining an optimal policy, one that
+maximizes. total discounted expected reward.
+6.5.1
+Important Terms .in Q Learning
+ Terminology used are as follows :
+1. States(s) : The current position of the agent in the environment.
+2. Action(a) : A step taken by the agent in a particular state.
+3. Rewards : For every action, the agent receives a reward and penalty.
+4.
+Episodes : The end of the stage, where agents can't take new action. It
+happens when the agent has achieved the goal or failed.
+5.
+Q(St+1, a) : Expected optimal Q-value'of doing the action in a particular state.
+6.
+Q(St, At) : It is the current estimation of Q(St+1, a).
+8. Temporal Differences (TD) : Used to estimate the expected value of Q(St+1, a)
+by using the current state and action and previous state and action.
+TECHNICALPUBLICATIONS
+-anup-thrustforknowledge
+
+=== PAGE 101 ===
+MachineLeaming
+Reinforcement Leaming
+6-16
+6.5.2
+Q Table
+The agent will use a Q-table to take the best possible action based on the expected
+reward for each state in the environment. In simple words, a Q-table is a data
+ structure of sets of actions and states, and we use the Q-learning algorithm to
+update the values in·the table.
+Fig. 6.5.1 shows Q-table:
+QTable
+State-Action
+Value
+0
+'State
+0
+0
+0
+Q-Value
+0
+Action
+0
+0
+0
+0
+Fig. 6.5.1 Q-table
+This Q-table has a row for each state and a:column for each action. Each cell
+contains the estimated Q-value for the corresponding state-action pair.
+We start by initializing all the Q-values to zero. As the agent interacts with the.
+environment and gets feedback, the algorithm iteratively improves these Q-values
+until they converge to the Optimal Q-values. It updates them using the Bellman
+equation.
+6.5.3
+Q Functions
+The Q-function uses the Bellman equation and takes state(s) and action(a) as input.
+The equation simplifies the state yalues and state-action value calculation.
+Q (st, at)
+E[Rt+1+yRt+2+Rt+3+
+Ist at] 
+Q-values for the stateExpected discountedGiven the'state
+given a particular state
+cumulativereward
+and action
+TECHNICALPUBLICATIONS
+?
+-anup-thrustforknowledge
+
+=== PAGE 102 ===
+Machine Leaming
+6-17
+Reinforcement Learning
+. Using the above function, we get the values of Q for the cells in the table. When
+we start, all the values in the Q-table are zeros.
+6.5.4
+Q Learning Algorithm
+.In the Q-learning algorithm, the goal is to learn iteratively the optimal Q-value
+function using the Bellman optimality equation. To do so, we store all the
+Q-values in a table that we will update at each time step using the Q-learning
+iteration.
+Initialize Q-table
+Choose an action
+Perform action
+Afteralotof iterations,
+agoodQ-tableis.ready
+Measurereward
+Update Q-table
+Fig. 6.5.2
+Step 1 : Initialize the Q-table : We will first build a Q-table. There are n columns,
+where n = number of actions. There are m rows, where m = number of states. We
+will initialisethevaluesatO.
+·Steps 2 and 3 : Choose and perform'an action
+ This combination of steps is done for an undefined amount of time. This means
+that this' step runs until the time we stop the training or the training loop stops as
+defined in the code.
+We will choose an action (a) in the' state (s) based on the Q-Table. But, as
+mentioned earlier, when the episode initially starts, every Q-value is 0.
+Steps 4 and 5 : Evaluate
+· Now we have taken an action. and observed an outcome and reward. We need to
+update the function Q(s, a).
+000

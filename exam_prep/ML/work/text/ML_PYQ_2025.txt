@@ -1,0 +1,118 @@
+Total No. of Questions : 8]
+[6584]-383
+B.E. (AIDS)
+MACHINE LEARNING
+ (2019 Pattern) (Semester - VII) (417521)
+Time : 2½ Hours]
+[Max. Marks : 70
+Instructions to the candidates:
+1)
+Answer Q.1 or Q.2, Q.3 or Q.4, Q.5 or Q.6 and Q.7 or Q.8.
+2)
+Neat diagrams must be drawn wherever necessary.
+3)
+Figures to the right indicate full marks.
+4)
+Use of electronic pocket calculator is allowed.
+PE2433
+[Total No. of Pages : 2
+SEAT No. :
+Q1) a)
+Explain evaluation measures (SSE, MSE) for regression model. For a
+given data having 100 examples, if squared errors SEI, SE2, and SE3 are
+13.33, 3.33 and 4.00 respectively, calculate Mean Squared Error (MSE).
+State the formula for MSE.
+[6]
+b)
+Explain K nearest neighbor classification algorithm with suitable example.[6]
+c)
+What are kernel functions in SVM? Describe the Radial Basis Kernel,
+Gaussian, Polynomial, and Sigmoid kernel
+[6]
+OR
+Q2) a)
+Explain Baysian Linear Regression.
+[6]
+b)
+Differentiate between balanced and imbalanced classification.
+[6]
+c)
+Explain the concept of a soft margin SVM. How does it differ from a
+hard margin SVM?
+[6]
+Q3) a)
+Explain the DBSCAN algorithm. How does it work? What are its
+advantages and disadvantages.
+[9]
+b)
+Discuss the applications of clustering techniques in market segmentaion,
+social network analysis, image segmentation, and anomaly detection.
+Provide examples for each application.
+[8]
+OR
+Q4) a)
+Describe the Gaussian Mixture Model (GMM) for distribution-based
+clustering. How is it different from other clustering algorithms?
+[9]
+b)
+Explain the K-Means clustering algorithm. What are its advantages and
+disadvantages.
+[8]
+P.T.O.
+CEGP013091
+49.248.216.237 12/12/2025 13:38:26 static-237
+CEGP013091
+49.248.216.237 12/12/2025 13:38:26 static-237
+CEGP013091
+49.248.216.237 12/12/2025 13:38:26 static-237
+
+2
+[6584]-383
+Q5) a)
+Explain the concept of ensemble learning. Why is ensemble learning
+considered beneficial in machine learning?
+[6]
+b)
+Discuss the concept of stacking in ensemble learning. What are the
+different methods used for variance reduction in stacking?
+[6]
+c)
+Describe the Random Forest ensemble method in detail.
+[6]
+OR
+Q6) a)
+Differentiate between homogeneous and heterogeneous ensemble
+methods. provide examples of each type.
+[6]
+b)
+Describe the concept of a voting ensemble. What are the different types
+of voting techniques?
+[6]
+c)
+Explain the Adaptive Boosting (AdaBoost) algorithm in detail.
+[6]
+Q7) a)
+Define reinforcement learning. Why is reinforcement learning important
+in the field of machine learning?
+[9]
+b)
+Explain Markov’s Decision Process (MDP). What is the Markov
+property in the context of MDP?
+  [8]
+OR
+Q8) a)
+Introduce Q-learning. What are the important terms used in Q-learning?
+How does Q-learning work?
+[9]
+b)
+Compare and contrast supervised, unsupervised, and reinforcement
+learning. Provide examples of each type.
+[8]
+… … …
+CEGP013091
+49.248.216.237 12/12/2025 13:38:26 static-237
+CEGP013091
+49.248.216.237 12/12/2025 13:38:26 static-237
+CEGP013091
+49.248.216.237 12/12/2025 13:38:26 static-237
+

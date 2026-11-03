@@ -1,0 +1,123 @@
+Total No. of Questions : 8]
+[6354]-781
+B.E. (AIDS)
+MACHINE LEARNING
+(2019 Pattern) (Semester - VII) (417521)
+Time : 2½ Hours]
+[Max. Marks : 70
+Instructions to the candidates:
+1)
+Answer Q1 or Q2, Q3 or Q4, Q5 or Q6, Q7 or Q8.
+2)
+Neat diagrams mus be drawn wherever necessary
+3)
+Figures to the right indicates full Marks
+4)
+Use of electronic pocket calculator is allowed
+PC2632
+[Total No. of Pages : 2
+SEAT No. :
+Q1) a)
+What are kernel functions in SVM? Describe the Radial Basis Kernel,
+and Sigmoid kernel.
+[6]
+b)
+Write formula for accuracy, precision, recall and fl-score. Calculate
+accuracy, precision, recall and fl-score for given example.
+[12]
+Actual Values
+Cancer
+No Cancer
+45
+18
+12
+25
+OR
+Q2) a)
+Explain any 4 evaluation measures of Multiclass classification.
+[4]
+b)
+Differentiate Balanced and Imbalanced Classification.
+[6]
+c)
+Write a detailed note on K Nearest Neighbour algorithm with suitable
+example.
+[8]
+Q3) a)
+Differentiate Agglomerative Hierarchical Clustering and Divisive
+Hierarchical Clustering.
+[8]
+b)
+What is clustering? Elaborate Types of Clustering.
+[9]
+OR
+Q4) a)
+Explain DBSCAN algorithm with advantages and disadvantages.
+[8]
+b)
+Describe centroid based clustering algorithm and explain any one type
+with example.
+[9]
+P.T.O.
+  Predicted Values
+    No       Cancer
+Cancer
+CEGP013091
+49.248.216.237 11/12/2024 14:08:07 static-237
+CEGP013091
+49.248.216.237 11/12/2024 14:08:07 static-237
+CEGP013091
+49.248.216.237 11/12/2024 14:08:07 static-237
+
+2
+[6354]-781
+Q5) a)
+Explain Following with respect to Ensemble learning.
+[9]
+i)
+Need of Ensemble Learning
+ii)
+Advantages of Ensemble methods
+iii)
+Ensemble learning limitations
+b)
+Elaborate stacking approach of ensemble with example.
+[9]
+OR
+Q6) a)
+Describe ensemble learning. Explain Gradient Boosting ensemble learning
+techniques.
+[9]
+b)
+Explain any three voting mechanism in ensemble learning.
+[9]
+Q7) a)
+Differentiate supervised and unsupervised learning with example.
+[8]
+b)
+Explain Reinforcement Learning need and its types in detail?
+[9]
+OR
+Q8) a)
+Explain following terms:
+[8]
+i)
+Belman Equation
+ii)
+Markov Chain
+iii)
+Q table
+iv)
+Q function
+b)
+How does the Markov property relate to Reinforcement Learning? Why
+is it important?
+[9]
+
+CEGP013091
+49.248.216.237 11/12/2024 14:08:07 static-237
+CEGP013091
+49.248.216.237 11/12/2024 14:08:07 static-237
+CEGP013091
+49.248.216.237 11/12/2024 14:08:07 static-237
+

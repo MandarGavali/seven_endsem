@@ -1,0 +1,919 @@
+
+=== PAGE 54 ===
+2-16
+Machine Leaming
+2-17
+Regression
+Machine Leaming
+40
+30
+2.1.6Lasso Regression (L1 Regularisation)
+20
+the coeficientsItisalso called asLlregularisation.
+10
+12
+overfitting.
+Fig.2.1.3
+Simplelinearmodel
+isas following.
+Palymamial model
+Y
+allwll
+min
+2nsamles
+M
+constantand llwllisthel-norm of thecoeficient vector.
+y=bo+b,x
+2.1.7SupportVectorRegression(SVR)
+Note:ThistopiciscoveredunderSupportVectorMachinesinUnit3.PleasereferSection3.8.
+X
+X
+Fig.2.14
+2.1.8Polynomial Regression
+Y=βo+BX+BX²
+andaresponse variablehavealinearrelationship.
+Note here that the polynomial relationshipmay notbe limited to justquadraticItcouldbe anything that fits the
+Howevermesteeonhpbeenpditvbleandrensvaibliline
+caseyoucouldusepolynomialregression.
+insteadofastraightline.
+Polymomialregression isaformof regressionanalysisinwhich therelationshipbetween the independentvaribl
+2.1.9Stepwise Regression
+Forexample,lookat theFig.2.12.
+include inaregression model.It is a variable selectionmethod that aims to determine which predictors
+40
+(independentvariables) shouldbeincludedorexcluded from the model basedon theirstatistical significance and
+30
+contribution tothemodel'spredictivepower.
+Sample size=number af variables
+20
+00000
+80000
+Stepwiseregression
+10
+00000
+eee
+Sample size>>number of variables
+More Generalizable Model
+10
+12
+Fig.2.1.2
+Fig.2.1.5
+TechKaowlodge
+TechKas
+Puhllcatioas
+
+=== PAGE 55 ===
+Machine Leaming
+Machine Learning
+Thestepwiseregressionproceduretypicallyinvolvestwomainsteps.
+2-19
+Regression
+continuesuntil nomore variablesmeet theselection criterion.
+the outputvariable.
+on the selected criterion.
+can mitigate this issue.
+interpretedandvalidatedcarefully.
+2.1.10 Decision Tree Regression
+can affect the predictions.
+mayrequireimputation techniques.
+setofconditionsorfeaturesleadingto thecreationofatreewithnodesandbranches.
+Indecisintreeregressiontheteeisconstructedbyreatedlysplitingthedatabaedonthevalesfdifeent
+2.1.11 Random Forest Regression
+Random forest regression is a machine learming algorithm that combines the power of deision trees and
+thepredictedoutputvluesThesplitingprocessispefomedinawaythatminimisesthevarianceorn
+squarederror(MSE）ofthepredictedvalueswithineachresulting subsetTheFig2.1.6illustratesasampledecision
+decision trees and aggregates their predictions tomakemore accurate and robust predictions frregression
+tree for regression.
+problems.
+X[0]<=5.5
+TheFig.2.1.7illustratestheconcept of randomforest regression.
+mse=4.686
+samples=15
+TestSampl input
+value=3.647
+Troe2
+Tree S00
+00=
+X[0]<=11.5
+samples=5
+mse=2.306
+value=1.14
+samples=10
+value=4.9
+Prediction1
+Prediction2
+Prediction 600
+mse=0.138
+mse=0.007
+samples=6
+samples=4
+value=6.117
+value=3.075
+RandomForest
+Fig.2.1,6
+Prediction
+Fig.2.1.7
+TechKnowledgs
+TechKaoulodge
+Publicatioss
+Pualicatioos
+
+=== PAGE 56 ===
+2-20
+MachineLearmg
+2-21
+Regression
+Machine Leaming
+Following arethehigh-levelstepsof howrandomforestregressionworks.
+Elasticnet
+Ridge
+training setandatestset.
+treisconstructed usingasubsetofthetrainingdataandarandomselectionof inputfeatures.
+predictions.
+Fig.2.1.8
+withpotentiallydifferentinstances.
+where:
+reachingamaximumdepthorminimumnumberof samplesperleaf.
+tree toobtain thefinalprediction.
+Thekeyadvantagesofrandomforestregressionareasfollowing.
+stabilisethemodel by shrinking lessimportant variables.
+tresbyreducingoverfitingandcapturingmorecomplexrelationshipsinthedata
+2.RobustessRanomforestsarelessensitivtonoisyorutiedatapointsandcanhandlemissingvale
+featureandsomeleveoffeatureselctionidesiredItcanauomaticallyselectrelevantfeatureswhileshrinking
+theinput features.
+the coeficents of lesmortant variablesByadjusting thevaluesof and入youcancontral thedegreof
+3.Feature Imortance: Random forests provide ameasure of feature mportance, indicating which features
+regularisatonandstrieabalancebetweenfeatureselectionandcoeficienthrinkage.
+have the most influence on the predictions.
+Howeverrandomforestregressioncomeswithsometrade-offsasfollowing.
+numberofobservationsandthereisapossibiltyofcollinearityamongthepredictorsItprovidesflexibleand
+ensemblenature of the model.
+interpretability.
+When fitting an ElasticNet regression modelthe optimal values of入and入can bedetermined through
+2.
+techniquessuch as cross-validationorgridsearch tofind thebestbalance between theLl andL2regularization
+computationally expensive.
+termsforthespecificproblem athand.
+Overallrandom forestregressionisapowerfulalgorithm thatcombines the strengths ofdecision trees and
+2.1.13 Bayesian Linear Regression
+range of applications.
+2.1.12 ElasticNetRegression
+principles.Unlike traditional linear regression,which provides point estimates for theregression coefficients,
+Bayesianlinearregressionprovidesadistributionofpossiblevaluesforthecoeficients.Thisdistibutioncaptures
+techniquesItisdesignedtoaddresssomeofthelimitationsofthesendividualregularisationmethodsan
+isnottofindthesinglebestyalueof themodelparametersbutrathertodeteminetheposteriordistributinfor
+provideabalancebetweenfeatureelectionandfeatureshrinkage.
+parametersare assumed tocome froma distribution aswell.
+TochKnoulodge
+TedhKnowledgs
+Puaiicatiaas
+Pubjications
+
+=== PAGE 57 ===
+2-2Z
+egressi
+Machine Learning
+Machine Learning
+MeanError(ME)
+2.2.1
+2-23
+Regresslon
+knowledgeorassumptions about thecoefficients'values.
+ThekeystepsinBayesian linearregressionareasfollowing.
+Y(Actual)
+includenomaldistributionswhichallowforflexbleandinterpretablepriorbeliefs.
+Y(Predicted)
+Error=y-y"
+10
+9.2
+0.8
+8
+8.3
+distribution.
+-0.3
+5
+4.7
+0.3
+7
+7.9
+-0.9
+withtheobserveddata.
+4
+3.1
+0.9
+Total
+0.8
+intervals thatrepresentranges of likely coeficient values.
+MeanError
+0.8/5=0.16
+theytendtcanceleachotheruInfatitistheretiallypossiblethattheerorareuchthatpsitivand
+arecommendedcostfunction.
+dataandtepriorbeliefsallwingfrmorenuancedunderstandingof theregressonrelatinshp.
+2.2.2
+Mean Squared Error(MSE)
+2.2
+CostFunctions(Evaluation Metrics)
+MeanquaredErorMEnmroventponeanErrMcostfctionquaresthediffernceeee
+Inmathematisafnctionisgeneralwayoestablihmathematiarelationshipbetweenentitiesorariable
+anexample.
+buyapacketfbiscuityoupayitsflpricehemoreyoubuythehigheristheamounttobepaid.utyoucould
+Y(Actual)
+Y(Predicted)
+Error=Y-Y
+ErrorSquared
+negotiateorgoto awholesalerwho startstogiveyou some discountsonbulkbuying.Thiscanberepresentedas
+10
+9.2
+0.8
+asimplecostfunction suchasthefollowing.
+0.64
+TotalAmount=0.9xTotalPrice
+8
+8.3
+-0.3
+0.09
+So,the abovefunctionoffersa 10%discount on thetotal price.
+5
+4.7
+0.3
+0.09
+A costfunction establishestherelationshipbetween eventsorasetofvaluestorepresentlossorpenaltyincurred
+7
+7.9
+-0.9
+0.81
+ingaining something(say an eventorvalue）.Itisalso calledaslossorerrorfunction.An optimisationproblem
+seekstominimiseacostfunctionsothatthemaximumgainscouldbeaccomplished.Forexample,whiletraininga
+4
+3.1
+60
+0.81
+machineleaningmodeyouseektominimisetheerroroccurredintrining.ypically,theerorisrepresentedor
+Total
+2.44
+named)asacost function.The idea behind representinga cost functionis that it can beminimised using
+MeanSquared Error
+2.44
+mathematical operations.
+=0.488
+5
+funtionftffnkeinintnis
+If youcomparetheMSEvalue0.488）withtheMEvalue(0.16）thatyoufoundforthesamedatayoufindthatMSE
+isabetterwaytocalculateerrwhencomparedwithMEMSEisgenerallyhigherthanMEforthesamedata
+maximiseit.
+indicatingtheerrorinthefunction.
+TechKnoulodge
+Publicatiens
+TechKnowledg
+Publicatisns
+
+=== PAGE 58 ===
+2-2
+Machine Learning
+2-25
+2.2.5R-Squared
+Regression
+Machine Leaming
+2.2.3
+MeanAbsoluteError(MAE)
+calculatesthemeanof thesumLetstakeanemle
+AbsoluteError=|Y-Y|
+Y(Predicted)
+Y(Actual)
+0.8
+Fittedvaluesfrommodel
+X
+10
+9.2
+R²=100%
+0.3
+R²=80%
+8.3
+8
+Great
+0.3
+10000
+Good
+5
+4.7
+0.9
+7
+7.9
+3.1
+0.9
+4
+Observedvalues
+Observed values
+3.2
+Total
+Fitted=observed:Modelexplainsallvariance
+Model explains bulk ofvariance
+32
+MeanAbsoluteError
+=0.64
+5
+Fittedvaluesfrommodel
+R²=0%
+R²=40%
+OK
+O
+Inconsistent
+indicating theerrorin thefunction.
+O
+®
+O
+O
+O
+2.2.4Root Mean Squared Error(RMSE)
+O
+RootMeanSquaredErrRMSEaloattemtstosolethcancelingotproblemwithMeanErrME）MSE
+Observedvalues
+takes theroot of Mean SquaredEror(MSE).Let's take an example.
+Observedvalues
+Model explains40%of variance,soisreasonable.
+Modelfails to explains anyvariance
+Y(Actual)
+V(Predicted)
+Error=Y-Y
+ErrorSquared
+Fig.2.2.1
+9.2
+0.8
+10
+0.64
+measure depends on many factorssuchas the nature of the variables employed in the model,the units of
+8
+8.3
+-0.3
+600
+measureof thevariablesand theaplied data transfomation.ThussometmesahighR²canindicate te
+5
+4.7
+03
+600
+problemswiththeregressionmodel.
+7
+7.9
+-0.9
+A lowRfigureisgenerallyabadsignforredictivemodels.oweverinsomecasesagoodmodelmayshow
+0.81-
+small value.There isno universal rule on how to incorporate the statistical measure in assessing a model.The
+4
+3.1
+0.9
+0.81
+contextof the experimentorforecastisextremelyimportant andindifferent scenarios,theinsightsfrom the
+Total
+metriccanvary.R2can take anyvalues between0 to1(asitisdenoted inpercentage).
+2.44
+RootMeanSquared Error
+TheformulaforcalculatingR-squared isasfollowing.
+2.44
+=0.698
+Sumofsquaresduetoreqression
+R²=
+totalsumofsquares
+s
+data indicating the errorin thefunction.
+modelling).
+
+=== PAGE 59 ===
+Machine Leaming
+Machine Learning
+Let's takeanexample.
+2-27
+Regression
+Assumethatheregressionlineisgivenasthefollowing function.
+AdjustedRquared=1-
+(1-Rsquaredx
+(n-1)
+following.
+(n-p-1)]
+(V-V
+EstimatedValue
+Actual ValueY
+A-A
+in the model.
+Data Pointx
+=2.2+0.6×
+22+0.6×1=2.8
+-12
+1.44
+2
+-2
+4
+1
+0
+2.2+0.6×2=3.4
+-0.6
+0.36
+AdjustedRsquared=1-
+2
+4
+0
+(100-1）]
+2.2+0.6×3=4.0
+0
+0
+3
+5
+1
+1
+Adjusted Rsquared=1-
+0.15×99
+2.2+0.6×4=4.6
+0.6
+0.36
+0
+0
+96
+4
+4
+12
+=1-0.155=0.845
+1
+1
+22+0.6×5=5.2
+1.44
+5
+5
+Total=3.6
+MeanY=4
+Total=6
+Hence,
+Sumof squares due toreqression3.6
+ispositiahtq
+R?
+totalsumof squares
+TheadjustedR-squared valueisusefulforcomarindiferentmdels withvarinnumberf predito
+Adjusted R-Squared
+higher adjusted R-squared indicates a better fit considering both themode's explanatory power and the
+2.2.6
+complexity introduced bythepredictors.
+adjustedversionof theR-quaredvaluethatconsidersthenumberofpreditorsindeendentvariablesinthe
+2.3
+Model Representation and Interpretability (Generalisation Issues)
+modelhadjustedR-squaredacountsfortheptentialovefittingornderfitingofthemodelbypenaliing
+theinclusionof unnecessarypredictors.
+Asyouunderstandmodelisbasedoffthedatayoufeedtoitandhowcloselyyoutuneisothatitcanmae
+TounderstandadjustedR-squaredlet'sconsideranexampleSupposeyouareacarmanufacturerandyouwant
+accuratepredictionsorcarryouttherequiredjob.
+topredictthefuelefficiency（measuredinkilometresperlitre,orkmpl)ofyourcarsbasedonvariousfeaturessuch
+Thetrainingdataislmitedandtherecouldbenoiseoutlersorvariationinthedatathatmaynotaccuratelyfit
+asenginesize,weightandhorsepower.oucollectadatasetof100carsandtheircorrespondingfuelefficieny
+model.alierouhavealreadyeatbouteveraldatqualitssuesthatarisewhiletrainingd
+andotherattributes.
+targetfunction.
+andhorsepower.Afterfitting themodelyou obtain anR-squared valueof0.85.
+R-squaredmeasurestheproportionofthevarianceinthedependentvariable(fueleficiency)thatisexplainedby
+thatitcanaccuratelycarry outmachinelearning tasksfornewdata.
+theindpendentvariablesenginesizeightndhorsepowerInthiscasean-squaredf.5indicatestt
+Definition:Instatisticsafitreferstohowwellyouapproximatea targetfunction
+85%of thevarianceinfuelefficiencyisaccountedforbythethreepredictors.
+However-squaredalonedoesotcnidertecomplexityfthmodelorthenumerofpreditrusedfyou
+Fitnessofatargetfunctionapproximatedbyaleaningalgorithmdetemineshowcorrectlytheleaming
+addmrepdctrtmdethqadalilnatalreaseveniftsadinedi
+algorithm is able to classifya setof data points thatit has never seen.Fitness isa measureof howwell the
+bythemodelwhenitwaslearning.
+modelfit
+TherearetwocommonproblemsthatoccurwhenadjustingandtuningfitnessofatargetfunctionOverfiting
+and Underfitting.
+TechKnomiedge
+TechKnowledgs
+Pusilcatiens
+Pubilicatiens
+
+=== PAGE 60 ===
+Regresslo
+Machine Learning
+2-29
+Regression
+2-28
+BiasvsVariance
+2.3.3
+Machine Learning
+X
+value,
+XX
++
+Model
+Actual
+Predictions
+XXX
+Values
+Bias
+XX
+XX
+X
+Over-fitting
+Appropirate-fiting
+(forcefiting-too
+Under-fitting
+aaqoipoo
+explain the variance)
+Fig.2.3.1
+Let'sleamabout them.
+Fig.2.3.2
+2.3.1
+Overfitting
+poorly onnew data.
+predictions.
+You haveleantaboutvariance earleVarianceisthevariabiltyofmodel predictionforagivendatapointra
+value whichtelsyou about the spread of datapoints in your dataset.
+tonewdataandnegativelyimpacthemodelsabilitytogeneraliseandcarryoutmachineleaningtasks.
+Amachine learning model with highvariance paysa lot of attention to training data and does notgeneralise
+tarettisuyaaihinlemingrtneami
+enoughonthedatawhichithasnotseenbeforesaresultsuchamodel perfomsverywellontrainingdatabut
+hashigherrorratesontestdata.
+to limitand constrainhowmuch detail themodel learns.
+Forexamleecisinteearenprametimchinleingalrthmthatveyflexibleandisubt
+overfitting training data.
+Thisproblemcanbeaddressedbypruningatreeafterithaslearnedinordertoremovesomeofthedetail ithas
+Actual
+Predicted
+pickedup.
+2.3.2
+Underfitting
+Definition:Underfittingoccurswhenthemodelcanneithermodelthetrainingdatanor workwith thenew
+data,cauingittoperformpoorly.
+Fig.2.3.3
+If thetargetfunctioniskepttoosimpleitmaynotbeabletoleantheessentialfeaturesandcharacteristicsofthe
+Soasyousee in the example,themodelhasleamed extremely well for training data,whichhas taughtitto
+trainingdataUnderfttingcouldpotentiallyhappenduetounavailabilityof suficienttrainingdataorincorrect
+identifycatuwhengvenewdatuhastepictrefoxthmodlredicttscatastatisw
+selection of features.
+haslearnedThishappenswhentheVrianceshighhemodelwill apturealthfeatrefthdatagiventit
+Anunderfitmachinelearningmodel isnotasuitablemodelandithasapoorpeformanceonthetrainingdata
+includingtillftdnddititwlwngivdtat
+onitasit istoospecifictotrainingdata.
+Tomakefutheleughfryoudstandtdifrencbweeniaandaacnsided
+Tech Knoulodgo
+TochKnowledgs
+
+=== PAGE 61 ===
+2-30
+Machine Learning
+High Vananco
+2-31
+Machine Leaming
+LowBias
+HighBlas
+Notethat
+LowVariance
+Bias-Variance Trade-Off
+2.3.4
+High variance,lowbias algonithms
+Highbias,low varianoo algonithms
+trainmodels thatare accurate on
+High variance
+trainmodels thalare consistent,
+average,butinconsstent
+High bias.
+but inaccurate on average
+Lowbiaslow variance
+Fig.2.3.4
+Fig.2.3.5.
+X
+LowVariance
+High Variance
+Overitting
+Underfiting
+X
+Good balance
+Fig.2.3.6
+Biasandvarianceerrorscanhowever,beminimised.Mathematicallytheeorfunctioncouldbedescribedas
+Bins
+following.
+Err(x)=Total Error=Bias+vaniance+Irreducible Error
+That third term,irreducibleeroristhenoiseterminthetruerelationship thatcannotfundamentallybereduced
+byany model.Given the truemodel and infinite data to calibrate ityou should be able to reduceboth thebias
+andvariancetermstoO.However,inaworldwithimperfectmodelsandfnitedatathereisatradeoffbetween
+minimising thebiasandminimising thevariance.Youcannotreallyminimise bothperfectlyat the sametime.
+Tobuildagoodmodel,youneed tofindagoodbalancebetween biasandvariancesuchthatitminimises the
+totalerror.
+OptimumBalance
+TotalError
+Fig.2.3.5
+Biasandvarianceforsomeofthecommonmachinelearningalgorithmsareasfollwing.
+Variance
+Algorithm Name
+Bias
+Variance
+Linear Regression
+High
+Low
+DecisionTree
+Low
+High
+Bagging
+Bias
+Low
+High
+RandomForest
+Low
+High
+Algonthm Complexity
+Fig.2.3.7
+TechKnouledgs
+
+=== PAGE 62 ===
+Macnine
+2-33
+biasexponentiallydecreasesasthemodelcomplexityincreases.
+Review Questions
+Regression
+varianceincreasesexponentiallyasthemodelcomplexityincreases.
+highererror rate.
+Regression Analysis
+Wrtea short noteonregressonanalys.
+Q.1
+Why Do We Need Regression Analys?
+Q.2
+variance wouldnotoverfit orunderfithemodel.
+Compareregression and corelation.
+(4Marks)
+Q.3
+Youcanuse theflowchart showninFig.2.3.8forbalancingbias andvariance.
+(4Marks)
+Start training
+Q.4
+(6Marks)
+Witea short note onmulivariateregression analys.
+Q.5
+1.Trainlonger
+(4Marks)
+2.Trainamore complexmodel
+Compare uivaiaeandultvariateregression analyss.
+Yeshighbias
+Q.6
+High trainingerror?
+3.Obtain more features
+(4Marks)
+4.Decrease regularization
+Q.7
+5.Newmodol architecture
+(6Marks)
+No
+Q.8
+How could yourepresentmultivariateregressonmodel?
+1.Obtain more data
+(4Marks)
+Yes high variance
+High Cross-validation
+2.Decrease numberof features
+Mutiarronlssndupeesalisdihane
+3.lncrease regularizatlon
+Q.9
+error?
+(4Marks)
+4.Now model architecture
+Q.10
+Withexamlesdescribelinearandnonlinearregressionanalysis.
+Done
+Q.11
+Compare linearand nonlinearregression analysis.
+(4Marks)
+Q.12
+Withexamplesdescribe smplelinearregressionandmultipe linearegression.
+Fig.2.3.8
+(6Marks)
+Q.13
+Comparesimlelinearreressonandmulilelinearregression.
+2.3.5Characteristics(Detection)ofa High Bias Model
+(6Marks)
+Q.14
+Define dependentand independent variableswitha suitable example.
+(6Marks)
+Characteristicsofahighbiasmodelareasfollowing.
+Q.15
+Whatislinearregression?
+(4Marks)
+1.Failure to capture proper data trends
+Q.16
+Forthefollwingdatasetfindthelinearregressionline.PredictthevaluefYi=0.
+(4Marks)
+2.
+Lowtraining accuracy
+(8Marks)
+X
+Potential towardsunderfitting
+Y
+3.
+4.
+Moregeneralised oroverly simplified
+5.Higherrorrate
+3
+2
+2
+2.3.6
+Characteristics(Detection)ofaHigh Variance Model
+3
+5
+Characteristicsofahighvariancemodelareasfollowing.
+7
+1.
+Noise in thedata set
+5
+8
+2.
+Lowtestingaccuracy
+6
+8
+3.
+Potential towardsoverfitting
+7
+9
+Complexmodels
+8
+10
+5.
+Tryingtoputalldatapointsascloseasposible
+9
+12
+TochKnouledge
+TechKnowlidp
+
+=== PAGE 63 ===
+Machine Learning
+3-2
+Classification
+3.1
+3
+Classification
+Unit3
+weightlooks,et.rnot
+Syllabus
+Athendoftsylestndhdthflinl
+Introduction
+oNeed of Classfiction
+TypesofClassification(BinaryandMulticass)
+oBinary-vs-Multiclass Classfication
+Binary Classfication
+LinearClassficationmodel
+Multiclass Classification
+Balanced and Imbalanced ClassficationProblems
+One-vs-One
+0
+One-vs-All
+a.The final look of the system
+b.Mature small size mangoes
+Performance Evaluation
+C.Mature big sizemangoes
+d.Raw smallsizemangoes
+Confusion Matrix
+e.Raw big size mangoes
+Accuracy
+Fig.3.1.1
+Precision
+Such clasifcation systems can tremendously help in automation. Some of the common applicationsof
+Recall
+classificationare
+Fmeasures
+1.Classifying spam emails
+2.Identifying fakeuser account
+PerClass Precision
+3.
+Classifying stageofa disease
+4.Classifying entity breeds orsorting objects
+PerClassRecall
+3.1.1
+Types ofClassification (Binary and Multiclass)
+Classification Algorithms
+KNearest Neighbour
+Atahig-eveltherearetwotyesofclassificatonsBnaryandMultiass
+LinearSupportVectorMachines(SVM)
+Binary classification
+Multiclass classiication
+oIntroduction
+SoftMargin SVM
+Class
+aSS3
+Class1
+X
+X
+oKemel functions
+X
+X
+X
+Radial BasisKernel
+Gaussian
+Class2
+Class2
+Polynomial
+△
+△
+△
+Sigmoid
+Fig.3.1.2
+TechKnowlodge
+
+=== PAGE 64 ===
+Classificatiom
+3-3
+Machine Learming
+Binary Classification
+Machine Leaming
+3-4
+3.2
+Classification
+Logistic Regression
+3.2.1
+churn）and1represents theotheroption（e.g.spam,chun)
+orrejected.
+buidmodethatcanaccratlyassignthecoretlbeteunseendata
+Forexample,
+Binary-vs-Multiclass Classification
+Givenaparticularhumidity levelonaday,what arethe chancesof raining?
+3.1.2
+TheTable3.11providesaquickcomparisonbetweenbinaryandmulticasclasification.
+Table3.1.1
+Multiclass Classification
+Comparison Attributes
+Binary Classification
+Morethawlasseeg
+winning?
+Numberof Classes
+Two classes(e.g,positiveand negative,yes
+Logisticregressionprvidesuchaprobabiltypredictionmodelbasedonthvalueftheindpenentvaables
+(oupue
+blue,yellow)
+(such as scores).
+Represented asmultipleclasslabels
+Typicallyrepresented as0or1
+Definition:Logisticregressioniaregressontechniquusedtmodelandestimtetheprobabilityofan
+Logistic Regresson, Decision Trees
+event occurringbasedonthe ualuesof theindependent variables.
+Classification Models
+Logistic
+Regression,
+Support
+Vector
+Machines,etc
+RandamForests,etc
+Unlike thelinearregressionlinethelogisticregressionlineisacuehisiscalledSigmoidcuverScuvin
+shortAlltheoutcomedatapointsareeitherconcentratedonOor1Thecuvedepictsvariouspossibleprobabilitiesof
+Evaluation Metrics
+Accuracycisincalore
+Per Class-Accuracy,Precision,Recall
+aneventoccurring betweenO（totallyuncertain）and1（totally certain)onthey-axis.
+AUC,etc
+F1-Score,ROC-AUC,et
+Decision Boundaries
+A single decision boundary to separate two
+Multiple
+decision
+boundaries
+1.00
+.to
+classes
+distinguishbetween classes
+0.75
+Complexity
+Relatively simpler as there areonlytwo
+Can be more complex due to the
+classes
+presence of multiple classes
+0,50
+Training DataBalance
+Requires
+balanced
+data
+for
+equal
+Can
+handle
+both
+balanced
+and
+0.25
+representation
+imbalanced datasets
+Class Imbalance
+Can handleclassimbalance with techniques
+000
+Class
+imbalance
+likeoversampling orunder sampling
+can
+be
+more
+challenging and requires
+-6
+-3
+0
+specialised
+3
+techniques like class weighting
+Fig.3.2.1
+or
+sampling
+Theprobabiltypredictionformulaforlogisticregressionisasfollowing
+Examples
+Email spam detectionsentment analysis
+eBo+B1x1
+Imageclassificationwithmultipleobject
+(agebauangisod)
+1+e0+B1x1
+categories
+TechKnowiedp
+TechKnauledgo
