@@ -16,6 +16,6 @@ Fixes: answers expanded to (X+2) length rule, deeper derivations/examples, more 
 (Q1.8 is in QAI.pdf p.7-8; Q2.2 is in QAI-ii.pdf p.36). QC script: tools/qc.py <unit>.
 - [x] v2 QAI_Unit1_Exam_Answers.docx (17 answers, QC PASS, 0 flags)
 - [x] v2 QAI_Unit2_Exam_Answers.docx (9 answers, QC PASS, 0 flags)
-- [ ] v2 QAI_Unit3_Exam_Answers.docx
+- [x] v2 QAI_Unit3_Exam_Answers.docx (9 answers, QC PASS, 6 not-found + 1 partial flags kept – genuinely absent from books)
 - [ ] v2 QAI_Unit4_Exam_Answers.docx
 - [ ] v2 QAI_PYQ_Topic_Analysis.docx (add appearance matrix + slot strategy; update flags)
