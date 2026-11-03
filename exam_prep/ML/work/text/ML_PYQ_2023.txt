@@ -1,0 +1,136 @@
+Total No. of Questions : 8]
+[6181]-404
+B.E. (AI & DS)
+MACHINE LEARNING
+(2019 Pattern) (Semester - VII) (417521)
+Time : 2½ Hours]
+[Max. Marks : 70
+Instructions to the candidates:
+1)
+Answer Q1 or Q2, Q3 or Q4, Q5 or Q6, Q7 or Q8.
+2)
+Neat diagrams must be drawn wherever necessary.
+3)
+Figures to right indicate full marks.
+P6779
+[Total No. of Pages : 2
+SEAT No. :
+Q1) a)
+Apply K-Nearest Neighbor Algorithm (KNN) on following data. Predict
+the student result for values physics = 6 marks, Chemistry = 8 marks.
+Consider number of neighbours K = 3 and Euclidean Distance as distance
+measure.
+[12]
+Physics (marks)
+Chemistry (marks)
+Results
+4
+3
+Fail
+6
+7
+Pass
+7
+8
+Pass
+5
+5
+Fail
+8
+8
+Pass
+b)
+Explain support Vector Machine classification algorithm with suitable
+example.
+[6]
+OR
+Q2) a)
+Explain any 4 evaluation measures of Binary classification with example?[6]
+b)
+Explain construction of multi-classifier.
+[6]
+i)
+One Vs. All approach
+ii)
+One Vs One approach
+c)
+Differentiate between Binary - vs - Multiclass Classification.
+[6]
+P.T.O.
+CEGP013091
+49.248.216.238 30/11/2023 13:42:16 static-238
+CEGP013091
+49.248.216.238 30/11/2023 13:42:16 static-238
+CEGP013091
+49.248.216.238 30/11/2023 13:42:16 static-238
+
+2
+[6181]-404
+Q3) a)
+Explain K - Means clustering algorithm and states the advantages and
+disadvantages of k-means clustering algorithm.
+[9]
+b)
+Explain Gaussian mixture model with example.
+[8]
+OR
+Q4) a)
+Elaborate need of clustering and explain how the elbow method is used
+to decide the value of cluster k.
+[9]
+b)
+Explain Divisive Hierarchical clustering (DHC) algorithm with example.[8]
+Q5) a)
+Differentiate the Bagging and Boosting approach of ensemble learning.[6]
+b)
+Explain different types of voting mechanisms in ensemble learning. [6]
+c)
+Explain AdaBoost algorithm in detail.
+[6]
+OR
+Q6) a)
+Compare Homogeneous and Heterogeneous ensemble methods.
+[6]
+b)
+What is the ensemble learning? Explain any two ensemble learning
+techniques.
+[6]
+c)
+Explain random forest ensembles with an example.
+[6]
+Q7) a)
+Explain following terms:
+[8]
+i)
+Markov Property
+ii)
+Bellman Equation
+iii)
+Markov Reward Process
+iv)
+Markov Chain
+b)
+Explain Q-Learning algorithm with an example.
+[9]
+OR
+Q8) a)
+What is Reinforcement Learning? Explain the real time applications of
+reinforcement learning.
+[8]
+b)
+Explain following terms :
+[9]
+i)
+Supervised Learning.
+ii)
+Unsupervised Learning.
+iii)
+Reinforcement Learning.
+
+CEGP013091
+49.248.216.238 30/11/2023 13:42:16 static-238
+CEGP013091
+49.248.216.238 30/11/2023 13:42:16 static-238
+CEGP013091
+49.248.216.238 30/11/2023 13:42:16 static-238
+
