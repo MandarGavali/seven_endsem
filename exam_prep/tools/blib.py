@@ -8,9 +8,12 @@ from docx.oxml import OxmlElement
 SCR="/tmp/claude-0/-home-user-seven-endsem/44ff7970-fe2a-534e-b1bc-198b0b780dca/scratchpad"
 IMG=SCR+"/diagrams"; os.makedirs(IMG,exist_ok=True)
 STAR={3:"★★★",2:"★★",1:"★"}
-def new_doc():
+def new_doc(header=None):
     d=Document()
-    s=d.sections[0]; s.left_margin=s.right_margin=Inches(0.9); s.top_margin=s.bottom_margin=Inches(0.8)
+    s=d.sections[0];
+    if header:
+        hp=s.header.paragraphs[0]; hp.alignment=WD_ALIGN_PARAGRAPH.RIGHT; hr=hp.add_run(header); hr.font.size=Pt(8.5); hr.font.color.rgb=RGBColor.from_string('7F7F7F')
+    s.left_margin=s.right_margin=Inches(0.9); s.top_margin=s.bottom_margin=Inches(0.8)
     st=d.styles['Normal']; st.font.name='Calibri'; st.font.size=Pt(11)
     st.element.rPr.rFonts.set(qn('w:eastAsia'),'Calibri')
     for n,sz,col in (('Heading 1',18,'1F3864'),('Heading 2',14,'2E74B5'),('Heading 3',12,'C55A11')):
