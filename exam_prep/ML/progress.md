@@ -1,7 +1,7 @@
 # Progress
 
 Session scope (budget mode): Machine Learning only.
-In this repo: the .docx files are in `exam_prep/ML/`, and the working files (`ml/`, `scripts/`, OCR `text/`, `qc/` previews) are in `exam_prep/ML/work/`. The paths below refer to the original local folder (`D:sem_seven_pyq`).
+In this repo: the .docx files are in `exam_prep/ML/`, and the working files (`ml/`, `scripts/`, OCR `text/`, `qc/` previews) are in `exam_prep/ML/work/`. The paths below refer to the original local folder (`D:\sem_seven_pyq`).
 Working files: `work/ml/`: questions.py (Phase 1 tally), sources.py (Phase 2 citations), U1–U4.md and UA.md (answer content), build.py (docx builder), diagrams.py, qc_check.py.
 OCR text: `work/text/`. Outputs: `Output/Machine_Learning/`.
 
