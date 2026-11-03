@@ -142,10 +142,50 @@ REVISION=[
 ASSUMPTIONS=[
 "Unit 4 = Q7/Q8 of 2023–2025 (quantum search, quantum walks, quantum production systems, heuristic search, quantum AI/data science).",
 "**Your materials cover only:** Grover/quantum search (QAI-ii.pdf p.13–15, 20–22, 29), QNN (p.20–23, 34–35) and a general challenges list for quantum-enhanced ML (p.22). **Quantum walk, tree search, production system, heuristic search and PennyLane are not in your materials** and are marked ⚠ (written from standard knowledge; no citations to your files are claimed).",
+"The Unit 4 topics (production systems, quantum tree search, Tarrataca\'s quantum production system, heuristic search, random/quantum walk, quantum neural computation) appear to follow A. Wichert, *Principles of Quantum Artificial Intelligence* (World Scientific) – this book is NOT in your repo; adding it (or its lecture notes) would let these answers be cited.",
 "2024 Q8a ‘Quantum Walk – Random Insect’ is interpreted as the classical random walk of an insect/drunkard compared with the quantum walk. Please check with your class notes if ‘Random Insect’ refers to something specific.",
 "**Tarrataca's quantum production system (Q4.5):** the description is a general account recalled from the literature (rules as reversible operators + Grover over the search tree); I cannot verify the exact formulation from your files – **please check against your lecture notes** before relying on it.",
 "Q4.4 and Q4.2 are only partly covered by your book (flagged ⚠ partial).",
 "The quantum-walk plot is a computer simulation (Hadamard coin, symmetric initial coin state, 60 steps), not from your book.",
 "Answer lengths follow (max marks + 2): Quantum walk, Challenges = 11; Tree search, Heuristic search = 10; Neural computation, Production system, PennyLane = 8; Quantum search = 7.",
 ]
+def _ins(cid,blocks):
+    bl=A[cid]['blocks']; i=[k for k,b in enumerate(bl) if b[0]=="concl"][0]; A[cid]['blocks']=bl[:i]+blocks+bl[i:]
+_ins('4.1',[("h","6. Worked example – the ‘insect’ walk for 3 steps"),
+("p","Convention: coin |0⟩ → step left, coin |1⟩ → step right; start at x = 0 with coin |0⟩; coin operator = H."),
+("n",["Step 1: (|−1,0⟩ + |+1,1⟩)/√2 → P(−1) = P(+1) = ½ (same as a classical insect).","Step 2: ½[|−2,0⟩ + |0,1⟩ + |0,0⟩ − |2,1⟩] → P(−2) = ¼, P(0) = ½, P(2) = ¼ (still classical-looking).","Step 3: (1/2√2)[|−3,0⟩ + 2|−1,0⟩ + |−1,1⟩ − |1,0⟩ + |3,1⟩] – the two |0,1⟩ terms (+ and −) **cancelled** (destructive interference)."]),
+("t",["Position after 3 steps","−3","−1","+1","+3"],[["Classical random walk","1/8","3/8","3/8","1/8"],["Quantum (Hadamard) walk","1/8","**5/8**","**1/8**","1/8"]],[2.2,1.0,1.0,1.0,1.0]),
+("p","Interference already makes the quantum distribution different (asymmetric for this start state); after many steps it spreads ballistically (σ ≈ 0.54 t, the plot above shows t = 60: σ ≈ 32 vs √60 ≈ 7.7).")])
+_ins('4.4',[("h","Explanation of the three biggest barriers"),
+("n",["**Data loading (input problem):** a dataset of N numbers must be encoded into log₂N qubits; without fast QRAM, preparing the state takes O(N) time, so the claimed exponential speed-up disappears.","**Read-out (output problem):** a measurement returns one sample; recovering an N-dimensional answer needs about N repetitions. Useful only when a single number (expectation, class label) is needed.","**NISQ hardware:** today's 50–1000 noisy qubits with ~10⁻³ gate errors allow only shallow circuits; deep algorithms (HHL, Shor-scale) need error-corrected logical qubits."]),
+("h","Where quantum computing can still help data science"),
+("t",["Area","Quantum approach"],[["Optimisation (scheduling, portfolio)","QAOA, quantum annealing"],["Kernel methods / classification","Quantum kernels, QSVM, VQC"],["Sampling & Monte-Carlo","Amplitude estimation (quadratic speed-up)"],["Linear algebra on huge sparse data","HHL-type algorithms (future, fault-tolerant)"]],[2.8,4.0])])
+_ins('4.2',[("h","5. Quantum perceptron (model of a quantum neuron)"),
+("f",["Classical neuron:  y = f( Σᵢ wᵢ xᵢ + b )","Quantum neuron:  |ψ_x⟩ → U(w)|ψ_x⟩ ,  output P(1) = |⟨1|U(w)|ψ_x⟩|²  (measurement acts as activation)"]),
+("b",["Inputs xᵢ are encoded as rotation angles or amplitudes; weights wᵢ are gate parameters; the non-linear ‘activation’ comes from measurement probabilities.","**Quantum associative memory / Hopfield-type models** store patterns as superpositions and retrieve the closest pattern with Grover-like amplification."])])
+_ins('4.3',[("h","4. Encoding a search tree in qubits"),
+("b",["A tree with branching factor b and depth d has bᵈ root-to-leaf paths.","Each path = sequence of d choices → needs d·⌈log₂ b⌉ qubits (e.g. b = 2, d = 3 → 3 qubits, 8 paths).","The oracle follows the choices with reversible circuits and tests the leaf state against the goal."]),
+("h","5. Example – maze / 8-puzzle"),
+("p","For an 8-puzzle limited to depth d = 10 with average branching b ≈ 3, classical exhaustive search checks up to 3¹⁰ ≈ 59 000 paths; Grover-based tree search needs about (π/4)√59 000 ≈ **190** oracle calls (plus verification) – quadratic saving."),
+("h","6. Limitations"),
+("b",["Only quadratic speed-up; the number of qubits grows with depth; all rule applications must be reversible; real trees are irregular (need quantum backtracking to handle them efficiently)."])])
+_ins('4.5',[("h","4. Example of production rules (8-puzzle / water-jug style)"),
+("t",["Rule","Condition (IF)","Action (THEN)"],[["R1","blank not in top row","move blank up"],["R2","blank not in bottom row","move blank down"],["R3","blank not in left column","move blank left"],["R4","blank not in right column","move blank right"]],[0.8,2.8,2.8]),
+("p","Classically, the control strategy fires one rule at a time and back-tracks. In the quantum production system the rule-choice register holds all sequences R₁R₂…R_d at once (2 qubits per step for 4 rules), so a depth-d search over 4ᵈ sequences needs only about 2ᵈ Grover iterations.")])
+_ins('4.6',[("h","4. Types of heuristic search"),
+("t",["Method","Evaluation used","Property"],[["Hill climbing","h(n) only, best neighbour","Fast, may get stuck in local maxima"],["Greedy best-first","f(n) = h(n)","Fast, not optimal"],["A*","f(n) = g(n) + h(n)","Optimal with admissible h"],["Beam search","Keeps best k nodes","Memory-bounded, not complete"]],[1.6,2.4,2.8]),
+("h","5. Good heuristics"),
+("b",["**Admissible:** never overestimates the true cost (h(n) ≤ h*(n)) → A* is optimal.","**Consistent:** h(n) ≤ cost(n, n′) + h(n′).","8-puzzle examples: h₁ = number of misplaced tiles; h₂ = sum of **Manhattan distances** (h₂ dominates h₁ and expands fewer nodes)."])])
+_ins('4.7',[("h","5. Key concepts"),
+("t",["Concept","Meaning"],[["Device","Backend that runs the circuit: qml.device('default.qubit', wires=2) or a hardware plugin"],["QNode","Quantum function + device, decorated with @qml.qnode; returns expectation values/probabilities"],["Templates","Ready layers: AngleEmbedding, StronglyEntanglingLayers, QAOA layers"],["Interfaces","Gradients flow into PyTorch / TensorFlow / JAX models"],["Optimisers","GradientDescentOptimizer, AdamOptimizer, QNGOptimizer"]],[1.4,5.4]),
+("h","6. PennyLane vs other libraries"),
+("t",["Point","PennyLane","Qiskit","Cirq"],[["Developer","Xanadu","IBM","Google"],["Focus","Differentiable QML, hybrid models","Circuits, IBM hardware, algorithms","Circuits, Google hardware, NISQ research"],["Hardware","Many (via plugins)","Mainly IBM","Mainly Google"],["Auto-diff","Built-in","Via add-ons","Via TensorFlow Quantum"]],[1.2,2.0,1.8,1.8])])
+_ins('4.8',[("h","Why √N (intuition)"),
+("b",["Each Grover iteration rotates the state by an angle 2θ (sin θ = 1/√N) towards the target in the plane of |w⟩ and the uniform state.","About (π/2)/(2θ) ≈ (π/4)√N rotations bring it to the target.","**Lower bound (BBBV, 1997):** any quantum algorithm needs Ω(√N) queries for unstructured search, so Grover is optimal – quantum computers cannot search unsorted data exponentially faster."])])
+_ins('4.2',[("h","6. Applications"),("b",["Image and speech pattern recognition, classification of quantum data (phase detection in physics), associative memory and pattern completion, optimisation and financial forecasting using hybrid QNN models."])])
+_ins('4.3',[("h","7. Game-tree evaluation"),("p","For AND–OR (NAND) game trees with N leaves, a continuous-time **quantum-walk** algorithm (Farhi, Goldstone, Gutmann, 2007) decides the winner in about **N^0.5** time, versus about N^0.753 for the best classical randomized algorithm – another quantum tree-search speed-up.")])
+_ins('4.6',[("h","6. Applications"),("b",["Route finding (Google Maps-style A*), game AI and robot path planning, puzzle solving (8-puzzle, Rubik's cube), job-shop scheduling (book p.15: heuristics as ‘rules of thumb’), and as a pruning stage before quantum tree search."])])
+_ins('4.7',[("h","7. Getting started"),("p","Install with **pip install pennylane**; add plugins such as **pennylane-qiskit** to run the same QNode on IBM devices. The same code also runs on a laptop simulator, which makes PennyLane suitable for teaching and research.")])
+_ins('4.8',[("h","Example – N = 4"),("p","Two qubits, one marked item |10⟩. Initial amplitudes ½ each; oracle makes |10⟩ → −½; mean = ¼; inversion about the mean gives 2(¼) − ½ = 0 for the others and 2(¼) + ½ = 1 for |10⟩. After **one** iteration the target is found with certainty (classically up to 3–4 checks).")])
+_ins('4.4',[("d",dg('c[label="Challenges of QC\\nin Data Science",shape=oval,fillcolor="#FCE4D6"]; h[label="Hardware\\nfew qubits, noise,\\ndecoherence, QEC cost"]; d[label="Data\\nloading (QRAM),\\nread-out bottleneck"]; a[label="Algorithms\\nassumption-heavy speed-ups,\\ntraining (barren plateaus)"]; p[label="Practical\\nhybrid integration, skills,\\ncost, benchmarking, security"]; c->h; c->d; c->a; c->p;',"TB"),"Mind-map: four groups of challenges (easy to redraw in the exam)",5.6),("p","**Groups:** *Hardware* limits what can run; *Data* limits how fast information gets in and out; *Algorithms* limits where speed-ups are real; *Practical* issues limit adoption.")])
 ANSWERS=A
