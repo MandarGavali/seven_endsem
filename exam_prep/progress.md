@@ -18,4 +18,5 @@ Fixes: answers expanded to (X+2) length rule, deeper derivations/examples, more 
 - [x] v2 QAI_Unit2_Exam_Answers.docx (9 answers, QC PASS, 0 flags)
 - [x] v2 QAI_Unit3_Exam_Answers.docx (9 answers, QC PASS, 6 not-found + 1 partial flags kept – genuinely absent from books)
 - [x] v2 QAI_Unit4_Exam_Answers.docx (8 answers, QC PASS, 5 not-found + 2 partial flags kept)
-- [ ] v2 QAI_PYQ_Topic_Analysis.docx (add appearance matrix + slot strategy; update flags)
+- [x] v2 QAI_PYQ_Topic_Analysis.docx (appearance matrix, slot pattern, source-status column)
+- [x] v2 FINAL_SUMMARY.md regenerated from flags. QAI v2 COMPLETE.
